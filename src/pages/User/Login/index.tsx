@@ -111,6 +111,7 @@ const Login: React.FC = () => {
             const userId = await register({...values});
             if (userId > 0) {
                 message.success('注册成功');
+                buttonStr = '登录'
                 setType('account')
             } else {
                 throw new Error(`register error id = ${userId}`)

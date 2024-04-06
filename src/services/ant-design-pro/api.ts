@@ -9,6 +9,13 @@ export async function currentUser(options?: { [key: string]: any }) {
         ...(options || {}),
     });
 }
+/** 查询用户 GET /api/currentUser */
+export async function queryUser(options?: { [key: string]: any }) {
+    return request<API.CurrentUser>('/user/query', {
+        method: 'GET',
+        ...(options || {}),
+    });
+}
 
 /** 退出登录接口 POST /api/login/outLogin */
 export async function outLogin(options?: { [key: string]: any }) {
