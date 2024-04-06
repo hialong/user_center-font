@@ -16,10 +16,6 @@ import React, {useState} from 'react';
 import {flushSync} from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
 import {GITHUB_LINK, SYSTEM_LOGO} from "@/constant";
-import {values} from "lodash";
-import exception from "@@/plugin-layout/Exception";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
 
 const useStyles = createStyles(({token}) => {
     return {
@@ -104,16 +100,22 @@ const Login: React.FC = () => {
         }
     };
     //注册功能
-    const handleregister = async (values:API.RegisterParams)=>{
+    const handleregister = async (values: API.RegisterParams) => {
         // 前端先校验，再后端请求
+        const {userPassword,checkPassword} = values
+        if(userPassword !== checkPassword){
+            message.error('两次密码不一致');
+            return;
+        }
         try {
             const userId = await register({...values});
-            if(Number(userId)>0){
+            if (userId > 0) {
                 message.success('注册成功');
-            }else {
-                message.error('注册失败请重试');
+                setType('account')
+            } else {
+                throw new Error(`register error id = ${userId}`)
             }
-        }catch (error){
+        } catch (error) {
             message.error('注册失败请重试');
         }
 
@@ -171,9 +173,8 @@ const Login: React.FC = () => {
                     }}
 
                     onFinish={async (values) => {
-                        console.log(type)
                         if (type === 'register') {
-                            handleregister(values as API.RegisterParams);
+                            await handleregister(values as API.RegisterParams);
                         } else {
                             // 登录
                             await handleSubmit(values as API.LoginParams);
