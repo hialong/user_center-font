@@ -316,6 +316,21 @@ const Login: React.FC = () => {
                                     }
                                 ]}
                             />
+
+                          <ProFormText
+                            name="specialCode"
+                            fieldProps={{
+                              size: 'large',
+                              prefix: <UserOutlined onPointerEnterCapture={undefined}
+                                                    onPointerLeaveCapture={undefined}/>,
+                            }}
+                            placeholder={'请输入邀请码'}
+                            rules={[
+                              {
+                                required: false,
+                              },
+                            ]}
+                          />
                         </>
                     )}
                 </LoginForm>
