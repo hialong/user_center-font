@@ -12,6 +12,9 @@ enum ErrorShowType {
 }
 // 与后端约定的响应数据格式
 interface ResponseStructure {
+  message:string;
+  description:string;
+  code:string;
   success: boolean;
   data: any;
   errorCode?: number;
@@ -99,7 +102,6 @@ export const errorConfig: RequestConfig = {
     (response) => {
       // 拦截响应数据，进行个性化处理
       const { data } = response as unknown as ResponseStructure;
-
       if (data?.success === false) {
         message.error('请求失败！');
       }

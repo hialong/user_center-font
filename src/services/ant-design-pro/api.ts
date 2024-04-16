@@ -17,9 +17,9 @@ export async function queryUser(options?: { [key: string]: any }) {
     });
 }
 
-/** 退出登录接口 POST /api/user/logOut */
+/** 退出登录接口 POST /api/user/logout */
 export async function outLogin(options?: { [key: string]: any }) {
-    return request<Record<string, any>>('/user/logOut', {
+    return request<Record<string, any>>('/user/logout', {
         method: 'POST',
         ...(options || {}),
     });
