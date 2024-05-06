@@ -18,7 +18,7 @@ declare namespace API {
     pageNum: number;
     pageSize: number;
     total: number;
-    userList: CurrentUser[];
+    list: CurrentUser[];
   };
 
   type CurrentUser = {

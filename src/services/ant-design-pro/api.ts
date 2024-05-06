@@ -32,6 +32,27 @@ export async function queryUserByPage(body:API.CommonUserByPage,options?: { [key
     });
 }
 
+/** 更新用户信息 POST /api/user/updateUser */
+export async function updateUser(body:API.CurrentUser,options?: { [key: string]: any }){
+    return request<Boolean>('/user/updateUser', {
+        method:'Post',
+        ...(options || {}),
+        data:{
+            ...body
+        }
+    });
+}
+
+/** 删除用户信息 POST /api/user/deleteUser */
+export async function deleteUser(id:number,options?: { [key: string]: any }){
+    return request<Boolean>('/user/deleteUser', {
+        method:'Post',
+        ...(options || {}),
+        params:{
+            id
+        }
+    });
+}
 /** 退出登录接口 POST /api/user/logout */
 export async function outLogin(options?: { [key: string]: any }) {
     return request<Record<string, any>>('/user/logout', {
@@ -52,7 +73,7 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
     });
 }
 
-/** 注册接口 POST /api/login/account */
+/** 注册接口 POST /api/user/register */
 export async function register(body: API.RegisterParams, options?: { [key: string]: any }) {
     return request<API.RegisterResult>('/user/register', {
         method: 'POST',
