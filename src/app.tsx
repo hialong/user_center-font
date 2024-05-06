@@ -139,8 +139,8 @@ export const layout: RunTimeLayoutConfig = ({initialState, setInitialState}) => 
  */
 export const request = {
   ...errorConfig,
-  // 其实可以设置timeout，后面再搞
-  baseURL: "/api",
+  // 这部分暂时设置线上环境和本地环境，后续有需要再写函数就ok
+  baseURL: isDev?"/api":'http://user-backend.code-nav.cn',
   responseInterceptors: [
     (response: API.CommonResponse<any>) => {
       // 拦截响应数据，进行个性化处理

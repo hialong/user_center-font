@@ -11,6 +11,16 @@ declare namespace API {
     data: T;
     description: string;
   };
+
+  // 分页查询返回用户类
+  type CommonUserByPage = {
+    user: CurrentUser;
+    pageNum: number;
+    pageSize: number;
+    total: number;
+    userList: CurrentUser[];
+  };
+
   type CurrentUser = {
     id: number;
     userName: string;

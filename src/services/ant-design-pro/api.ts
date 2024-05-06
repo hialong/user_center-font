@@ -17,6 +17,21 @@ export async function queryUser(options?: { [key: string]: any }) {
     });
 }
 
+/** 分页查询用户 GET /api/queryUserByPage */
+export async function queryUserByPage(body:API.CommonUserByPage,options?: { [key: string]: any }) {
+    return request<API.CommonUserByPage>('/user/queryByPage', {
+        method: 'Post',
+        ...(options || {}),
+        data:{
+           ...body.user
+        },
+        params:{
+            pageSize: body.pageSize,
+            pageNum: body.pageNum
+        }
+    });
+}
+
 /** 退出登录接口 POST /api/user/logout */
 export async function outLogin(options?: { [key: string]: any }) {
     return request<Record<string, any>>('/user/logout', {

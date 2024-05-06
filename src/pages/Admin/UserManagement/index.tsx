@@ -1,10 +1,9 @@
-import {EllipsisOutlined, PlusOutlined} from '@ant-design/icons';
+import {PlusOutlined} from '@ant-design/icons';
 import type {ActionType, ProColumns} from '@ant-design/pro-components';
 import {ProTable, TableDropdown} from '@ant-design/pro-components';
-import {Button, Dropdown, Image, Space, Tag} from 'antd';
+import {Button, Image} from 'antd';
 import {useRef} from 'react';
-import request from 'umi-request';
-import {queryUser} from "@/services/ant-design-pro/api";
+import {queryUser, queryUserByPage} from "@/services/ant-design-pro/api";
 
 export const waitTimePromise = async (time: number = 100) => {
   return new Promise((resolve) => {
@@ -60,8 +59,8 @@ const columns: ProColumns<API.CurrentUser>[] = [
         <Image src={record.avatarUrl}/>
       </div>
     ),
+    hideInSearch:true,
   },
-
   {
     title: '性别',
     dataIndex: 'gender',
@@ -87,6 +86,8 @@ const columns: ProColumns<API.CurrentUser>[] = [
     title: '用户积分',
     dataIndex: 'score',
     copyable: true,
+    // 去除搜索条件
+    hideInSearch:true
   },
   {
     title: '用户邀请码',
@@ -124,8 +125,6 @@ const columns: ProColumns<API.CurrentUser>[] = [
     dataIndex: 'createTime',
     valueType: 'date',
   },
-
-
   {
     title: '操作',
     valueType: 'option',
@@ -134,13 +133,11 @@ const columns: ProColumns<API.CurrentUser>[] = [
       <a
         key="editable"
         onClick={() => {
+          console.log(action)
           action?.startEditable?.(record.id);
         }}
       >
         编辑
-      </a>,
-      <a href={record.url} target="_blank" rel="noopener noreferrer" key="view">
-        查看
       </a>,
       <TableDropdown
         key="actionGroup"
@@ -155,6 +152,7 @@ const columns: ProColumns<API.CurrentUser>[] = [
 ];
 
 export default () => {
+  // useRef实际上是一个hook。创建一个可变的引用对象，你可以在组件的整个生命周期内访问它，并且每次访问到的都是同一个可变对象。
   const actionRef = useRef<ActionType>();
   return (
     <ProTable<GithubIssueItem>
@@ -162,11 +160,19 @@ export default () => {
       actionRef={actionRef}
       cardBordered
       request={async (params, sort, filter) => {
-        console.log(sort, filter);
+        console.log(params,sort, filter);
         // await waitTime(2000);
-        const userList = await queryUser();
+        const {pageSize, current, ...condition} = params;
+        const pageInfo = await queryUserByPage({
+          user:condition,
+          pageSize:pageSize,
+          pageNum:current,
+        });
+        console.log(pageInfo)
         return {
-          data: userList
+          // 采用了mybatis的分页，里面就是叫list，所以暂时这样写没有问题的
+          data: pageInfo.list,
+          total:pageInfo.total,
         }
       }}
       editable={{
@@ -208,7 +214,7 @@ export default () => {
         onChange: (page) => console.log(page),
       }}
       dateFormatter="string"
-      headerTitle="高级表格"
+      headerTitle="用户表"
       toolBarRender={() => [
         <Button
           key="button"
