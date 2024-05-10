@@ -126,7 +126,7 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            仅供学习使用
+            仅供学习使用（管理员账号hailong/12345678）
           </p>
           <div
             style={{
@@ -139,19 +139,20 @@ const Welcome: React.FC = () => {
               index={1}
               href="https://github.com/hialong"
               title="个人github"
-              desc=""
+              desc="点击了解更多可以跳转github"
             />
             <InfoCard
               index={2}
               title="了解 项目前端"
               href="https://github.com/hialong/user_center-font"
-              desc="前端是通过阿里的ant.design.pro进行开发的，框架为react,语言为TypeScript"
+              desc="前端是通过阿里的ant.design.pro进行开发的，框架为react,语言为TypeScript,目前实现功能有 个人博客，页面权限管理
+              （管理员账号hailong/12345678）只有管理员可以查看并修改用户的权限，用户管理等"
             />
             <InfoCard
               index={3}
               title="了解项目后端"
               href="https://github.com/hialong/user-universe"
-              desc="后端采用java21以及spring-boot加mybatis进行开发"
+              desc="后端采用java21以及spring-boot加mybatis进行开发，目前实现用户的增删改查，逻辑删除，权限管理等"
             />
           </div>
         </div>

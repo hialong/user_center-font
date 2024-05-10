@@ -17,7 +17,8 @@ export default [
       {name: '用户管理', icon: 'smile', path: '/admin/userManagement', component: './Admin/UserManagement'},
     ],
   },
-  {name: '查询表格', icon: 'table', path: '/list', component: './TableList'},
+  // {name: '查询表格', icon: 'table', path: '/list', component: './TableList'},
+  {name: '个人博客', icon: 'table', path: '/note', component: './note/'},
   {path: '/', redirect: '/welcome'},
   {path: '*', layout: false, component: './404'},
 ];

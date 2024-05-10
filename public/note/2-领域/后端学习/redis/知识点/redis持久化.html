@@ -1,0 +1,178 @@
+<!DOCTYPE html> <html><head>
+		<title>Redis持久化</title>
+		<base href="..\..\..\../">
+		<meta id="root-path" root-path="..\..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="myVault - Redis持久化">
+		<meta property="og:title" content="Redis持久化">
+		<meta property="og:description" content="myVault - Redis持久化">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="2-领域/后端学习/redis/知识点/redis持久化.html">
+		<meta property="og:image" content="lib\media\image-20231226001133134.png">
+		<meta property="og:site_name" content="myVault">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager theme-dark show-inline-title minimal-flexoki-dark colorful-headings colorful-active links-int-on links-ext-on full-width-media minimal-readable trim-cols styled-scrollbars"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">Created</span><span class="token punctuation">:</span> <span class="token datetime number">2024-01-17</span>
+<span class="token key atrule">Updated</span><span class="token punctuation">:</span> <span class="token datetime number">2024-01-25</span>
+<span class="token key atrule">Type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> knowledge
+<span class="token key atrule">Status</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 🎃已完成
+<span class="token key atrule">截止日期</span><span class="token punctuation">:</span> 
+<span class="token key atrule">目标</span><span class="token punctuation">:</span> 
+<span class="token key atrule">领域</span><span class="token punctuation">:</span> 
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></code><button class="copy-code-button">复制</button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Redis持久化"><p>Redis持久化</p></h1><div class="heading-wrapper"><div class="heading-children"><div><p>持久化策略，两个策略</p></div><div><ul>
+<li data-line="0">RDB快照（整点切片），通过切片还原数据</li>
+<li data-line="1">AOF日志：记录日志，可以通过命令恢复</li>
+</ul></div><div><p>差别<br>
+​相同数据量下，RDB更小，因为RDB记录二进制紧凑型数据库<br>
+​AOF记录了每条日志，RDB是间隔时间记录一次，AOF恢复数据通常更为完整，ADB更快，<br>
+AOF对性能影响比较大，AOF和RDB是可以同时开启的，官网更推荐AOF </p></div><div class="heading-wrapper"><h4 data-heading="加载策略" class="heading" id="加载策略"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>加载策略</h4><div class="heading-children"><div><ul>
+<li data-line="0"><img alt="image-20231226001133134" src="lib/media/image-20231226001133134.png" referrerpolicy="no-referrer"><br>
+</li>
+</ul></div><div><p>先判断AOF是否存在，而且不会<mark>降级</mark>（如果开启了AOF，AOF文件不存在也不会去找RDB），aof文件不存在就会启动空库，有aof只会用aof</p></div></div></div><div class="heading-wrapper"><h3 data-heading="RDB详解（快照）" class="heading" id="RDB详解（快照）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>RDB详解（快照）</h3><div class="heading-children"><div><p>​	dump.rdb -- 快照文件</p></div><div><ul>
+<li data-line="0">
+<p>怎么开启</p>
+</li>
+<li data-line="2">
+<p>save 900 1（save min times）</p>
+</li>
+<li data-line="4">
+<p>900 秒里面有一次就会开启一次 RDB</p>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>也可以使用 sava 命令来主动使用持久化</p>
+<p>  <img alt="image-20231226234407734" src="lib/media/image-20231226234407734.png" referrerpolicy="no-referrer"></p>
+<p>  后台持久化，会fork一个子进程开始复制</p>
+<ul>
+<li data-line="12">
+<p>文件名字 ： dump.rdb</p>
+</li>
+<li data-line="14">
+<p>存放位置：看redis</p>
+</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="写入流程" class="heading" id="写入流程"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>写入流程</h4><div class="heading-children"><div><ol>
+<li data-line="0">Fork 一个子进程专门来做 RDB 持久化</li>
+<li data-line="1">子进程写入数据到临时的 RDB 文件</li>
+<li data-line="2">写完之后用新的 RDB 文件替换旧的 RDB 文件</li>
+</ol></div></div></div><div class="heading-wrapper"><h4 data-heading="写时复制" class="heading" id="写时复制"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>写时复制</h4><div class="heading-children"><div><p>如果用的 save 的命令。那么就会阻塞主进程，如果用的 bgsave 命令，那么用的就是从主进程 fork 的一个子线程，用子进程去开始复制，那么这里就有问题，就是子进程在执行的过程中，主进程还能修改数据吗？如果阻塞岂不是跟 save 命令没什么区别，还是会主动阻塞进程？</p></div><div><p>答案是 主进程当然可以写入数据，依然可以继续执行操作命令<br>
+执行 bgsave 命令的时候，会通过 fork（）创建子进程（注意是进程不是线程），<strong>子进程和父进程是共享同一片内存数据的</strong>，因为创建子进程的时候，会复制父进程的页表，但是页表指向的物理内存还是一个，方便子进程去复制数据 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240125145632.png" referrerpolicy="no-referrer"><br>
+但是当发生内存修改的时候，这块<strong>被修改的</strong>物理内存就会被复制一份，如下 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240125150053.png" referrerpolicy="no-referrer"> 子进程指向就变成了新的物理内存，然后主进程继续自己的写入，子进程继续自己的复制，<strong>发生了写时复制后，RDB 快照保存的是原本的内存数据</strong>，而主线程刚修改的数据，是没办法在这一时间写入 RDB 文件的，只能交由下一次的 bgsave 快照。</p></div><div><p>那么极端情况下，<strong>如果所有的共享内存都被修改，则此时的内存占用是原先的 2 倍。</strong><br>
+所以，针对写操作多的场景，我们要留意下快照过程中内存的变化，防止内存被占满了</p></div><div><p>写时复制：写的时候就开始复制，谁写谁复制，fork的过程中如果有新的数据，那就这个数据自己多写一份放到线程里面</p></div></div></div><div class="heading-wrapper"><h4 data-heading="面试题" class="heading" id="面试题"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>面试题</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>RDB本质是什么<br>
+​	本质是二进制形式的快照，直接保存二进制的数据到磁盘，后续通过加载RDB文件恢复数据<br>
+</p>
+</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>如何触发RDB </p>
+<ul>
+<li data-line="4">RDB可以通过配置定时触发，触发时使用的是后台持久化方式</li>
+<li data-line="5">也可以主动用命令触发，save和bgsave，save底层用的是阻塞式持久化，bgsave用的是后台持久化</li>
+<li data-line="6">最后如果redis正常关闭，是会触发阻塞式持久化的</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>RDB对主流程有什么影响 </p>
+<ul>
+<li data-line="9">用命令执行阻塞式持久化的时候，由主进程进行RDB快照保存，会阻塞主进程</li>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>当执行后台持久化时，由fork出来的子进程来进行RDB快照保存
+<ul>
+<li data-line="11">数据量大的时候，会导致fork主进程操作比较耗时，从而阻塞主进程（<mark>耗时会阻塞主进程吗？进程之间阻塞？</mark>）</li>
+<li data-line="12">由于采用了写时复制，如果在fork期间有大量写入，就会导致主线程多拷贝一份数据，消耗大量额外内存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="AOF详解" class="heading" id="AOF详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>AOF详解</h3><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>是什么<br>
+- 记录了对应操作的命令，有自己的一套协议记录（<mark>但是只记录写操作，读操作是没有意义的</mark>）</p>
+</li>
+<li data-line="4">
+<p>怎么开启<br>
+-  也是redis的配置文件，里面有一个appendonly no 改成yes<br>
+-  写入的文件名字就是 appendfilename “xxxx”</p>
+</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>写入？<br>
+- 流程：<mark>请求到来-&gt;处理请求-&gt; 写入AOF文件</mark> </p>
+<ul>
+<li data-line="11">其中写入 AOF文件又有三个步骤<br>
+- 命令追加（写入aof_buf）<br>
+- 将数据写入到AOF缓存中，实际上就是把日志写到一个sds数据<br>
+- 文件写入（write 到内核缓冲区）<br>
+- 将上一步aof_buf里面的数据里面对应的数据刷入磁盘缓冲区，<mark>那么我们什么时候刷入呢？</mark><br>
+- 事实上有四个时机刷入，会调用一个叫flushAppendOnlyFile的函数，将数据写入系统缓冲区<br>
+1. 处理完时机，等待下一次事件到来之前，这就是在 <mark>beforeSleep</mark>中<br>
+2. 周期函数serverCron中<br>
+3. 服务器正常退出的时候<br>
+4. 通过配置指令关闭AOF功能的时候<br>
+- 文件同步（fsync到磁盘）<br>
+- 刷盘策略（当我们设置的刷盘策略（appendfsync）不同，刷盘的情况也不同）<br>
+1. always 每次请求都刷盘，非常慢，但是很安全，性能开销很大，<mark>而且这玩意是直接主线程刷盘的</mark><br>
+2. everySec 每秒刷一次，足够快了，但是可能丢失一秒的数据<br>
+3. appendfsync no 不主动刷盘，让操作系统自己刷，一半linux30秒刷一次，对性能影响比较小，但是如果崩溃，可能会丢失比较多的数据 </li>
+</ul>
+</li>
+<li data-line="28"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>aof重写（优化aof里面的重复数据，比如set a1 1 然后覆盖了 set a1 2,就会合成一个） </p>
+<ul>
+<li data-line="29">为什么要重写<br>
+-因为AOF是不断写入的，这样带来一个问题就是AOF文件会变得非常大，无限制的膨胀，针对这个问题，Redis采用了重写的方式来解决问题</li>
+<li data-line="31"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>怎么做？<br>
+- <img alt="image-20231227001640372" src="lib/media/image-20231227001640372.png" referrerpolicy="no-referrer"> 
+<ul>
+<li data-line="33">当redis发现AOF文件过大的时候，就会在<mark>后台Fork一个子进程</mark>（进程不是线程，Redis是单线程的），专门针对AOF进行重写，简单来说就是合并一些重复的操作，比如set同一个key之类的</li>
+<li data-line="34">重写的过程中，Redis不但将新的操作记录在原有的AOF缓冲区<a data-tooltip-position="top" aria-label="^0a9ef9" data-href="#^0a9ef9" href="#^0a9ef9" class="internal-link" target="_self" rel="noopener">看里面的命令追加那一块</a>，而且同时会记录在AOF的重写缓冲区，一旦新的AOF重写好了，Redis就会把缓冲区的直接追加到新的文件里面，然后用新文件替换旧文件</li>
+</ul>
+</li>
+<li data-line="35">什么时候重写?<br>
+-配置决定的，默认情况下是，<mark>超过64M的情况下，相比上次重写时的数据大一倍</mark>，则触发重写，很明显，最后实际上还是在周期函数来检查和触发的。</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="面试题" class="heading" id="面试题"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>面试题</h4><div class="heading-children"><div><p>​aof不是默认开启，rdb是默认开启的</p></div><div><p>aof对主流程有什么影响？<br>
+1. 如果我们使用的是 always 的策略，Redis执行命令之后，就会需要<mark>主线程</mark>进行write+fsync的操作<a data-href="#^852a5e" href="#^852a5e" class="internal-link" target="_self" rel="noopener">^852a5e</a>，导致主线程处理其他请求会变得很慢<br>
+2. 如果策略用的是everySec，如果后台线程上一轮的fsync没有完成，会导致我们本轮主线程执行write被阻塞<br>
+3. AOF重写是由fork出的子进程进行的，类似于上面提到的风险，fork子进程这个操作有可能阻塞主进程 </p></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="AOF优化" class="heading" id="AOF优化"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>AOF优化</h3><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>aof的不足</p>
+<ul>
+<li data-line="2">文件体积大，加载速度慢</li>
+<li data-line="3">重写性能差，重写流程复杂，代码难度高</li>
+</ul>
+</li>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><mark>混合持久化</mark>（redis配置文件中打开） </p>
+<ul>
+<li data-line="6"><strong>混合部署实际上发生在AOF的重写阶段</strong></li>
+<li data-line="7"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>是什么？
+<ul>
+<li data-line="8">重写发生时候，将当前状态保存为RDB二进制内容，把这个RDB的内容写入到新的AOF文件中，然后跟前面重写流程一样会把缓存区的内容追加进来，最后代替原有的AOF文件<a data-tooltip-position="top" aria-label="^a8ab5a" data-href="#^a8ab5a" href="#^a8ab5a" class="internal-link" target="_self" rel="noopener">重写流程</a></li>
+</ul>
+</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>解决了什么问题？
+<ul>
+<li data-line="10">优化了重写的流程，RDB是快照 <a data-tooltip-position="top" aria-label="^1010b3" data-href="#^1010b3" href="#^1010b3" class="internal-link" target="_self" rel="noopener">RDB本质</a>，使得重写更快，大大降低了AOF重写的性能损耗</li>
+</ul>
+</li>
+<li data-line="11"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>怎么开启？
+<ul>
+<li data-line="12">打开redis配置文件，5.0之后是默认打开的</li>
+</ul>
+</li>
+<li data-line="13">实际流程是什么样子？<br>
+-<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240107194100.png" referrerpolicy="no-referrer"><br>
+前面说过，如果同时开启了RDB和AOF，那么优先会去找AOF文件  <a data-tooltip-position="top" aria-label="^7ad171" data-href="#^7ad171" href="#^7ad171" class="internal-link" target="_self" rel="noopener">加载策略</a>，那么这里如果开启了混合持久化，也会去优先找混合持久化的文件</li>
+</ul>
+</li>
+<li data-line="22">
+<p>优化方案</p>
+</li>
+</ul></div><div><p><img alt="image-20231227003741271" src="lib/media/image-20231227003741271.png" referrerpolicy="no-referrer"></p></div><div><p>优化之一,下面去掉了重写缓冲区，去掉了子线程合入两个文件，直接两个文件放一起，由manifest清单（7.0的优化)</p></div><div><p><img alt="image-20231227004031822" src="lib/media/image-20231227004031822.png" referrerpolicy="no-referrer"></p></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#Redis持久化"><div class="tree-item-contents heading-link" heading-name="Redis持久化"><span class="tree-item-title">Redis持久化</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#加载策略"><div class="tree-item-contents heading-link" heading-name="加载策略"><span class="tree-item-title">加载策略</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#RDB详解（快照）"><div class="tree-item-contents heading-link" heading-name="RDB详解（快照）"><span class="tree-item-title">RDB详解（快照）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#写入流程"><div class="tree-item-contents heading-link" heading-name="写入流程"><span class="tree-item-title">写入流程</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#写时复制"><div class="tree-item-contents heading-link" heading-name="写时复制"><span class="tree-item-title">写时复制</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#面试题"><div class="tree-item-contents heading-link" heading-name="面试题"><span class="tree-item-title">面试题</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#AOF详解"><div class="tree-item-contents heading-link" heading-name="AOF详解"><span class="tree-item-title">AOF详解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#面试题"><div class="tree-item-contents heading-link" heading-name="面试题"><span class="tree-item-title">面试题</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\redis\知识点\redis持久化.html#AOF优化"><div class="tree-item-contents heading-link" heading-name="AOF优化"><span class="tree-item-title">AOF优化</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

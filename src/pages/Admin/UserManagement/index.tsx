@@ -56,7 +56,7 @@ const columns: ProColumns<API.CurrentUser>[] = [
         dataIndex: 'avatarUrl',
         render: (_, record) => (
             <div>
-                <Image src={record.avatarUrl}/>
+                <Image src={record?.avatarUrl} width={48} height={48}/>
             </div>
         ),
         hideInSearch: true,

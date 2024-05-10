@@ -1,0 +1,1221 @@
+<!DOCTYPE html> <html><head>
+		<title>JAVA基础巩固</title>
+		<base href="..\..\../">
+		<meta id="root-path" root-path="..\..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="myVault - JAVA基础巩固">
+		<meta property="og:title" content="JAVA基础巩固">
+		<meta property="og:description" content="myVault - JAVA基础巩固">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="2-领域/后端学习/java/java基础巩固.html">
+		<meta property="og:image" content="lib\media\1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png">
+		<meta property="og:site_name" content="myVault">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager theme-dark show-inline-title minimal-flexoki-dark colorful-headings colorful-active links-int-on links-ext-on full-width-media minimal-readable trim-cols styled-scrollbars"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><pre class="frontmatter language-yaml" tabindex="0" style="display: none;"><code class="language-yaml is-loaded"><span class="token key atrule">Created</span><span class="token punctuation">:</span> <span class="token datetime number">2024-01-17</span>
+<span class="token key atrule">Updated</span><span class="token punctuation">:</span> <span class="token datetime number">2024-01-17</span>
+<span class="token key atrule">Type</span><span class="token punctuation">:</span> knowledge
+<span class="token key atrule">Status</span><span class="token punctuation">:</span> 🌱 活跃
+<span class="token key atrule">截止日期</span><span class="token punctuation">:</span> 
+<span class="token key atrule">目标</span><span class="token punctuation">:</span> 
+<span class="token key atrule">领域</span><span class="token punctuation">:</span> 
+Tags<span class="token punctuation">:</span></code><button class="copy-code-button">复制</button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="JAVA基础巩固"><p>JAVA基础巩固</p></h1><div class="heading-wrapper"><h3 data-heading="基础概念" class="heading" id="基础概念"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基础概念</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="基础" class="heading" id="基础"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>基础</h4><div class="heading-children"><div><ul>
+<li data-line="0">javaSE和javaEE是基础版和企业开发版本的区别，javaEE更适合开发企业级应用或web<br>
+</li>
+<li data-line="2">java9开始就不需要区分JRE和JDK的关系了<br>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>java从源码到运行的过程：
+<ul>
+<li data-line="6">.java-&gt; javac编译-&gt;.class-&gt;解释器&amp;JIT-》机器能理解的代码<br>
+</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>java和C++的对比
+<ul>
+<li data-line="10">java不提供指针访问内存，所以内存更安全<br>
+</li>
+<li data-line="12">java类是单继承的，接口可以多继承，但是C++支持多继承<br>
+</li>
+<li data-line="14">C++支持操作符重载和方法重载，java只支持方法重载<br>
+</li>
+</ul>
+</li>
+<li data-line="16"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>移位运算符
+<ul>
+<li data-line="18">x&gt;&gt;1 // 右移运算相当于除2，数字是几就是除2的几次方<br>
+</li>
+<li data-line="20">x&lt;&lt;1 //左移，相当于×2，同上<br>
+</li>
+<li data-line="22">由于左移位数大于等于 32 位操作时，会先求余（%）后再进行左移操作，所以代码左移 42 位相当于左移 10 位（42%32=10）<br>
+</li>
+</ul>
+</li>
+<li data-line="24">八种基本数据类型 byte short int long float double boolean char<br>
+</li>
+<li data-line="26"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>包装类型的 <strong><em>缓存机制</em></strong>--就是valueOf方法有缓存机制
+<ul>
+<li data-line="28"><code>Byte</code>,<code>Short</code>,<code>Integer</code>,<code>Long</code> 这 4 种包装类默认创建了数值 <strong>[-128，127]</strong> 的相应类型的缓存数据，<code>Character</code> 创建了数值在 <strong>[0,127]</strong> 范围的缓存数据，<code>Boolean</code> 直接返回 <code>True</code> or <code>False</code>。<br>
+</li>
+<li data-line="30">两个浮点类型的包装类没有实现缓存机制<br>
+</li>
+</ul>
+</li>
+<li data-line="32">应避免频繁的拆装箱<br>
+</li>
+<li data-line="34">成员变量如果没有赋初始值，那么会自动以类型的默认值而赋值，但是成员变量没有（会编译时报错）<br>
+</li>
+<li data-line="36">静态对象只会被赋一次内存,即使创建多个对象<br>
+</li>
+<li data-line="38">char在java中占两个字节<br>
+</li>
+<li data-line="40">构造方法不能被重写，但是可以被重载（参数不同）<br>
+</li>
+<li data-line="42">面对对象三大特征 封装 继承 多态（多态表现为父类引用指向子类实例）<br>
+</li>
+<li data-line="44">BigDecimal方法应该使用compareTo方法，因为bigDecimal的equals方法还会比较精度<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="String" class="heading" id="String"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>String</h4><div class="heading-children"><div><ul>
+<li data-line="0">stringBuilder和StringBuffer都是继承自abstractStringBuilder方法，采用字符数组保存字符串，并提供很多修改字符串的方法<br>
+</li>
+<li data-line="2">String中的对象是不可变的，可以理解为常量，就是线程安全的，每次对String对象进行改变的时候都会生成一个新的String对象，然后指针指向新的对象并改变引用<br>
+</li>
+<li data-line="4">StringBuffer对字符的操作加了同步锁或者对方法加了同步锁，所以是线程安全的<br>
+</li>
+<li data-line="6">StringBuilder没有对方法加同步锁，所以是不安全的<br>
+</li>
+<li data-line="8">每次对 <code>String</code> 类型进行改变的时候，都会生成一个新的 <code>String</code> 对象，然后将指针指向新的 <code>String</code> 对象。<code>StringBuffer</code> 每次都会对 <code>StringBuffer</code> 对象本身进行操作，而不是生成新的对象并改变对象引用。相同情况下使用 <code>StringBuilder</code> 相比使用 <code>StringBuffer</code> 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险<br>
+</li>
+<li data-line="10">String类型被final修饰，且是私有的，没有对外暴露方法，而且被final修饰不能被继承<br>
+</li>
+<li data-line="12">+和+=是专门为String类重载过的运算符，字符串的+和+=实际上是通过StringBuilder的append方法<br>
+</li>
+<li data-line="14"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>不过，在循环内使用“+”进行字符串的拼接的话，存在比较明显的缺陷：<strong>编译器不会创建单个 <code>StringBuilder</code> 以复用，会导致创建过多的 <code>StringBuilder</code> 对象</strong>。
+<ul>
+<li data-line="16">
+<blockquote>
+<p>java9以后这个问题得到了解决，也就是意味着可以放心使用+进行拼接了</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li data-line="18">String.intern(),就是返回这个对象在常量池里的引用？新建一个对象：常量池里的字符串<br>
+</li>
+<li data-line="20"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>String是可以用== 来判断的，
+<ul>
+<li data-line="22">String str = "string";<br>
+String newStr = str.intern();<br>
+// true<br>
+system.out.println(str == newStr)  
+   &nbsp; &nbsp;<br>
+</li>
+</ul>
+</li>
+<li data-line="28"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>在编译期间可以确定的字符串，jvm会把他放到常量池中（在堆中）--<mark>常量折叠</mark>
+<ul>
+<li data-line="30">常量折叠不止能用在字符串，基本数据类型都有这种，字符串的加减乘除，以及string的+<br>
+</li>
+<li data-line="32"><strong>平时写代码的时候，避免创建多个字符串对象的拼接，因为这样会重新创建对象，可以使用StringBuilder或者StringBuffer</strong> <mark>不过，字符串用了final修饰之后，可以让编译器当作常量来处理，那么编译器在编译期间就能确定值，就也会对其优化，进行常量折叠</mark><br>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="异常" class="heading" id="异常"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>异常</h4><div class="heading-children"><div><ul>
+<li data-line="0">两个重要的Throwable子类：Exception 和 Error，简单来说就是可处理异常和无法处理的错误<br>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>受检异常和非受检异常（一个不catch不能通过编译，一个能编译）
+<ul>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>runtimeException 都称之为非受检异常
+<ul>
+<li data-line="6">空指针 NPE<br>
+</li>
+<li data-line="8">数组越界<br>
+</li>
+<li data-line="10">非法入参<br>
+</li>
+<li data-line="12">类型转换错误<br>
+</li>
+<li data-line="14">算术错误，0/1<br>
+</li>
+<li data-line="16">NumberFormat<br>
+</li>
+<li data-line="18">....<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="20">finally块中不要有return，否则会忽略掉try块的return，try或者catch块中有return语句的时候，return的语句会被暂存在一个本地变量中，然后执行finally块，然后返回return ，但是当finally中有return时，那就会把本地变量变成finally中的return了<br>
+</li>
+<li data-line="22"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>finally块中的代码未必会执行</mark>
+<ul>
+<li data-line="24">执行过程中虚拟机直接终止<br>
+</li>
+<li data-line="26">程序所在线程死亡<br>
+</li>
+<li data-line="28">关闭CPU<br>
+</li>
+</ul>
+</li>
+<li data-line="30">每次抛异常要new一个对象抛出，不然如果定义了静态变量的话会导致异常栈信息错乱<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="泛型" class="heading" id="泛型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>泛型</h4><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>泛型有三种
+<ul>
+<li data-line="2">泛型类<br>
+</li>
+<li data-line="4">泛型接口<br>
+</li>
+<li data-line="6">泛型方法<br>
+</li>
+</ul>
+</li>
+<li data-line="8">泛型不能用在异常处理的catch中，因为异常处理是运行时的JVM处理的，无法区别<code>MyException</code>和<code>MyException</code>的<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="反射" class="heading" id="反射"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>反射</h4><div class="heading-children"><div><p>反射是框架的灵魂，框架中都会有大量的反射机制，动态代理也依赖反射</p></div><div><p>通过类加载器获取 Class 对象不会进行初始化，意味着不进行包括初始化等一系列步骤，静态代码块和静态对象不会得到执行</p></div></div></div><div class="heading-wrapper"><h4 data-heading="注解" class="heading" id="注解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>注解</h4><div class="heading-children"><div><p>注解的本质是一个实现了annotation的特殊接口</p></div></div></div><div class="heading-wrapper"><h4 data-heading="SPI" class="heading" id="SPI"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>SPI</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="SPI和API的区别" class="heading" id="SPI和API的区别"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>SPI和API的区别</h5><div class="heading-children"><div><p>广义上他们都属于接口，SPI更像给开发者的接口，API则是给调用者的接口</p></div><div><p><img alt="img" src="lib/media/1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png" referrerpolicy="no-referrer"></p></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="序列化和反序列化" class="heading" id="序列化和反序列化"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>序列化和反序列化</h4><div class="heading-children"><div><p>什么场景需要序列化和反序列化？</p></div><div><p>如果需要持久化Java对象，比如将对象保存在文件中或者网络传输java对象，都需要序列化</p></div></div></div><div class="heading-wrapper"><h4 data-heading="代理模式" class="heading" id="代理模式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代理模式</h4><div class="heading-children"><div><p>简单理解就是给你的对象穿装备，目的是拓展对象的功能</p></div><div><ul>
+<li data-line="0">静态代理<br>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>动态代理 <mark>重点（尤其在框架中用的多）</mark>
+<ul>
+<li data-line="4">JDK动态代理机制：
+<blockquote>
+<p>核心是InvocationHandler接口和Proxy类</p>
+</blockquote>
+</li>
+</ul>
+  创建一个代理之后要实现一个handler类，用proxy传建的类（Object强转），然后这个类就相当于穿了一层装备，每次调用方法实际是走的你实现的那个handler类里面的invoke方法，这样你可以在handler实现里面加上自己的处理<br>
+</li>
+</ul></div><div><p><mark>？？？<strong>序列化协议对应于 TCP/IP 4 层模型的哪一层？这个后续再看，不太懂</strong></mark></p></div></div></div><div class="heading-wrapper"><h4 data-heading="Java魔法类unsaffe ==???不太懂容后再看==" class="heading" id="Java魔法类unsaffe_==???不太懂容后再看=="><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Java魔法类unsaffe <mark>???不太懂容后再看</mark></h4><div class="heading-children"><div><p>介绍</p></div><div><blockquote>
+<p><code>Unsafe</code> 是位于 <code>sun.misc</code> 包下的一个类，主要提供一些用于执行低级别、不安全操作的方法，如直接访问系统内存资源、自主管理内存资源等，这些方法在提升 Java 运行效率、增强 Java 语言底层资源操作能力方面起到了很大的作用。但由于 <code>Unsafe</code> 类使 Java 语言拥有了类似 C 语言指针一样操作内存空间的能力，这无疑也增加了程序发生相关指针问题的风险。在程序中过度、不正确使用 <code>Unsafe</code> 类会使得程序出错的概率变大，使得 Java 这种安全的语言变得不再“安全”，因此对 <code>Unsafe</code> 的使用一定要慎重。</p>
+<hr>
+<p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/basis/unsafe.html" target="_blank">https://javaguide.cn/java/basis/unsafe.html</a></p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="java语法糖" class="heading" id="java语法糖"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>java语法糖</h4><div class="heading-children"><div><ul>
+<li data-line="0">条件编译，有局限，在通过判断常量之后会把确定的不会走的语句去掉再去编译<br>
+</li>
+<li data-line="2">assert 底层逻辑就是if判断<br>
+</li>
+<li data-line="4">数值字面量：不管是浮点数还是整数，java允许我们在数值中加入任意多个下划线，这些下划线不会对数字产生影响，目的就是为了方便阅读
+  int i = 100_000_12;<br>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="集合" class="heading" id="集合"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>集合</h3><div class="heading-children"><div><p>java集合，也叫做容器，主要时两大类派生出来的，</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>一个是collection 用于存储单一的值，
+<ul>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>collection下面又分为三个大类
+<ul>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>List
+<ul>
+<li data-line="6">arrayList<br>
+</li>
+<li data-line="8">vector<br>
+</li>
+<li data-line="10">linkedList<br>
+</li>
+</ul>
+</li>
+<li data-line="12"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>set
+<ul>
+<li data-line="14">hashSet<br>
+</li>
+<li data-line="16">linkedHashSet<br>
+</li>
+<li data-line="18">TreeSet:(红黑树，自平衡的排序二叉树)<br>
+</li>
+</ul>
+</li>
+<li data-line="20"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>queue
+<ul>
+<li data-line="22">arryQueue<br>
+</li>
+<li data-line="24">DelayQueue<br>
+</li>
+<li data-line="26">PriorityQueue<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="28"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>一个是Map用来存贮键值对
+<ul>
+<li data-line="30">hashMap<br>
+</li>
+<li data-line="32">linkedhashMap<br>
+</li>
+<li data-line="34">Hashtable<br>
+</li>
+<li data-line="36">TreeMap<br>
+</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h4 data-heading="List" class="heading" id="List"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>List</h4><div class="heading-children"><div><ul>
+<li data-line="0">arrayList里面不能储存基本类型的数据，，只能储存包装类，但是数组可以，（记：数组创建必须要确定大小）<br>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>arrayList的扩容机制</strong>
+<ul>
+<li data-line="4">无参构造Arraylist的时候，先是初始化一个空数组<br>
+</li>
+<li data-line="6">然后真正赋值的时候，添加第一个数组的时候，数组容量扩大为10<br>
+</li>
+</ul>
+</li>
+<li data-line="9">ArrayList和Vector的区别，Vector很古老，线程安全（不是很推荐使用，线程安全可以用CopyOnWriteArrayList或者自己手动实现），arrayList属于新写法<br>
+</li>
+<li data-line="11"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>ArrayList插入和删除元素的时间复杂度</mark>
+<ul>
+<li data-line="13">头部插入，由于需要将所有的元素都往后移动一个位置，所以时间复杂度是O（n）<br>
+</li>
+<li data-line="15"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>尾部插入
+<ul>
+<li data-line="17">尾部插入分两种情况，一个是arrayList没有到达极限大小，那么复杂度就是O(1)<br>
+</li>
+<li data-line="19">如果数组到达了极限大小，那么就要先做一个O（n)的操作把数组全体复制到一个大的数组中，再做一个O（1）的添加操作<br>
+</li>
+<li data-line="21">指定位置插入，同头部插入O(n)<br>
+</li>
+</ul>
+</li>
+<li data-line="23">删除操作同理<br>
+</li>
+</ul>
+</li>
+<li data-line="25"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>LinkedList插入删除的时间复杂度</mark>
+<ul>
+<li data-line="27">头部插入/删除：只需要修改头结点的指针即可完成插入/删除操作，因此时间复杂度为 O(1)。
+  尾部插入/删除：只需要修改尾结点的指针即可完成插入/删除操作，因此时间复杂度为 O(1)。
+  指定位置插入/删除：需要先移动到指定位置，再修改指定节点的指针完成插入/删除，因此需要移动平均 n/2 个元素，时间复杂度为 O(n)。
+<hr>
+  著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/collection/java-collection-questions-01.html" target="_blank">https://javaguide.cn/java/collection/java-collection-questions-01.html</a><br>
+</li>
+</ul>
+</li>
+<li data-line="37">LinkedList为什么不能实现randomAccess接口
+  randomAccess接口是一个标记接口，他的作用是表面，实现他的类可以随机地址访问（就是通过索引快速访问元素），但是linkedList底层是链表，地址不连续，只能通过指针访问，不支持快速随机访问
+<blockquote>
+<p><strong>所以其实，linkedList并没有在增删性能上优于arraylist，指定位置插入的删除复杂度也是O(n)</strong></p>
+</blockquote>
+</li>
+</ul></div><div><p><mark>随机访问时通过索引快速访问，数组天然支持快速随机访问，时间复杂度是O(1),而链表需要遍历到指定位置才能访问特定位置的元素，arrayList的底层就是数组，所以大多数场景，arrayList要比linkedList更好用</mark></p></div></div></div><div class="heading-wrapper"><h4 data-heading="Set" class="heading" id="Set"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Set</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>comparable 和Comparator的区别：<strong>实现方法的参数不同</strong></p>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>无序性和不可重复性的含义是什么</p>
+<ul>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>无序性不是说就是随机排列，而是不是按照数组的索引顺序添加，是按照元素的hash值决定的
+<ul>
+<li data-line="6">不可重复性是指元素的判断相同时，元素的hashCode和equals方法不能不一致，要同时重写这两个方法<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="queue和Deque的区别" class="heading" id="queue和Deque的区别"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>queue和Deque的区别</h4><div class="heading-children"><div><ul>
+<li data-line="0">queue是单端队列，先进先出  </li>
+<li data-line="1">deque是双端队列</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="ArrayDeque和linkedList的区别" class="heading" id="ArrayDeque和linkedList的区别"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ArrayDeque和linkedList的区别</h4><div class="heading-children"><div><p>其实这俩都实现了Deque的接口</p></div><div><ul>
+<li data-line="0">arrayDeque是基于可变长的数组和双指针来实现的，但是linkedList是基于链表来实现的<br>
+</li>
+<li data-line="2">ArrayDeque不能存储null，但是linkedList可以<br>
+</li>
+<li data-line="4">arrayDeque在插入时可能会有扩容，不过均摊后复杂度还是O（1）,linkedList不需要扩容，但是每次插入的时候都要申请新的堆空间，性能更慢
+<blockquote>
+<p>性能角度上，arrayDeque会更好</p>
+</blockquote>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="priorityQueue" class="heading" id="priorityQueue"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>priorityQueue</h4><div class="heading-children"><div><p>作用是优先级更高的元素先出队，优先级用comparator来定义</p></div></div></div><div class="heading-wrapper"><h4 data-heading="blockingQueue" class="heading" id="blockingQueue"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>blockingQueue</h4><div class="heading-children"><div><p>阻塞队列，支持没有元素时一直阻塞到有元素，还支持当队列已满的时候会一直等到可以插入的时候再插入新元素</p></div><div><ul>
+<li data-line="0">arrayBlockingQueue等  </li>
+<li data-line="1">....了解即可</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="Map==重要==" class="heading" id="Map==重要=="><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Map<mark>重要</mark></h4><div class="heading-children"></div></div><div class="heading-wrapper"><h4 data-heading="hashMap和Hashtable的区别" class="heading" id="hashMap和Hashtable的区别"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hashMap和Hashtable的区别</h4><div class="heading-children"><div><ul>
+<li data-line="0">hashMap是非线程安全的，但是hashTable是线程安全的，（但是hashTable快要被淘汰了，不要在代码里面使用他，想要线程安全可以用concurrentHashMap,<strong>concurrenthashmap里面的key不能为null</strong>）<br>
+</li>
+<li data-line="2">hashMap是支持null 的key和value的，但是key只能有一个，hashtable会报空指针<br>
+</li>
+<li data-line="4">hashmap 的默认大小是16，以后每次扩容都变成原来的2倍，hashtable默认大小是11,以后每次扩容都会变成原来的2n+1<br>
+</li>
+<li data-line="6">如果创建时给定了大小，那么hashTable会直接使用给定大小，但是hashMap会把他扩充成2的幂次方（<strong>为了尽量把数据分配均匀，减少碰撞，碰撞会产生链表</strong>）<br>
+</li>
+<li data-line="8">hashMap解决hash冲突时候（hash冲突会产生链表结构），当链表大于阈值（默认为8）就会先判断，if 当前数组长度小于64，那么就优先进行数组扩容，如果大于64则转链表为红黑树，而hashTable没有这个机制<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="hashMap和hashSet的区别" class="heading" id="hashMap和hashSet的区别"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hashMap和hashSet的区别</h4><div class="heading-children"><div><blockquote>
+<p>没啥大区别，Hash Set的底层就是基于HashMap实现的</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h4 data-heading="treeMap" class="heading" id="treeMap"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>treeMap</h4><div class="heading-children"><div><p>treeMap可以实现Comparator接口实现key排序</p></div></div></div><div class="heading-wrapper"><h4 data-heading="hashSet如何去重？" class="heading" id="hashSet如何去重？"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hashSet如何去重？</h4><div class="heading-children"><div><p>通过hashCode和equals方法</p></div></div></div><div class="heading-wrapper"><h4 data-heading="hashMap多线程操作导致死循环（了解就行）" class="heading" id="hashMap多线程操作导致死循环（了解就行）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hashMap多线程操作导致死循环（了解就行）</h4><div class="heading-children"></div></div><div class="heading-wrapper"><h4 data-heading="hashMap常见的遍历方式" class="heading" id="hashMap常见的遍历方式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hashMap常见的遍历方式</h4><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>迭代器
+<ul>
+<li data-line="2">EntrySet<br>
+</li>
+<li data-line="4">EntryKey<br>
+</li>
+</ul>
+</li>
+<li data-line="6">ForEach<br>
+</li>
+<li data-line="8">Lambada<br>
+</li>
+<li data-line="10">Stream<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="集合的一些注意事项" class="heading" id="集合的一些注意事项"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>集合的一些注意事项</h4><div class="heading-children"><div><ul>
+<li data-line="0"><strong>在使用 <code>java.util.stream.Collectors</code> 类的 <code>toMap()</code> 方法转为 <code>Map</code> 集合时，一定要注意当 value 为 null 时会抛 NPE 异常。</strong><br>
+</li>
+<li data-line="2">不要在foreach里面进行元素的remove/add操作，remove元素请用Iterator的方式，如果是并发操作，请加锁<br>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>使用Arrays.asList()的时候的注意事项</mark>
+<ul>
+<li data-line="6">第一这个数组不能是基本数据类型的，比如 int[] arr = {1,2,3}，Arrays.aslist(arr)会报错，要使用包装类型<br>
+</li>
+<li data-line="8">使用集合的add,remove等方法会报错，因为<code>Arrays.asList()</code> 方法返回的并不是 <code>java.util.ArrayList</code> ，而是 <code>java.util.Arrays</code> 的一个内部类,这个内部类并没有实现集合的修改方法或者说并没有重写这些方法。
+<hr>
+  著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/collection/java-collection-precautions-for-use.html" target="_blank">https://javaguide.cn/java/collection/java-collection-precautions-for-use.html</a><br>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="==源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖==" class="heading" id="==源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖=="><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><mark>源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖</mark></h4><div class="heading-children"></div></div></div></div><div class="heading-wrapper"><h3 data-heading="并发编程" class="heading" id="并发编程"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>并发编程</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="线程与进程" class="heading" id="线程与进程"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程与进程</h4><div class="heading-children"><div><ul>
+<li data-line="0">线程比进程更小，但是同类的多个线程共享资源，而且每个线程都有自己的程序计数器和虚拟栈等<br>
+</li>
+<li data-line="2">JAVA天生多线程，一个java程序的运行是main线程和多个其他线程同时运行<br>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>一个进程可以有多个线程，线程共享进程的堆和方法区，但是每个线程有自己的<strong><em>虚拟机栈</em></strong>，<strong><em>程序计数器</em></strong>和<strong><em>本地方法栈</em></strong>（<mark>私有的</mark>）
+<ul>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>虚拟机栈
+<ul>
+<li data-line="8">虚拟机栈相当于一个执行java的小空间<br>
+</li>
+</ul>
+</li>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>程序计数器
+<ul>
+<li data-line="12">程序计数器是记录当前线程的运行位置，方便切回来的时候，线程知道自己运行到哪了，方便实现代码的流程控制<br>
+</li>
+</ul>
+</li>
+<li data-line="14"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>本地方法栈
+<ul>
+<li data-line="16">和虚拟机栈类似，这个是用来执行native方法的<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="并发和并行" class="heading" id="并发和并行"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>并发和并行</h4><div class="heading-children"><div><ul>
+<li data-line="0">并发是指两个及以上的作业在同一时间段运行  </li>
+<li data-line="1">并行是指两个及以上的作业同时运行</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="线程的生命周期和状态（六种）" class="heading" id="线程的生命周期和状态（六种）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程的生命周期和状态（六种）</h4><div class="heading-children"><div><ul>
+<li data-line="0">初始<br>
+</li>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>运行
+<ul>
+<li data-line="4">调用strat（）方法开始运行
+<blockquote>
+<p>初始和运行状态在JVM中都视作runnable状态</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>阻塞
+<ul>
+<li data-line="10">当线程进入了synchronized 方法块，但是这个时候锁被其他线程占用，这个时候，线程就会进入到RUNNABLE状态<br>
+</li>
+</ul>
+</li>
+<li data-line="12"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>等待
+<ul>
+<li data-line="14">执行wait（）方法之后，就会进入等待状态，这个时候只能通过其他线程的notify才能回到运行时状态<br>
+</li>
+</ul>
+</li>
+<li data-line="16"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>超时等待
+<ul>
+<li data-line="18">等于在等待状态的基础上加了超时限制，比如sleep。等过了超时时间，会自动回到runnable状态<br>
+</li>
+</ul>
+</li>
+<li data-line="20">终止状态<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="上下文切换（context）" class="heading" id="上下文切换（context）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>上下文切换（context）</h4><div class="heading-children"><div><p><mark>什么是上下文</mark>：线程在执行过程中会有自己的运行过程和状态，就称之为上下文，上下文就是说是保存线程的执行状态，虚拟机栈，本地方法栈，以及程序计数器状态的一个统称</p></div><div><p><mark>上下文切换发送的条件？</mark>：就是说线程sleep，或者报错，终止，时间片用完，都会切换，换到别的线程的上下文</p></div><div><p><mark>频繁的切换会导致整体效率低下</mark></p></div></div></div><div class="heading-wrapper"><h4 data-heading="线程死锁" class="heading" id="线程死锁"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程死锁</h4><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>什么是线程死锁
+<ul>
+<li data-line="2">举个例子，线程 A 持有资源 2，线程 B 持有资源 1，他们同时都想申请对方的资源，所以这两个线程就会互相等待而进入死锁状态<br>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>代码为例
+<ul>
+<li data-line="6">public class DeadLockDemo {<br>
+private static Object resource1 = new Object();//资源 1<br>
+private static Object resource2 = new Object();//资源 2
+<pre><code>  public static void main(String[] args) {
+      new Thread(() -&gt; {
+          synchronized (resource1) {
+              System.out.println(Thread.currentThread() + "get resource1");
+              try {
+                  Thread.sleep(1000);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+              System.out.println(Thread.currentThread() + "waiting get resource2");
+              synchronized (resource2) {
+                  System.out.println(Thread.currentThread() + "get resource2");
+              }
+          }
+      }, "线程 1").start();
+
+      new Thread(() -&gt; {
+          synchronized (resource2) {
+              System.out.println(Thread.currentThread() + "get resource2");
+              try {
+                  Thread.sleep(1000);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              }
+              System.out.println(Thread.currentThread() + "waiting get resource1");
+              synchronized (resource1) {
+                  System.out.println(Thread.currentThread() + "get resource1");
+              }
+          }
+      }, "线程 2").start();
+  }
+</code><button class="copy-code-button">复制</button></pre>
+  }<br>
+</li>
+<li data-line="43">Thread[线程 1,5,main]get resource1<br>
+Thread[线程 2,5,main]get resource2<br>
+Thread[线程 1,5,main]waiting get resource2<br>
+Thread[线程 2,5,main]waiting get resource1<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="48"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何预防和避免线程死锁？
+<ul>
+<li data-line="50"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>预防（三点）
+<ul>
+<li data-line="52">第一是破坏请求与保持条件，比如一次性就申请所有的需要的资源，而不是一点一点申请<br>
+</li>
+</ul>
+</li>
+<li data-line="54">破坏不剥夺条件：占用部分资源的线程在进一步申请其他资源的时候，如果没有申请到，那就释放掉自己占用的资源<br>
+</li>
+<li data-line="56">给申请资源的时候，<em>排序</em>，固定好释放和请求的顺序，按照某一顺序申请资源，释放也是按照顺序反向释放<br>
+</li>
+<li data-line="58"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>避免
+<ul>
+<li data-line="60">借助算法（比如等线程一跑完，线程二才能申请到资源）<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="sleep和wait方法" class="heading" id="sleep和wait方法"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>sleep和wait方法</h4><div class="heading-children"><div><ul>
+<li data-line="0">sleep()没有释放锁，但是wait方法释放了锁<br>
+</li>
+<li data-line="2">wait()方法调用后，线程不会自动苏醒，要靠notify来唤醒，或者可以设置wait（long timeout），超时等待也会超时后苏醒，sleep会自动苏醒<br>
+</li>
+<li data-line="4">sleep是Thread类的静态本地方法，而wait（）则是Object的本地方法<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="可以直接调用Thread类的run方法吗" class="heading" id="可以直接调用Thread类的run方法吗"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>可以直接调用Thread类的run方法吗</h4><div class="heading-children"><div><p>这个问题要从线程启动的流程来看</p></div><div><ul>
+<li data-line="0">首先创建一个线程，new一个Thread以后，调用他的start方法，就会启动该线程，做一些准备工作，等到时间片分配到了以后，会自动执行他的run方法，这是真正的<em>多线程工作</em>，但是如果直接执行他的run方法的话，那这个线程就会被视为mian线程下的普通方法执行，而不是多线程工作了<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="volatile关键字和synchronized关键字（互补）" class="heading" id="volatile关键字和synchronized关键字（互补）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>volatile关键字和synchronized关键字（互补）</h4><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>volatile关键字修饰的变量保证了变量的可视性，但是没有保证其原子性，就是volatile关键字修饰的的变量是共享的，每次使用都要去主内存去读取</p>
+</li>
+<li data-line="1">
+<p>synchrinized关键字是既能保证可视性，又能保证原子性</p>
+</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>如何保证原子性（改进）？</p>
+<ul>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>对于volitile变量，操作他的方法加synchronized关键字
+<ul>
+<li data-line="7">数字可以用automaticInteger来代替<br>
+</li>
+</ul>
+</li>
+<li data-line="9">用ReentrantLock改进<br>
+</li>
+</ul>
+</li>
+<li data-line="11"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p><mark>Synchronized</mark></p>
+<ul>
+<li data-line="13">修饰实例方法<br>
+</li>
+<li data-line="15">修饰静态方法<br>
+</li>
+<li data-line="17">修饰代码块
+<blockquote>
+<p>静态synchronized方法和实例synchronized方法调用互斥吗？不互斥，因为一个是类的锁，一个是实例的锁</p>
+</blockquote>
+</li>
+<li data-line="21">尽量不要使用Synchronized(String)，因为有常量池这个东西，你一锁，就锁一片，影响其他线程<br>
+</li>
+<li data-line="23">构造方法本身就属于线程安全，不能用Syncronized 修饰
+<blockquote>
+<p>Synchronized的底层原理，主要原理在于两个指令</p>
+<p>一个是monitorenter，一个是monitorexit，</p>
+</blockquote>
+  <img alt="执行 monitorenter 获取锁" src="https://oss.javaguide.cn/github/javaguide/java/concurrent/synchronized-get-lock-code-block.png" referrerpolicy="no-referrer">
+  <img alt="执行 monitorexit 释放锁" src="lib/media/synchronized-release-lock-block.png" referrerpolicy="no-referrer"><br>
+</li>
+</ul>
+</li>
+</ul></div><div class="heading-wrapper"><h5 data-heading="禁止指令重排序" class="heading" id="禁止指令重排序"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>禁止指令重排序</h5><div class="heading-children"><div><p>volatile除了保证变量的可变性，还有一个重要作用就是<mark>防止JVM指令重排序</mark></p></div><div><blockquote>
+<p> 什么是指令重排序</p>
+<p> ​	为了提升执行速度/性能，计算机在执行程序代码的时候，会执行指令重排序，就是说，计算机执行程序的时候，不一定按照你代码写的顺序来</p>
+</blockquote></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>双重检验锁方式实现单例模式
+<ul>
+<li data-line="2">public class SingleTon{<br>
+private static volite SingleTon singleTon;
+<pre><code>  private SingleTon(){
+  }
+  
+  public static SingleTon getInstance(){
+  	if(singleTon == null){
+      	synchronized(SingleTon.class){
+          	if(singleTon == null){
+                  // 这一段实际上分三步执行    
+              	singleTon = new singleTon()
+              }
+          }
+      }
+      return singleTon;
+  }
+  
+</code><button class="copy-code-button">复制</button></pre>
+  }<br>
+</li>
+<li data-line="22"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>singleTon = new singleTon()</code>这一段实际分三步执行，
+<ol>
+<li data-line="24">为singleTon分配内存空间</li>
+<li data-line="26">初始化singleTon</li>
+<li data-line="28">将singleTon指向分配的地址</li>
+</ol>
+  但是由于JVM有指令重排的特性，这一步可能变成1-3-2，单线程环境下没有问题，多线程环境下就有问题出现了
+  <code>比如，线程A执行了1 3 然后时间片耗尽，这时候，线程2执行了这一段，发现singleTon不为null，就直接拿到了未初始化的singleTon对象，所以这个时候，volitile关键字就很有必要了</code><br>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="乐观锁和悲观锁" class="heading" id="乐观锁和悲观锁"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>乐观锁和悲观锁</h4><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>悲观锁：认为共享的资源每次都会被修改，所以每次申请资源的时候，都会上锁，其他想要访问的线程都会阻塞一直到上一个拿到资源的线程释放线程
+<ul>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>像java中的synchronized 和reentrantLock就是悲观锁的思想实现
+<ul>
+<li data-line="4"><em>缺点</em>，在高并发的场景下，频繁的阻塞会很浪费资源，增加性能开销，而且还可能有死锁的风险<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>乐观锁：认为线程是可以无限制的执行下去的，每次资源都不会被其他线程修改，但是在提交的时候会做一个验证，判断资源是否已经被其他线程修改过了，修改过了我就不给你修改了或者我就再重试一遍，重新拿资源修改一遍（版本号机制或者CAS算法）
+<ul>
+<li data-line="8">版本号机制：
+  就是取资源的时候，资源上加一个version版本号，然后我修改完成以后，再看一下数据库里面这个版本号是不是跟我取的一样，一样就说明没别人动过，就改掉，顺便version加一，不一样就说明别人动过，那就驳回请求<br>
+</li>
+<li data-line="12"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>CAS
+<blockquote>
+<p>CAS 是一个原子操作，底层依赖于一条 CPU 的原子指令。</p>
+<blockquote>
+<p><strong>原子操作</strong> 即最小不可拆分的操作，也就是说操作一旦开始，就不能被打断，直到操作完成。</p>
+</blockquote>
+<p>CAS 涉及到三个操作数：</p>
+<ul>
+<li data-line="20"><strong>V</strong>：要更新的变量值(Var)<br>
+</li>
+<li data-line="22"><strong>E</strong>：预期值(Expected)<br>
+</li>
+<li data-line="24"><strong>N</strong>：拟写入的新值(New)<br>
+</li>
+</ul>
+<p>当且仅当 V 的值等于 E 时，CAS 通过原子方式用新值 N 来更新 V 的值。如果不等，说明已经有其它线程更新了 V，则当前线程放弃更新。</p>
+<p><strong>举一个简单的例子</strong>：线程 A 要修改变量 i 的值为 6，i 原值为 1（V = 1，E=1，N=6，假设不存在 ABA 问题）。</p>
+<ol>
+<li data-line="31">i 与 1 进行比较，如果相等， 则说明没被其他线程修改，可以被设置为 6 。</li>
+<li data-line="33">i 与 1 进行比较，如果不相等，则说明被其他线程修改，当前线程放弃更新，CAS 操作失败。</li>
+</ol>
+<p>当多个线程同时使用 CAS 操作一个变量时，只有一个会胜出，并成功更新，其余均会失败，但失败的线程并不会被挂起，仅是被告知失败，并且允许再次尝试，当然也允许失败的线程放弃操作。</p>
+<p>Java 语言并没有直接实现 CAS，CAS 相关的实现是通过 C++ 内联汇编的形式实现的（JNI 调用）。因此， CAS 的具体实现和操作系统以及 CPU 都有关系。</p>
+<hr>
+<p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/concurrent/java-concurrent-questions-02.html" target="_blank">https://javaguide.cn/java/concurrent/java-concurrent-questions-02.html</a></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li data-line="44"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>乐观锁存在哪些问题？
+<ul>
+<li data-line="46">ABA问题：解决思路是CAS基础上加版本号或者时间戳<br>
+</li>
+<li data-line="48">多写入场景频繁的重试或者失败会导致性能问题<br>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="ReentrantLock" class="heading" id="ReentrantLock"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ReentrantLock</h4><div class="heading-children"><div><p>ReentrantLock是一个实现了Lock接口的类，作用和Synchronized类似，是一个<code>可重入且独占式的锁</code>，但是更强大 (<code>增加了，轮询，超时，中断，公平锁和非公平锁等高级功能</code>)</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>公平锁
+<ul>
+<li data-line="2">锁被释放以后，先申请的线程先获得锁，但是会导致上下文频繁切换<br>
+</li>
+</ul>
+</li>
+<li data-line="4">非公平锁<br>
+</li>
+<li data-line="6">锁释放后，可能随机线程获得锁，但是可能导致某些线程永远拿不到锁<br>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>可重入锁
+<ul>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>可重入锁也叫递归锁，这个可以解决部分死锁问题，简单例子就是一个线程拿到了一个对象的锁还没释放的时候，还能再获得该对象的锁，递归释放，目前JDK提供的LOCK实现类都是可重入式锁
+<ul>
+<li data-line="12">public class SynchronizedDemo {<br>
+public synchronized void method1() {<br>
+System.out.println("方法1");<br>
+method2();<br>
+}
+<pre><code>  public synchronized void method2() {
+      System.out.println("方法2");
+  }
+</code><button class="copy-code-button">复制</button></pre>
+  }<br>
+</li>
+<li data-line="23">由于 <code>synchronized</code>锁是可重入的，同一个线程在调用<code>method1()</code> 时可以直接获得当前对象的锁，执行 <code>method2()</code> 的时候可以再次获取这个对象的锁，不会产生死锁问题。假如<code>synchronized</code>是不可重入锁的话，由于该对象的锁已被当前线程所持有且无法释放，这就导致线程在执行 <code>method2()</code>时获取锁失败，会出现死锁问题。<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="25"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>中断（获取锁的过程可中断）
+<ul>
+<li data-line="27"><code>ReentrantLock</code>提供了一种能够中断等待锁的线程的机制，通过 <code>lock.lockInterruptibly()</code> 来实现这个机制。也就是说正在等待的线程可以选择放弃等待，改为处理其他事情<br>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h4 data-heading="ThreadLocal" class="heading" id="ThreadLocal"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ThreadLocal</h4><div class="heading-children"><div><p>他是什么？为什么出现</p></div><div><ul>
+<li data-line="0">首先，我们创建的变量在通常情况下都是能被所有线程访问修改的，但是这时候我们希望，能让线程拥有自己的专属本地变量，应该怎么办<br>
+</li>
+<li data-line="2">ThreadLocal就出现了，用get(),set()或者独属于线程自己的本地变量，主要是避免线程竞争？？ <code>这个是不是就相当于变量锁一直不放</code>?<br>
+</li>
+<li data-line="4">原理解析：<br>
+</li>
+</ul></div><div><blockquote>
+<p>Thread 类里面有两个Map，一个是自身的map（ThreadLocalMap），一个是继承下来的map(inherientThreadLocalMap)，一开始，这两个都是null（ThreadLocalMap可以视作为ThreadLocal类定制实现的HashMap），我们在外面创建一个Thread的子类的时候，给他创建了一个成员变量ThreadLocl</p>
+<p> private static final ThreadLocal formatter = ThreadLocal.withInitial(() -&gt; new SimpleDateFormat("yyyyMMdd HHmm"));</p>
+<p>类似上面这样，那么线程重写（实现）run方法的时候，要在方法里调用这个formatter.get()或者set()的时候，就会初始化这个线程的这个定制的hashMap，然后拿值或者取值，所以实际上这个变量会存在线程中的ThreadLocalmaps里面，哪怕你给子类写了两个ThreadLocal，存还是存在一个ThreadLocalmap里面,key就是ThreadLocal对象，value就是set放的值</p>
+</blockquote></div><div><p><img alt="ThreadLocal 数据结构" src="lib/media/threadlocal-data-structure.png" referrerpolicy="no-referrer"></p></div></div></div><div class="heading-wrapper"><h4 data-heading="ThreadLocal会导致内存泄漏问题？" class="heading" id="ThreadLocal会导致内存泄漏问题？"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>ThreadLocal会导致内存泄漏问题？</h4><div class="heading-children"><div><p><code>ThreadLocalMap</code> 中使用的 key 为 <code>ThreadLocal</code> 的弱引用，而 value 是强引用。所以，如果 <code>ThreadLocal</code> 没有被外部强引用的情况下，在垃圾回收的时候，key 会被清理掉，而 value 不会被清理掉。</p></div><div><p>这样一来，<code>ThreadLocalMap</code> 中就会出现 key 为 null 的 Entry。假如我们不做任何措施的话，value 永远无法被 GC 回收，这个时候就可能会产生内存泄露。<code>ThreadLocalMap</code> 实现中已经考虑了这种情况，在调用 <code>set()</code>、<code>get()</code>、<code>remove()</code> 方法的时候，会清理掉 key 为 null 的记录。使用完 <code>ThreadLocal</code>方法后最好手动调用<code>remove()</code>方法</p></div><div><hr></div><div><p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/concurrent/java-concurrent-questions-03.html" target="_blank">https://javaguide.cn/java/concurrent/java-concurrent-questions-03.html</a></p></div></div></div><div class="heading-wrapper"><h4 data-heading="线程池" class="heading" id="线程池"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程池</h4><div class="heading-children"><div><p>池化思想，线程池中的线程在完成任务后并不会被销毁，而是等待下一个任务</p></div><div><ul>
+<li data-line="0">节约了资源的损耗<br>
+</li>
+<li data-line="2">提升了线程的响应速度<br>
+</li>
+<li data-line="4">提高线程可管理性<br>
+</li>
+</ul></div><div class="heading-wrapper"><h5 data-heading="如何创建线程池" class="heading" id="如何创建线程池"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何创建线程池</h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>构造函数创建</p>
+<p>ThreadPoolExecutor来创建</p>
+</li>
+<li data-line="4">
+<p>Executor的框架工具类Executors来创建（不推荐，要开发的人更明确自己创建线程的意义）</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h5 data-heading="注意事项" class="heading" id="注意事项"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>注意事项</h5><div class="heading-children"><div><ul>
+<li data-line="0">
+<p>不推荐Excutors 的方式创建线程，推荐构造方法创建，因为这样开发同学能更明确自己要什么样的线程池</p>
+</li>
+<li data-line="1">
+<p>阿里巴巴开发规范明确要求线程必须通过线程池来提供，不允许手动创建线程</p>
+</li>
+<li data-line="3"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>线程池构造方法参数（7个）</p>
+<ul>
+<li data-line="5"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程池大小 maxPoreSize
+<ul>
+<li data-line="7"><code>当任务队列达到了最大值的时候，线程池允许的最大同时运行的线程数</code><br>
+</li>
+</ul>
+</li>
+<li data-line="9"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>核心线程数
+<ul>
+<li data-line="11"><code>当任务队列没达到最大时，线程池允许的最大线程数</code><br>
+</li>
+</ul>
+</li>
+<li data-line="13"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>当线程池大于核心线程数的大小时，其他的非核心的线程存活的时间
+<ul>
+<li data-line="15"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>垃圾回收会对核心线程和非核心线程一视同仁，直到线程数量等于核心线程数为止</code>
+<ul>
+<li data-line="17">时间单位<br>
+</li>
+<li data-line="19">queue，队列存放任务的<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="21"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>拒绝策略
+<ul>
+<li data-line="23">就是当任务队列已经满了，而且线程池也已经满负荷了，这时候还加任务进来的拒绝策略<br>
+</li>
+<li data-line="25">工厂（创建线程的工厂，一般默认就行）<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h5 data-heading="线程池常用的一些阻塞队列有哪些" class="heading" id="线程池常用的一些阻塞队列有哪些"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>线程池常用的一些阻塞队列有哪些</h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>LinkedBlockIngQueue :无界的，所以你创建线程池的时候，永远不会满（实际容量为Integer.maxValue），那就创建一个核心线程数和最大一致的线程池</p>
+</li>
+<li data-line="2">
+<p>SynchronousQueue：同步的queue，同步的意思就是，我里面没有容量，一来任务我这就是满的，所以会一直需要最大线程数的线程池，可能会创建大量线程，导致OOM</p>
+</li>
+<li data-line="4">
+<p>DelayedWorkQueue： 这个特殊在于排序，按任务进来的延迟排序，延迟越低越先出栈</p>
+</li>
+</ol></div><div><p><img alt="图解线程池实现原理" src="https://oss.javaguide.cn/javaguide/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" referrerpolicy="no-referrer"></p></div></div></div><div class="heading-wrapper"><h5 data-heading="给线程池命名" class="heading" id="给线程池命名"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>给线程池命名</h5><div class="heading-children"><div><p>这个还是蛮重要的，因为普通的默认线程池名字不容易分辨，不带业务名称，看日志很成问题</p></div><div><ol>
+<li data-line="0">自己实现工厂方法创建线程</li>
+<li data-line="2">GUAVA的ThreadFactoryBuilder</li>
+</ol></div></div></div><div class="heading-wrapper"><h5 data-heading="如何设定线程池大小？" class="heading" id="如何设定线程池大小？"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何设定线程池大小？</h5><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>CPU密集型任务--》N+1（N是CPU核心数）
+<ul>
+<li data-line="2">就是密集的计算啊啥的<br>
+</li>
+</ul>
+</li>
+<li data-line="4">I/O密集型--》2N<br>
+</li>
+</ul></div></div></div><div class="heading-wrapper"><h5 data-heading="实现一个优先级执行线程池" class="heading" id="实现一个优先级执行线程池"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>实现一个优先级执行线程池</h5><div class="heading-children"><div><p>PriorityBlockingQueue</p></div></div></div><div class="heading-wrapper"><h5 data-heading="如何动态修改线程池的参数" class="heading" id="如何动态修改线程池的参数"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>如何动态修改线程池的参数</h5><div class="heading-children"><div><p>详见美团技术团队的一些设置</p></div></div></div><div class="heading-wrapper"><h5 data-heading="创建一个优先级排序的线程池" class="heading" id="创建一个优先级排序的线程池"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建一个优先级排序的线程池</h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>首先是考虑PriorityBlockingQueue 作为线程池的任务队列，因为这个是可以排序的，可以视为线程安全的PriorityQueue</p>
+</li>
+<li data-line="2">
+<p>然后由于这个任务队列可能是无界的，所以我们可以创建一个类继承PriorityBlockingQueue,重写他的offer方法，判断队列到达指定大小后就返回false，无法继续加进去</p>
+</li>
+<li data-line="4">
+<p>会可能存在某些任务进去以后，由于优先级的原因一直得不到线程，那么就可以继续修改一下这个子类，当一个任务超时多久就提升一个优先级之类的</p>
+</li>
+</ol></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="CountDownLatch" class="heading" id="CountDownLatch"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>CountDownLatch</h4><div class="heading-children"><div><p>允许多个线程阻塞在一个地方</p></div></div></div><div class="heading-wrapper"><h4 data-heading="JVM(内存模型)" class="heading" id="JVM(内存模型)"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JVM(内存模型)</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="CPU缓存模型" class="heading" id="CPU缓存模型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>CPU缓存模型</h5><div class="heading-children"><div><p>类比我们开发时候用到redis是为了解决程序处理速度和关系型数据库速度不匹配的问题</p></div><div><p>缓存就是为了解决CPU处理速度和内存存储速度不匹配的问题（硬盘的访问速度比较慢）</p></div></div></div><div class="heading-wrapper"><h5 data-heading="并发编程的三个重要特性" class="heading" id="并发编程的三个重要特性"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>并发编程的三个重要特性</h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>原子性</p>
+</li>
+<li data-line="2">
+<p>可见性</p>
+</li>
+<li data-line="4">
+<p>有序性（volatile关键字可以禁止指令重排）</p>
+</li>
+</ol></div></div></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="javaIO基础知识" class="heading" id="javaIO基础知识"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>javaIO基础知识</h3><div class="heading-children"><div><p>笔记栏</p></div><div><ol>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>什么是IO ?</p>
+<ol>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>四个基类</p>
+<ol>
+<li data-line="4">InputStream/Reader</li>
+<li data-line="6">OutputStream/Writer</li>
+</ol>
+</li>
+</ol>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>能做什么？</p>
+<ol>
+<li data-line="10">
+<blockquote>
+<p>读取文件，写文件</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li data-line="12">
+<p>关于字节流，字符流之类的方法比较多，不详细记录，主要重点感觉是flush方法，由于流是慢慢传输的，有时候，流在写入（<code>只有写入流有这个方法</code>）文件的时候，你不能说你觉得读完了就把流关闭了，你要在流关闭之前，flush一下，把流里面的东西清空，然后再关闭</p>
+<p>public class test02 {<br>
+public static void main(String[] args) {<br>
+File file = new File("./xx.txt");<br>
+try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {<br>
+fileOutputStream.write(new byte[1024]);<br>
+fileOutputStream.flush();</p>
+<pre><code>    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+}
+</code><button class="copy-code-button">复制</button></pre>
+<p>}</p>
+<p>上面的方法就可以得到1024个null字符的txt文件</p>
+</li>
+<li data-line="29"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>字节缓冲流</p>
+<ol>
+<li data-line="31"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>是什么</p>
+<ol>
+<li data-line="33">是一个包装类，创建方法就是new BufferedInputStream(inputStream)</li>
+</ol>
+</li>
+<li data-line="35"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>做什么</p>
+<ol>
+<li data-line="37">包装输入流，增强输入流能力的</li>
+<li data-line="39">IO操作是非常耗费性能的操作，缓冲流能将数据一下子加载到缓冲区再慢慢操作，从而就能避免频繁的IO操作</li>
+</ol>
+</li>
+<li data-line="41"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>什么特征？</p>
+<ol>
+<li data-line="43">文件越大性能更好，缓存区的存在可以节约更多的性能</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol></div><div class="heading-wrapper"><h4 data-heading="IO设计模式总结" class="heading" id="IO设计模式总结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>IO设计模式总结</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="装饰器模式" class="heading" id="装饰器模式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>装饰器模式</h5><div class="heading-children"><div><blockquote>
+<p>不改变对象的前提下，拓展其功能</p>
+</blockquote></div><div><p>就是跟跟上面说的‘包装类’有类似的效果，需要的是装饰器需要跟原始类继承相同的抽象类或者实现相同的接口</p></div><div><p>例如：我们常见的<code>BufferedInputStream</code>(字节缓冲输入流)、<code>DataInputStream</code> 等等都是<code>FilterInputStream</code> 的子类，我们可以通过 <code>BufferedInputStream</code>（字节缓冲输入流）来增强 <code>FileInputStream</code> 的功能</p></div><div><p>用子类去增强原始类就既可以调原始类的方法，也可以调字节写的新方法了</p></div></div></div><div class="heading-wrapper"><h5 data-heading="适配器模式（Adapter）" class="heading" id="适配器模式（Adapter）"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>适配器模式（Adapter）</h5><div class="heading-children"><div><blockquote>
+<p>主要用于适配接口不兼容的情形</p>
+</blockquote></div><div><p>举个例子，如何将字符流转换成字节流？</p></div><div><p>依靠 InputStream这个大类来转换,下面的代码把文件输入流（字符流）转换成了InputStreamReader（字节流），这里是因为InPutstream里面有一个StreamDecoder，专门用来转换的</p></div><div><p>// InputStreamReader 是适配器，FileInputStream 是被适配的类<br>
+InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-8");<br>
+// BufferedReader 增强 InputStreamReader 的功能（装饰器模式）<br>
+BufferedReader bufferedReader = new BufferedReader(isr);</p></div></div></div><div class="heading-wrapper"><h5 data-heading="工厂模式" class="heading" id="工厂模式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>工厂模式</h5><div class="heading-children"><div><blockquote>
+<p>用于创建对象，就比如Files 类的 Files.newInputStream()方法</p>
+</blockquote></div></div></div><div class="heading-wrapper"><h5 data-heading="观察者模式" class="heading" id="观察者模式"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>观察者模式</h5><div class="heading-children"><div><blockquote>
+<p>我理解就是，监听，在代码中，你定义了一个类，然后实现Watchable接口，然后去重写他的监听方法，比如监听文件的path类的监听方法里面采用的就是<strong><a data-tooltip-position="top" aria-label="https://cloud.tencent.com/developer/article/2318134" rel="noopener" class="external-link" href="https://cloud.tencent.com/developer/article/2318134" target="_blank">守护线程</a></strong>？采用轮询的方式去监听操作的文件的变化</p>
+</blockquote></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="IO模型详解" class="heading" id="IO模型详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>IO模型详解</h4><div class="heading-children"><div><p>常见IO模型</p></div><div><ol>
+<li data-line="0">
+<p>BIO</p>
+<blockquote>
+<p>同步阻塞IO</p>
+</blockquote>
+<p>在同步阻塞IO模型中，应用发起read之后，会一直阻塞，一直到内核把数据拷贝到用户空间里面，然后直到read返回，才会接触阻塞，这个同步的方式在大量用户大量读取的场景下，比较吃力</p>
+<p><img alt="图源：《深入拆解Tomcat &amp; Jetty》" src="lib/media/6a9e704af49b4380bb686f0c96d33b81~tplv-k3u1fbpfcp-watermark.png" referrerpolicy="no-referrer"></p>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>NIO</p>
+<blockquote>
+<p>NonBlocking IO 不阻塞IO</p>
+</blockquote>
+<p>NIO属于多路复用模型，而不是同步非阻塞模型</p>
+<p><img alt="图源：《深入拆解Tomcat &amp; Jetty》" src="lib/media/bb174e22dbe04bb79fe3fc126aed0c61~tplv-k3u1fbpfcp-watermark.png" referrerpolicy="no-referrer"></p>
+<p><img alt="img" src="lib/media/88ff862764024c3b8567367df11df6ab~tplv-k3u1fbpfcp-watermark.png" referrerpolicy="no-referrer"></p>
+<p>两者的差别就在于在准备数据阶段，<code>同步不阻塞模型</code>一直轮询采用read调用去判断数据有没有准备好，好了以后再阻塞的去拷贝数据</p>
+<p>而<code>多路复用模型</code>则是直接select去查询系统是否准备好了，等准备好了，再阻塞的调用read</p>
+<blockquote>
+<p><strong>IO 多路复用模型，通过减少无效的系统调用，减少了对 CPU 资源的消耗。</strong></p>
+<p>Java 中的 NIO ，有一个非常重要的<strong>选择器 ( Selector )</strong> 的概念，也可以被称为 <strong>多路复用器</strong>。通过它，只需要一个线程便可以管理多个客户端连接。当客户端数据到了之后，才会为其服务。</p>
+<hr>
+<p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/io/io-model.html" target="_blank">https://javaguide.cn/java/io/io-model.html</a></p>
+</blockquote>
+<p>NIO,主要包括下面三个核心组件</p>
+<ul>
+<li data-line="32"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>缓冲区
+<ul>
+<li data-line="34">NIO的读写数据都是通过缓冲区实现的，读操作的时候，把Channel中的数据写到buffer里面，写操作的时候，把Buffer中的数据写到Channel里面<br>
+</li>
+<li data-line="36">NIO在读写数据的时候，都是通过缓冲区进行操作<br>
+</li>
+</ul>
+</li>
+<li data-line="38">Channel（通道）<br>
+</li>
+<li data-line="40">Selector（选择器）<br>
+</li>
+</ul>
+</li>
+<li data-line="42">
+<p>AIO(Asynchronous I/O)</p>
+</li>
+</ol></div><div><p>AIO就是NIO2 ，属于异步IO模型，也就是完全不阻塞，基于<code>回调机制实现</code>，应用读取完会直接返回，等后台数据准备完成，操作系统会通知相对应的程序去进行操作</p></div></div></div></div></div><div class="heading-wrapper"><h3 data-heading="JVM" class="heading" id="JVM"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JVM</h3><div class="heading-children"><div class="heading-wrapper"><h4 data-heading="java内存区域" class="heading" id="java内存区域"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>java内存区域</h4><div class="heading-children"><div><p><img alt="Java 运行时数据区域（JDK1.8 ）" src="lib/media/java-runtime-data-areas-jdk1.8.png" referrerpolicy="no-referrer"></p></div><div><p>java 天生是多线程的语言，那么我们按照线程拥有的来划分可以得到</p></div><div><p><em>线程私有的：</em></p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>程序计数器
+<ul>
+<li data-line="2">这个是因为线程总是在CPU分配的时间片上才是活的，有自己的上下文，计数器用来记录线程跑到哪里了，方便切回来的时候继续运行，控制代码的流程<br>
+</li>
+</ul>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>虚拟机栈
+<ul>
+<li data-line="6"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>这个相当于一块小的虚拟机用来运行
+<ul>
+<li data-line="8"><code>栈</code>是JVM运行时核心，除了本地方法，其他所有的java方法的调用都是通过栈来完成的（和程序计数器配合）<br>
+</li>
+</ul>
+</li>
+<li data-line="10">每一次方法的调用，都会有一个对应的栈帧被压入栈中，调用结束后会被弹出<br>
+</li>
+</ul>
+</li>
+<li data-line="12"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>本地方法栈
+<ul>
+<li data-line="14">这个和虚拟机栈类似，但是是用来执行本地方法的<br>
+</li>
+</ul>
+</li>
+</ul></div><div><p><em>线程共享的：</em></p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>堆
+<ul>
+<li data-line="2">堆是jvm管理内存中最大的一块内存，这一块的目的就是为了<code>存放对象实例</code>，几乎所有的对象实例和数组都在这里分配内存<br>
+</li>
+<li data-line="4">为什么说几乎，因为JDK1.7开始，就已经开始默认开启逃逸分析，一些方法的的对象的引用没有被返回，或者没有被外面引用，那么这个对象的创建会在栈上<br>
+</li>
+<li data-line="6">字符串常量池在堆上，为什么放堆上？：因为堆是GC管理的最大的区域，放堆中可以及时高效的回收，常量池里存放的直接是字符串对象，而不是引用<br>
+</li>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>方法区</code>
+<ul>
+<li data-line="10">JDK1.7的时候，堆内存被分为新生代，老生代，永久代，方法区就属于永久代<br>
+</li>
+<li data-line="12">方法区是线程共享的一块逻辑区域，如何实现要看不同的虚拟机的实现<br>
+</li>
+<li data-line="14">JDK1.8的时候，方法区（永久代）就被移除了，取而代之的是元空间<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="16">直接内存<br>
+</li>
+</ul></div><div class="heading-wrapper"><h5 data-heading="新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块" class="heading" id="新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块</h5><div class="heading-children"></div></div></div></div><div class="heading-wrapper"><h4 data-heading="hotSopt虚拟对象" class="heading" id="hotSopt虚拟对象"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>hotSopt虚拟对象</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="对象创建的步骤 ==5步==" class="heading" id="对象创建的步骤_==5步=="><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>对象创建的步骤 <mark>5步</mark></h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>第一步 类加载检查</p>
+<blockquote>
+<p>当虚拟机遇到一条新的new指令的时候，首先会去检查能不能从常量池找到对应对象的引用，然后再判断 new的这个类，是否在之前就被加载，解析和初始化过了，如果没有，那要执行相应的类加载过程</p>
+</blockquote>
+</li>
+<li data-line="4"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
+<p>第二步 分配内存</p>
+<blockquote>
+<p>在类加载完成之后，就会进入分配内存的过程中，这个大小在类加载完成后就可以确定，分配方式分为指针碰撞和空闲列表两种，具体选哪种要看堆内存是否规整，而堆内存是否规整要看垃圾回收装置是否带压缩整理功能（规整的收集器：parNew,serial，不规整的：CMS）</p>
+</blockquote>
+<ul>
+<li data-line="8"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>指针碰撞
+<ul>
+<li data-line="10">如果内存是规整的前提下，用过的内存在一边，没用过的内存在另一边，中间会有个指针，只要把指针往没有用过的内存那边移动一个该类内存大小就可以了<br>
+</li>
+</ul>
+</li>
+<li data-line="12"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>空闲列表
+<ul>
+<li data-line="14">如果内存是不规整的，那么虚拟机会自己维护一个列表，里面记录了哪些内存块是可以用的，分配内存的时候，分配一个足够大的内存块给这个类就可以了<br>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>内存分配的并发问题</em>：</p>
+<p>创建对象来说，虚拟机必须要保证创建过程是线程安全的，一般来说，虚拟机会通过两种方式来保证线程安全（因为堆是共享的，所以保证线程安全就很重要）</p>
+<ul>
+<li data-line="21"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>TLAB：首先是虚拟机会为每个线程在Eden区域分配一块内存，创建对象的时候，优先在eden区域中创建，只有这一块内存不够的时候，再去堆中，用CAS+失败重试的方式去创建（乐观锁）
+<ul>
+<li data-line="23">eden区域，堆内存的一块地方，属于新生代<br>
+</li>
+<li data-line="25">CAS +失败重试<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="27">
+<p>第三步 初始化零值</p>
+<blockquote>
+<p>当内存分配完毕以后，虚拟机就会把对象里面的一些内存空间都初始化零值，比如，int 零值就是0 对象类零值就是null，这一部保证了 <em>java的实例字段（成员变量）不需要初始化就能用</em></p>
+<p>但是这不包含对象头</p>
+</blockquote>
+</li>
+<li data-line="33">
+<p>第四步 设置对象头</p>
+<blockquote>
+<p>对象头就是一些信息，例如这个是哪个类的实例，或者对象的GC分代年龄等信息</p>
+</blockquote>
+<p><strong>Hotspot 虚拟机的对象头包括两部分信息</strong>，<strong>第一部分用于存储对象自身的运行时数据</strong>（哈希码、GC 分代年龄、锁状态标志等等），<strong>另一部分是类型指针</strong>，即对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例。</p>
+<hr>
+<p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/jvm/memory-area.html" target="_blank">https://javaguide.cn/java/jvm/memory-area.html</a></p>
+</li>
+<li data-line="43">
+<p>第五步 init方法</p>
+<blockquote>
+<p>实际上，在上一步的时候，虚拟机已经认为一个新的对象被创建好了，但是从程序的视角来看，这才刚刚开始，init就是构造方法之类的一些防范，给对象赋上真正的程序需要的值，变成一个程序可用的对象</p>
+</blockquote>
+</li>
+</ol></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="JVM垃圾回收" class="heading" id="JVM垃圾回收"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JVM垃圾回收</h4><div class="heading-children"><div><p>需要排查各种内存溢出问题，当系统过大，垃圾回收成为系统实现更高并发的瓶颈的时候，我们就要对这些进行必要的监控和调节</p></div><div class="heading-wrapper"><h5 data-heading="堆空间的基本结构" class="heading" id="堆空间的基本结构"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>堆空间的基本结构</h5><div class="heading-children"><div><p>Java 自动内存管理最核心的功能是 <strong>堆</strong> 内存中对象的分配与回收</p></div><div><p>在jdk7及以前的版本里，堆内存通常分为如下的三块部分</p></div><div><ol>
+<li data-line="0">新生代（eden和两个相等大小的survivor区）</li>
+<li data-line="2">老生代</li>
+<li data-line="4">永久代（JDK8以后被元空间取代，metaspace，元空间用的是直接内存）</li>
+</ol></div><div><p><img alt="堆内存结构" src="lib/media/hotspot-heap-structure.png" referrerpolicy="no-referrer"></p></div><div><p>上面的eden区和S0 S1属于新生代</p></div><div><p>Tenured属于老生代</p></div><div><p>下面就是永久层/元空间</p></div></div></div><div class="heading-wrapper"><h5 data-heading="创建对象时候的minor GC" class="heading" id="创建对象时候的minor_GC"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>创建对象时候的minor GC</h5><div class="heading-children"><div><ol>
+<li data-line="0">创建对象有5步（看上面笔记）在分配内存的那一步的时候，一般是会在eden层进行，如果eden层内存空间不足了这时候再创建一个对象，那么垃圾回收就会执行一次minor GC</li>
+</ol></div><div><p><code>minorGC</code>: 就是会把这个eden里面的已经存在对象，找到里面活跃的对象，然后放到S1里面去，同时清理掉eden区和s1区的数据，然后对象年龄加一，一般15岁就会存放到老生代区</p></div><div><blockquote>
+<p>大部分情况，对象都会首先在 Eden 区域分配，在一次新生代垃圾回收后，如果对象还存活，则会进入 S0 或者 S1，并且对象的年龄还会加 1(Eden 区-&gt;Survivor区后对象的初始年龄变为 1)，当它的年龄增加到一定程度（默认为 15 岁，cms是6），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数</p>
+<p>-XX:MaxTenuringThreshold</p>
+<p>来设置。</p>
+<p>就是说对象每熬过一次minorGC就会长一岁（这个计算是动态的，根据对象年龄大小和占用动态涨年龄，说的浅显一点就是大概长了一岁）</p>
+</blockquote></div><div><ol start="2">
+<li data-line="0">当进行minorGC以后，发现这个老的对象还是无法存入Survior区域，那么就会通过<em>分配担保机制</em>把这个老对象直接放到老年区</li>
+<li data-line="2">后面创建的新的对象，如果能放eden区域的话，那么还是会在eden区域进行分配内存的</li>
+</ol></div></div></div><div class="heading-wrapper"><h5 data-heading="大对象直接进入老年代" class="heading" id="大对象直接进入老年代"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>大对象直接进入老年代</h5><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>进入老年代有两种方式，一种是年龄到了，自动进入老年代</p>
+</li>
+<li data-line="2">
+<p>另一种是大对象（需要连续区域的大对象，一般有大数组，字符串之类的），会直接进入老年代</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h5 data-heading="HostSpot VM的垃圾回收机制" class="heading" id="HostSpot_VM的垃圾回收机制"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>HostSpot VM的垃圾回收机制</h5><div class="heading-children"><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>分类：
+<ul>
+<li data-line="2"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>部分收集
+<ul>
+<li data-line="4">youngGC/minor GC 是用来回收新生代的<br>
+</li>
+<li data-line="6">old GC /major GC 用来回收老年代的<br>
+</li>
+<li data-line="8">mixed GC 用来回收新生代和老年代的<br>
+</li>
+</ul>
+</li>
+<li data-line="10"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>整堆收集
+<ul>
+<li data-line="12">full GC 收集整个java堆和方法区<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="14"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>什么时候进行这些回收？
+<ul>
+<li data-line="16">首先是yong GC 这个是创建对象的时候，eden区放不下新的对象的内存了，就会触发yong GC，这时候，eden区域存活的对象，会进入survior区，年龄也会增长，如果发现放不进去survior区，那就晋升到老年区去<br>
+</li>
+<li data-line="18">那如果老年区也不够用咋办呢？那新生代的对象就放不进去老年区了，这时候，就不会触发yongGC了，会直接触发fullGC，回收掉整个java堆和方法区（判断对象死亡：就是不再被任何地方引用）<br>
+</li>
+</ul>
+</li>
+<li data-line="20"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>引用类型介绍（强，软弱无力）
+<ul>
+<li data-line="22"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>强引用
+<ul>
+<li data-line="24">大部分我们使用的都是强引用，java回收装置宁愿抛出outofmenory错误也不会回收强引用<br>
+</li>
+</ul>
+</li>
+<li data-line="26"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>软引用
+<ul>
+<li data-line="28">可有可无的引用，当内存不足 的时候，垃圾回收器就会回收他们<br>
+</li>
+</ul>
+</li>
+<li data-line="30"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>弱引用
+<ul>
+<li data-line="32">这个比软引用具有更短的生命周期，一旦被垃圾回收器扫到就一定会回收<br>
+</li>
+</ul>
+</li>
+<li data-line="34"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>虚引用
+<ul>
+<li data-line="36">这个不会影响对象的生命周期，几乎就等于没有任何引用，任何时候都可能会被回收<br>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-line="38"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>垃圾清理算法
+<ol>
+<li data-line="40">标记-清理算法</li>
+<li data-line="42">复制算法</li>
+<li data-line="44">标记-整理算法</li>
+<li data-line="46">分代收集算法</li>
+</ol>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="类文件结构详解" class="heading" id="类文件结构详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类文件结构详解</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="字节码" class="heading" id="字节码"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>字节码</h5><div class="heading-children"><div><p>字节码就是 .class文件，是jvm可以理解的代码，是不同语言在java虚拟机上的重要桥梁，很多语言，包括 GRoovy，Scala，Kotlin 都是运行在Java虚拟机上的</p></div><div><p>Class文件通过ClassFile定义</p></div><div><p>ClassFile {<br>
+u4             magic; //Class 文件的标志<br>
+u2             minor_version;//Class 的小版本号<br>
+u2             major_version;//Class 的大版本号<br>
+u2             constant_pool_count;//常量池的数量<br>
+cp_info        constant_pool[constant_pool_count-1];//常量池<br>
+u2             access_flags;//Class 的访问标记<br>
+u2             this_class;//当前类<br>
+u2             super_class;//父类<br>
+u2             interfaces_count;//接口数量<br>
+u2             interfaces[interfaces_count];//一个类可以实现多个接口<br>
+u2             fields_count;//字段数量<br>
+field_info     fields[fields_count];//一个类可以有多个字段<br>
+u2             methods_count;//方法数量<br>
+method_info    methods[methods_count];//一个类可以有个多个方法<br>
+u2             attributes_count;//此类的属性表中的属性数<br>
+attribute_info attributes[attributes_count];//属性表集合<br>
+}</p></div><div><p>在 Java 中，JVM 可以理解的代码就叫做<code>字节码</code>（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以 Java 程序运行时比较高效，而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p></div><div><hr></div><div><p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/jvm/class-file-structure.html" target="_blank">https://javaguide.cn/java/jvm/class-file-structure.html</a></p></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="类加载过程详解" class="heading" id="类加载过程详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载过程详解</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="类的生命周期" class="heading" id="类的生命周期"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类的生命周期</h5><div class="heading-children"><div><p>类从被加载一直到被卸载，可以简单概括成7个阶段</p></div><div><ol>
+<li data-line="0">加载</li>
+<li data-line="2">验证</li>
+<li data-line="4">准备</li>
+<li data-line="6">解析</li>
+<li data-line="8">初始化</li>
+<li data-line="10">使用</li>
+<li data-line="12">卸载</li>
+</ol></div><div><p>其中，验证-准备-解析可以统称为连接（Link）</p></div><div><p><img alt="一个类的完整生命周期" src="lib/media/lifecycle-of-a-class.png" referrerpolicy="no-referrer"></p></div></div></div><div class="heading-wrapper"><h5 data-heading="类加载过程" class="heading" id="类加载过程"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载过程</h5><div class="heading-children"><div><p>类加载过程，就是如上图所示的，加载-连接-初始化</p></div><div><p>连接就是框里的三步（验证-准备-解析）</p></div><div><ul>
+<li data-line="0"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>加载
+  加载这一步主要是通过类加载器（ClassLoader）去确定的，用哪个类加载器是由 <code>双亲委派模型确定的</code>（不过我们也能打破双亲委派模型）
+  每个java类都有指向他的ClassLoader，不过数组类除外，他们是JVM需要的时候自动创建的，数组类通过 getClassLoader获取他的ClassLoader 得到的和他内部元素的ClassLoader是一样的
+  类加载的过程主要做三件事
+<ol>
+<li data-line="8">通过全类名获取定义此类的二进制字节流。（通过名字获取二进制字节流）</li>
+<li data-line="10">将字节流所代表的静态存储结构转换为方法区的运行时数据结构。（然后把字节流的静态格式，转换成方法去动态的数据结构）</li>
+<li data-line="12">在内存中生成一个代表该类的 <code>Class</code> 对象，作为方法区这些数据的访问入口。（然后生成一个Class入口）</li>
+</ol>
+</li>
+<li data-line="15">验证
+  保证Class文件的字节流信息不会损害虚拟机<br>
+</li>
+<li data-line="19">准备
+  分配内存和准备类变量初始值<br>
+</li>
+<li data-line="23">解析
+  <strong>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程</strong><br>
+</li>
+<li data-line="27">初始化
+  <strong>初始化阶段是执行初始化方法的过程，是类加载的最后一步，这一步 JVM 才开始真正执行类中定义的 Java 程序代码(字节码)。</strong><br>
+</li>
+</ul></div></div></div></div></div><div class="heading-wrapper"><h4 data-heading="类加载器详解" class="heading" id="类加载器详解"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载器详解</h4><div class="heading-children"><div class="heading-wrapper"><h5 data-heading="类加载器介绍" class="heading" id="类加载器介绍"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载器介绍</h5><div class="heading-children"><div><p>首先</p></div><div><ol>
+<li data-line="0">
+<p>每个java类（除了数组）都有一个引用指向加载他的Classloader</p>
+</li>
+<li data-line="2">
+<p>类加载器负责实现类的加载过程</p>
+</li>
+<li data-line="4">
+<p>数组类不是通过ClassLoader创建的，是JVM直接生成的</p>
+</li>
+</ol></div><div><p>简而言之，就是类加载器作用就是 把class文件转换到虚拟机里面生成一个class对象</p></div></div></div><div class="heading-wrapper"><h5 data-heading="类加载器加载规则" class="heading" id="类加载器加载规则"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载器加载规则</h5><div class="heading-children"><div><ul>
+<li data-line="0">JVM中类是动态加载的，JVM启动的时候不会加载所有的类，而是根据需要动态的加载类，对内存更加友好</li>
+<li data-line="1">对JVM来说，相同的名称的类只会加载一次，加载过的类会存在ClassLoader里面，需要的时候直接返回</li>
+</ul></div></div></div><div class="heading-wrapper"><h5 data-heading="类加载器总结" class="heading" id="类加载器总结"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>类加载器总结</h5><div class="heading-children"><div><p>jvm中内置了三个重要的Classloader</p></div><div><ol>
+<li data-line="0">
+<p>BootstrapClassLoader</p>
+<p>顶层加载器，通过getParent方法找这个加载器是null，因为这是C写的，java中没有对应的类</p>
+</li>
+<li data-line="4">
+<p>ExtensionClassLoader</p>
+</li>
+<li data-line="6">
+<p>AppClassLoader</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h5 data-heading="双亲委派模型" class="heading" id="双亲委派模型"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>双亲委派模型</h5><div class="heading-children"><div><p>java类是由类加载器加载的，但是具体是哪个类加载器，则需要通过双亲委派模型了</p></div><div><ul>
+<li data-line="0">ClassLoader使用委派机制<br>
+</li>
+<li data-line="2">双亲委派模型要求除了最顶层的ClassLoader之外，每个ClassLoader都要有自己的父ClassLoader<br>
+</li>
+<li data-line="4">在ClassLoader亲自去加载资源的之前，会委派父类Classloader去加载（比如加载的时候要判断这个类之前有没有加载过，就要一直找到最顶上的父类去查，然后查出来没有，我就依次向下，开始加载你这个类）<br>
+</li>
+</ul></div><div><p><img alt="类加载器层次关系图" src="lib/media/class-loader-parents-delegation-model.png" referrerpolicy="no-referrer"></p></div><div><blockquote>
+<p>这里要注意的是，类加载器之间的父子关系不是以继承来实现的，而是<em>组合</em> 如下</p>
+<p>public abstract class ClassLoader {<br>
+...<br>
+// 组合<br>
+private final ClassLoader parent;<br>
+protected ClassLoader(ClassLoader parent) {<br>
+this(checkCreateClassLoader(), parent);<br>
+}<br>
+...<br>
+}</p>
+<p>在面向对象编程中，有一条非常经典的设计原则：<strong>组合优于继承，多用组合少用继承</strong></p>
+</blockquote></div><div><p>🌈 拓展一下：</p></div><div><p><strong>JVM 判定两个 Java 类是否相同的具体规则</strong>：JVM 不仅要看类的全名是否相同，还要看加载此类的类加载器是否一样。只有两者都相同的情况，才认为两个类是相同的。即使两个类来源于同一个 <code>Class</code> 文件，被同一个虚拟机加载，只要加载它们的类加载器不同，那这两个类就必定不相同。</p></div><div><hr></div><div><p>著作权归JavaGuide(javaguide.cn)所有 基于MIT协议 原文链接：<a rel="noopener" class="external-link" href="https://javaguide.cn/java/jvm/classloader.html" target="_blank">https://javaguide.cn/java/jvm/classloader.html</a></p></div><div class="heading-wrapper"><h6 data-heading="双亲委派模型的好处" class="heading" id="双亲委派模型的好处"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>双亲委派模型的好处</h6><div class="heading-children"><div><ol>
+<li data-line="0">
+<p>可以保证java的稳定运行，避免类的重复加载，</p>
+</li>
+<li data-line="2">
+<p>二来，（java判断类相同的标准加上了加载器）也保证了java核心API不会被篡改</p>
+</li>
+</ol></div></div></div><div class="heading-wrapper"><h6 data-heading="打破双亲委派" class="heading" id="打破双亲委派"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>打破双亲委派</h6><div class="heading-children"><div><p>首先是如何自定义一个类加载器</p></div><div><ol>
+<li data-line="0">
+<p>写一个类，继承ClassLoader类，重写里面的findClass（String name），（比如，我们想加载一个D盘某个目录下的所有的类，那我们就findClass写成从D盘某个路径下的 name.class把他转换成class类这种）</p>
+</li>
+<li data-line="2">
+<p>但是如果想要打破双亲委派模型，那么就要重写，loadClass()方法了，就可以自定义怎么loadClass了，不需要一层层往上找了（比如tomcat服务器，为了优先加载web目录下的类，再加载其他目录下的类，就自己定义实现了webAppClassLoader这个类）</p>
+</li>
+</ol></div></div></div></div></div></div></div></div></div><div class="heading-wrapper"><h2 data-heading="面试题错误部分整理" class="heading" id="面试题错误部分整理"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>面试题错误部分整理</h2><div class="heading-children"><div class="heading-wrapper"><h3 data-heading="JMM内存模型（重看）和JVM不同的" class="heading" id="JMM内存模型（重看）和JVM不同的"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>JMM内存模型（重看）和JVM不同的</h3><div class="heading-children"><div><p>主内存（Main Memory）：主内存是所有线程共享的内存区域，用于存储共享变量。当一个线程需要读取或修改共享变量时，它首先会从主内存中获取该变量的值，然后在自己的工作内存中进行操作，最后将结果写回主内存。</p></div><div><p>工作内存（Working Memory）：工作内存是每个线程私有的内存区域，用于存储主内存中共享变量的副本。线程对共享变量的所有操作都发生在工作内存中，然后将结果同步回主内存。这样可以提高程序的执行效率，避免每次操作共享变量都需要直接访问主内存。</p></div><div><p>内存间交互操作：JMM定义了八种操作，用于描述生成的class字节码指令对内存的读写要求。这些操作包括：lock（锁定）、unlock（解锁）、read（读取）、load（载入）、use（使用）、assign（赋值）、store（存储）和write（写入）。</p></div><div><p>原子性：原子性是指一个操作要么全部完成，要么全部不完成。JMM保证了基本类型的读取和写入操作的原子性，但对于复合操作（例如自增运算），JMM并没有保证其原子性。为了解决这个问题，可以使用synchronized关键字或显式锁（如ReentrantLock）来确保复合操作的原子性。</p></div><div><p>可见性：可见性是指当一个线程修改了共享变量的值，其他线程能够立即看到修改后的值。JMM通过volatile关键字和synchronized关键字来保证可见性。当一个共享变量被volatile修饰时，其他线程能够立即看到该变量的最新值；当一个共享变量在synchronized块中被修改时，其他线程在退出synchronized块后能够立即看到修改后的值。</p></div><div><p>有序性：有序性是指程序执行的顺序应该按照代码的先后顺序进行。然而，由于处理器和编译器的优化，代码的执行顺序可能会被重新排序。JMM通过happens-before规则来保证程序的有序性。如果一个操作happens-before另一个操作，那么第一个操作的结果对于第二个操作是可见的，而且第一个操作不会因为线程的执行而重排序。</p></div><div><p>总之，JMM内存模型定义了一组规则，用于确保多线程程序在各个虚拟机上运行时能够得到一致的结果。这些规则涉及原子性、可见性和有序性等方面，可以帮助开发者编写正确、可靠的多线程程序。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="**Java**  **线程有几种状态，分别是啥**" class="heading" id="**Java**__**线程有几种状态，分别是啥**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Java</strong>  <strong>线程有几种状态，分别是啥</strong></h3><div class="heading-children"><div><p>新建（New）：线程刚被创建，但是尚未启动。还没调用start()方法。</p></div><div><p>可运行（Runnable）：线程可以在Java虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操作系统处理器。包括运行（running）和就绪（ready）两种状态。</p></div><div><p>阻塞（Blocked）：线程进入等待状态，线程因为某种原因，放弃了CPU的使用权。阻塞的情况分三种： A. 等待阻塞：运行的线程执行了wait()，JVM会把当前线程放入等待队列。 B. 同步阻塞：运行的线程在获取对象的同步锁时，如果该同步锁被其他线程占用了，JVM会把当前线程放入锁池中。 C. 其他阻塞：运行的线程执行sleep()、join()或者发出IO请求时，JVM会把当前线程设置为阻塞状态，当sleep()执行完，join()线程终止，IO处理完毕线程再次恢复。</p></div><div><p>等待（Waiting）：线程拥有了某个锁之后，调用了wait()方法，等待其他线程/锁拥有者调用notify/notifyAll以便该线程可以继续下一步操作。线程调用join()方法时，也会进入等待状态，等待被join的线程执行结束。</p></div><div><p>超时等待（Timed Waiting）：同等待状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Thread.sleep、Object.wait。</p></div><div><p>终止（Terminated）：线程执行完毕，因为run()方法正常退出或者因为没有捕获的异常终止了run()方法而死亡。终止的线程不可再次恢复。</p></div></div></div><div class="heading-wrapper"><h3 data-heading="AQS的补充" class="heading" id="AQS的补充"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>AQS的补充</h3><div class="heading-children"><div><p>AQS（AbstractQueuedSynchronizer）是Java并发包java.util.concurrent中的一个抽象类，它提供了构建锁和其他同步组件的一个通用框架。AQS实现了基于队列的阻塞和唤醒机制，用于构建各种同步组件，如ReentrantLock、Semaphore、CountDownLatch等。</p></div><div><p>AQS内部维护了一个整数状态（state）和一个双向队列（CLH队列），用于实现同步组件的阻塞和唤醒操作。它定义了三个核心方法：tryAcquire、tryRelease和isHeldExclusively。这些方法需要子类根据具体同步组件的实现来提供。</p></div><div class="mod-footer"></div></div></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#JAVA基础巩固"><div class="tree-item-contents heading-link" heading-name="JAVA基础巩固"><span class="tree-item-title">JAVA基础巩固</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#基础概念"><div class="tree-item-contents heading-link" heading-name="基础概念"><span class="tree-item-title">基础概念</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#基础"><div class="tree-item-contents heading-link" heading-name="基础"><span class="tree-item-title">基础</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#String"><div class="tree-item-contents heading-link" heading-name="String"><span class="tree-item-title">String</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#异常"><div class="tree-item-contents heading-link" heading-name="异常"><span class="tree-item-title">异常</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#泛型"><div class="tree-item-contents heading-link" heading-name="泛型"><span class="tree-item-title">泛型</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#反射"><div class="tree-item-contents heading-link" heading-name="反射"><span class="tree-item-title">反射</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#注解"><div class="tree-item-contents heading-link" heading-name="注解"><span class="tree-item-title">注解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#SPI"><div class="tree-item-contents heading-link" heading-name="SPI"><span class="tree-item-title">SPI</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#SPI和API的区别"><div class="tree-item-contents heading-link" heading-name="SPI和API的区别"><span class="tree-item-title">SPI和API的区别</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#序列化和反序列化"><div class="tree-item-contents heading-link" heading-name="序列化和反序列化"><span class="tree-item-title">序列化和反序列化</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#代理模式"><div class="tree-item-contents heading-link" heading-name="代理模式"><span class="tree-item-title">代理模式</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#Java魔法类unsaffe_==???不太懂容后再看=="><div class="tree-item-contents heading-link" heading-name="Java魔法类unsaffe ==???不太懂容后再看=="><span class="tree-item-title">Java魔法类unsaffe <mark>???不太懂容后再看</mark></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#java语法糖"><div class="tree-item-contents heading-link" heading-name="java语法糖"><span class="tree-item-title">java语法糖</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#集合"><div class="tree-item-contents heading-link" heading-name="集合"><span class="tree-item-title">集合</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#List"><div class="tree-item-contents heading-link" heading-name="List"><span class="tree-item-title">List</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#Set"><div class="tree-item-contents heading-link" heading-name="Set"><span class="tree-item-title">Set</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#queue和Deque的区别"><div class="tree-item-contents heading-link" heading-name="queue和Deque的区别"><span class="tree-item-title">queue和Deque的区别</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#ArrayDeque和linkedList的区别"><div class="tree-item-contents heading-link" heading-name="ArrayDeque和linkedList的区别"><span class="tree-item-title">ArrayDeque和linkedList的区别</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#priorityQueue"><div class="tree-item-contents heading-link" heading-name="priorityQueue"><span class="tree-item-title">priorityQueue</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#blockingQueue"><div class="tree-item-contents heading-link" heading-name="blockingQueue"><span class="tree-item-title">blockingQueue</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#Map==重要=="><div class="tree-item-contents heading-link" heading-name="Map==重要=="><span class="tree-item-title">Map<mark>重要</mark></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hashMap和Hashtable的区别"><div class="tree-item-contents heading-link" heading-name="hashMap和Hashtable的区别"><span class="tree-item-title">hashMap和Hashtable的区别</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hashMap和hashSet的区别"><div class="tree-item-contents heading-link" heading-name="hashMap和hashSet的区别"><span class="tree-item-title">hashMap和hashSet的区别</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#treeMap"><div class="tree-item-contents heading-link" heading-name="treeMap"><span class="tree-item-title">treeMap</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hashSet如何去重？"><div class="tree-item-contents heading-link" heading-name="hashSet如何去重？"><span class="tree-item-title">hashSet如何去重？</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hashMap多线程操作导致死循环（了解就行）"><div class="tree-item-contents heading-link" heading-name="hashMap多线程操作导致死循环（了解就行）"><span class="tree-item-title">hashMap多线程操作导致死循环（了解就行）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hashMap常见的遍历方式"><div class="tree-item-contents heading-link" heading-name="hashMap常见的遍历方式"><span class="tree-item-title">hashMap常见的遍历方式</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#集合的一些注意事项"><div class="tree-item-contents heading-link" heading-name="集合的一些注意事项"><span class="tree-item-title">集合的一些注意事项</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#==源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖=="><div class="tree-item-contents heading-link" heading-name="==源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖=="><span class="tree-item-title"><mark>源码分析暂时没怎么看，略扫了一眼，后面再研究，不要太钻牛角尖</mark></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#并发编程"><div class="tree-item-contents heading-link" heading-name="并发编程"><span class="tree-item-title">并发编程</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#线程与进程"><div class="tree-item-contents heading-link" heading-name="线程与进程"><span class="tree-item-title">线程与进程</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#并发和并行"><div class="tree-item-contents heading-link" heading-name="并发和并行"><span class="tree-item-title">并发和并行</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#线程的生命周期和状态（六种）"><div class="tree-item-contents heading-link" heading-name="线程的生命周期和状态（六种）"><span class="tree-item-title">线程的生命周期和状态（六种）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#上下文切换（context）"><div class="tree-item-contents heading-link" heading-name="上下文切换（context）"><span class="tree-item-title">上下文切换（context）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#线程死锁"><div class="tree-item-contents heading-link" heading-name="线程死锁"><span class="tree-item-title">线程死锁</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#sleep和wait方法"><div class="tree-item-contents heading-link" heading-name="sleep和wait方法"><span class="tree-item-title">sleep和wait方法</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#可以直接调用Thread类的run方法吗"><div class="tree-item-contents heading-link" heading-name="可以直接调用Thread类的run方法吗"><span class="tree-item-title">可以直接调用Thread类的run方法吗</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#volatile关键字和synchronized关键字（互补）"><div class="tree-item-contents heading-link" heading-name="volatile关键字和synchronized关键字（互补）"><span class="tree-item-title">volatile关键字和synchronized关键字（互补）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#禁止指令重排序"><div class="tree-item-contents heading-link" heading-name="禁止指令重排序"><span class="tree-item-title">禁止指令重排序</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#乐观锁和悲观锁"><div class="tree-item-contents heading-link" heading-name="乐观锁和悲观锁"><span class="tree-item-title">乐观锁和悲观锁</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#ReentrantLock"><div class="tree-item-contents heading-link" heading-name="ReentrantLock"><span class="tree-item-title">ReentrantLock</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#ThreadLocal"><div class="tree-item-contents heading-link" heading-name="ThreadLocal"><span class="tree-item-title">ThreadLocal</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#ThreadLocal会导致内存泄漏问题？"><div class="tree-item-contents heading-link" heading-name="ThreadLocal会导致内存泄漏问题？"><span class="tree-item-title">ThreadLocal会导致内存泄漏问题？</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#线程池"><div class="tree-item-contents heading-link" heading-name="线程池"><span class="tree-item-title">线程池</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#如何创建线程池"><div class="tree-item-contents heading-link" heading-name="如何创建线程池"><span class="tree-item-title">如何创建线程池</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#注意事项"><div class="tree-item-contents heading-link" heading-name="注意事项"><span class="tree-item-title">注意事项</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#线程池常用的一些阻塞队列有哪些"><div class="tree-item-contents heading-link" heading-name="线程池常用的一些阻塞队列有哪些"><span class="tree-item-title">线程池常用的一些阻塞队列有哪些</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#给线程池命名"><div class="tree-item-contents heading-link" heading-name="给线程池命名"><span class="tree-item-title">给线程池命名</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#如何设定线程池大小？"><div class="tree-item-contents heading-link" heading-name="如何设定线程池大小？"><span class="tree-item-title">如何设定线程池大小？</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#实现一个优先级执行线程池"><div class="tree-item-contents heading-link" heading-name="实现一个优先级执行线程池"><span class="tree-item-title">实现一个优先级执行线程池</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#如何动态修改线程池的参数"><div class="tree-item-contents heading-link" heading-name="如何动态修改线程池的参数"><span class="tree-item-title">如何动态修改线程池的参数</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#创建一个优先级排序的线程池"><div class="tree-item-contents heading-link" heading-name="创建一个优先级排序的线程池"><span class="tree-item-title">创建一个优先级排序的线程池</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#CountDownLatch"><div class="tree-item-contents heading-link" heading-name="CountDownLatch"><span class="tree-item-title">CountDownLatch</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#JVM(内存模型)"><div class="tree-item-contents heading-link" heading-name="JVM(内存模型)"><span class="tree-item-title">JVM(内存模型)</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#CPU缓存模型"><div class="tree-item-contents heading-link" heading-name="CPU缓存模型"><span class="tree-item-title">CPU缓存模型</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#并发编程的三个重要特性"><div class="tree-item-contents heading-link" heading-name="并发编程的三个重要特性"><span class="tree-item-title">并发编程的三个重要特性</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#javaIO基础知识"><div class="tree-item-contents heading-link" heading-name="javaIO基础知识"><span class="tree-item-title">javaIO基础知识</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#IO设计模式总结"><div class="tree-item-contents heading-link" heading-name="IO设计模式总结"><span class="tree-item-title">IO设计模式总结</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#装饰器模式"><div class="tree-item-contents heading-link" heading-name="装饰器模式"><span class="tree-item-title">装饰器模式</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#适配器模式（Adapter）"><div class="tree-item-contents heading-link" heading-name="适配器模式（Adapter）"><span class="tree-item-title">适配器模式（Adapter）</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#工厂模式"><div class="tree-item-contents heading-link" heading-name="工厂模式"><span class="tree-item-title">工厂模式</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#观察者模式"><div class="tree-item-contents heading-link" heading-name="观察者模式"><span class="tree-item-title">观察者模式</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#IO模型详解"><div class="tree-item-contents heading-link" heading-name="IO模型详解"><span class="tree-item-title">IO模型详解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#JVM"><div class="tree-item-contents heading-link" heading-name="JVM"><span class="tree-item-title">JVM</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#java内存区域"><div class="tree-item-contents heading-link" heading-name="java内存区域"><span class="tree-item-title">java内存区域</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块"><div class="tree-item-contents heading-link" heading-name="新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块"><span class="tree-item-title">新生代区、老生代区、永久区（略看一眼）---详细看JVM垃圾回收那块</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#hotSopt虚拟对象"><div class="tree-item-contents heading-link" heading-name="hotSopt虚拟对象"><span class="tree-item-title">hotSopt虚拟对象</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#对象创建的步骤_==5步=="><div class="tree-item-contents heading-link" heading-name="对象创建的步骤 ==5步=="><span class="tree-item-title">对象创建的步骤 <mark>5步</mark></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#JVM垃圾回收"><div class="tree-item-contents heading-link" heading-name="JVM垃圾回收"><span class="tree-item-title">JVM垃圾回收</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#堆空间的基本结构"><div class="tree-item-contents heading-link" heading-name="堆空间的基本结构"><span class="tree-item-title">堆空间的基本结构</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#创建对象时候的minor_GC"><div class="tree-item-contents heading-link" heading-name="创建对象时候的minor GC"><span class="tree-item-title">创建对象时候的minor GC</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#大对象直接进入老年代"><div class="tree-item-contents heading-link" heading-name="大对象直接进入老年代"><span class="tree-item-title">大对象直接进入老年代</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#HostSpot_VM的垃圾回收机制"><div class="tree-item-contents heading-link" heading-name="HostSpot VM的垃圾回收机制"><span class="tree-item-title">HostSpot VM的垃圾回收机制</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类文件结构详解"><div class="tree-item-contents heading-link" heading-name="类文件结构详解"><span class="tree-item-title">类文件结构详解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#字节码"><div class="tree-item-contents heading-link" heading-name="字节码"><span class="tree-item-title">字节码</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载过程详解"><div class="tree-item-contents heading-link" heading-name="类加载过程详解"><span class="tree-item-title">类加载过程详解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类的生命周期"><div class="tree-item-contents heading-link" heading-name="类的生命周期"><span class="tree-item-title">类的生命周期</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载过程"><div class="tree-item-contents heading-link" heading-name="类加载过程"><span class="tree-item-title">类加载过程</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="4"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载器详解"><div class="tree-item-contents heading-link" heading-name="类加载器详解"><span class="tree-item-title">类加载器详解</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载器介绍"><div class="tree-item-contents heading-link" heading-name="类加载器介绍"><span class="tree-item-title">类加载器介绍</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载器加载规则"><div class="tree-item-contents heading-link" heading-name="类加载器加载规则"><span class="tree-item-title">类加载器加载规则</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#类加载器总结"><div class="tree-item-contents heading-link" heading-name="类加载器总结"><span class="tree-item-title">类加载器总结</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="5"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#双亲委派模型"><div class="tree-item-contents heading-link" heading-name="双亲委派模型"><span class="tree-item-title">双亲委派模型</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="6"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#双亲委派模型的好处"><div class="tree-item-contents heading-link" heading-name="双亲委派模型的好处"><span class="tree-item-title">双亲委派模型的好处</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="6"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#打破双亲委派"><div class="tree-item-contents heading-link" heading-name="打破双亲委派"><span class="tree-item-title">打破双亲委派</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible is-collapsed" data-depth="2"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#面试题错误部分整理"><div class="tree-item-contents heading-link" heading-name="面试题错误部分整理"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">面试题错误部分整理</span></div></a><div class="tree-item-children nav-folder-children" style="display: none;"><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#JMM内存模型（重看）和JVM不同的"><div class="tree-item-contents heading-link" heading-name="JMM内存模型（重看）和JVM不同的"><span class="tree-item-title">JMM内存模型（重看）和JVM不同的</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#**Java**__**线程有几种状态，分别是啥**"><div class="tree-item-contents heading-link" heading-name="**Java**  **线程有几种状态，分别是啥**"><span class="tree-item-title"><strong>Java</strong>  <strong>线程有几种状态，分别是啥</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="2-领域\后端学习\java\java基础巩固.html#AQS的补充"><div class="tree-item-contents heading-link" heading-name="AQS的补充"><span class="tree-item-title">AQS的补充</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
