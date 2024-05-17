@@ -1,23 +1,16 @@
-import {Footer} from '@/components';
-import {login, register} from '@/services/ant-design-pro/api';
-import {
-  LockOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
-import {
-  LoginForm,
-  ProFormCheckbox,
-  ProFormText,
-} from '@ant-design/pro-components';
-import {Helmet, history, useModel} from '@umijs/max';
-import {Alert, Tabs, message} from 'antd';
-import {createStyles} from 'antd-style';
-import React, {useState} from 'react';
-import {flushSync} from 'react-dom';
+import { Footer } from '@/components';
+import { GITHUB_LINK, SYSTEM_LOGO } from '@/constant';
+import { login, register } from '@/services/ant-design-pro/api';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LoginForm, ProFormCheckbox, ProFormText } from '@ant-design/pro-components';
+import { Helmet, history, useModel } from '@umijs/max';
+import { Alert, Tabs, message } from 'antd';
+import { createStyles } from 'antd-style';
+import React, { useState } from 'react';
+import { flushSync } from 'react-dom';
 import Settings from '../../../../config/defaultSettings';
-import {GITHUB_LINK, SYSTEM_LOGO} from "@/constant";
 
-const useStyles = createStyles(({token}) => {
+const useStyles = createStyles(({ token }) => {
   return {
     action: {
       marginLeft: '8px',
@@ -54,12 +47,12 @@ const useStyles = createStyles(({token}) => {
 });
 
 const Lang = () => {
-  const {styles} = useStyles();
+  const { styles } = useStyles();
   return;
 };
 const LoginMessage: React.FC<{
   content: string;
-}> = ({content}) => {
+}> = ({ content }) => {
   return (
     <Alert
       style={{
@@ -71,21 +64,20 @@ const LoginMessage: React.FC<{
     />
   );
 };
-let buttonStr = '登录'
+let buttonStr = '登录';
 const Login: React.FC = () => {
   const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
-  const {initialState, setInitialState} = useModel('@@initialState');
-  const {styles} = useStyles();
+  const { initialState, setInitialState } = useModel('@@initialState');
+  const { styles } = useStyles();
   const handlerChange = (val: string) => {
     if (val === 'register') {
-      buttonStr = '注册'
-
+      buttonStr = '注册';
     }
     if (val === 'account') {
-      buttonStr = '登录'
+      buttonStr = '登录';
     }
-    setType(val)
+    setType(val);
     return type;
   };
   const fetchUserInfo = async () => {
@@ -102,32 +94,31 @@ const Login: React.FC = () => {
   //注册功能
   const handleregister = async (values: API.RegisterParams) => {
     // 前端先校验，再后端请求
-    const {userPassword, checkPassword} = values
+    const { userPassword, checkPassword } = values;
     if (userPassword !== checkPassword) {
       message.error('两次密码不一致');
       return;
     }
     try {
-      const userId = await register({...values});
+      const userId = await register({ ...values });
       if (userId > 0) {
         message.success('注册成功');
-        buttonStr = '登录'
-        setType('account')
+        buttonStr = '登录';
+        setType('account');
       } else {
-        throw new Error(`register error id = ${userId}`)
+        throw new Error(`register error id = ${userId}`);
       }
     } catch (error) {
       message.error('注册失败请重试');
     }
-
-  }
+  };
   const handleSubmit = async (values: API.LoginParams) => {
     try {
       // 登录
       const msg = await login({
-        ...values
+        ...values,
       });
-      console.log('登录后返回结果',msg);
+      console.log('登录后返回结果', msg);
       if (msg) {
         const defaultLoginSuccessMessage = '登录成功！';
         message.success(defaultLoginSuccessMessage);
@@ -144,7 +135,7 @@ const Login: React.FC = () => {
       console.log(error);
     }
   };
-  const {status, type: loginType} = userLoginState;
+  const { status, type: loginType } = userLoginState;
   return (
     <div className={styles.container}>
       <Helmet>
@@ -152,7 +143,7 @@ const Login: React.FC = () => {
           {'登录/注册'}- {Settings.title}
         </title>
       </Helmet>
-      <Lang/>
+      <Lang />
       <div
         style={{
           flex: '1',
@@ -164,14 +155,13 @@ const Login: React.FC = () => {
             minWidth: 280,
             maxWidth: '75vw',
           }}
-          logo={<img alt="logo" src={SYSTEM_LOGO}/>}
-          submitter={{searchConfig: {submitText: buttonStr}}}
+          logo={<img alt="logo" src={SYSTEM_LOGO} />}
+          submitter={{ searchConfig: { submitText: buttonStr } }}
           title="BOSC CENTER"
           subTitle={'hailong出品，必属精品'}
           initialValues={{
             autoLogin: true,
           }}
-
           onFinish={async (values) => {
             if (type === 'register') {
               await handleregister(values as API.RegisterParams);
@@ -192,13 +182,13 @@ const Login: React.FC = () => {
               },
               {
                 key: 'register',
-                label: '用户注册'
-              }
+                label: '用户注册',
+              },
             ]}
           />
 
           {status === 'error' && loginType === 'account' && (
-            <LoginMessage content={'错误的用户名和密码(admin/ant.design)'}/>
+            <LoginMessage content={'错误的用户名和密码(admin/ant.design)'} />
           )}
           {type === 'account' && (
             <>
@@ -206,14 +196,19 @@ const Login: React.FC = () => {
                 name="userAccount"
                 fieldProps={{
                   size: 'large',
-                  prefix: <UserOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <UserOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
                 placeholder={'请输入账号'}
                 rules={[
                   {
                     required: true,
-                    message: '账号是必填项！',
+                    message: '账号长度要大于4，不要包含空格等非法字符',
+                    min: 4,
                   },
                 ]}
               />
@@ -221,8 +216,12 @@ const Login: React.FC = () => {
                 name="userPassword"
                 fieldProps={{
                   size: 'large',
-                  prefix: <LockOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <LockOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
                 placeholder={'密码'}
                 rules={[
@@ -233,8 +232,8 @@ const Login: React.FC = () => {
                   {
                     min: 8,
                     type: 'string',
-                    message: '密码长度最小为8'
-                  }
+                    message: '密码长度最小为8',
+                  },
                 ]}
               />
               <div
@@ -256,7 +255,6 @@ const Login: React.FC = () => {
                 </a>
               </div>
             </>
-
           )}
           {type === 'register' && (
             <>
@@ -264,8 +262,12 @@ const Login: React.FC = () => {
                 name="userAccount"
                 fieldProps={{
                   size: 'large',
-                  prefix: <UserOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <UserOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
                 placeholder={'请输入账号'}
                 rules={[
@@ -279,8 +281,12 @@ const Login: React.FC = () => {
                 name="userPassword"
                 fieldProps={{
                   size: 'large',
-                  prefix: <LockOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <LockOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
                 placeholder={'密码'}
                 rules={[
@@ -291,16 +297,20 @@ const Login: React.FC = () => {
                   {
                     min: 8,
                     type: 'string',
-                    message: '密码长度最小为8'
-                  }
+                    message: '密码长度最小为8',
+                  },
                 ]}
               />
               <ProFormText.Password
                 name="checkPassword"
                 fieldProps={{
                   size: 'large',
-                  prefix: <LockOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <LockOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
                 placeholder={'请确认密码'}
                 rules={[
@@ -311,8 +321,8 @@ const Login: React.FC = () => {
                   {
                     min: 8,
                     type: 'string',
-                    message: '密码长度最小为8'
-                  }
+                    message: '密码长度最小为8',
+                  },
                 ]}
               />
 
@@ -320,10 +330,14 @@ const Login: React.FC = () => {
                 name="specialCode"
                 fieldProps={{
                   size: 'large',
-                  prefix: <UserOutlined onPointerEnterCapture={undefined}
-                                        onPointerLeaveCapture={undefined}/>,
+                  prefix: (
+                    <UserOutlined
+                      onPointerEnterCapture={undefined}
+                      onPointerLeaveCapture={undefined}
+                    />
+                  ),
                 }}
-                placeholder={'请输入邀请码'}
+                placeholder={'请输入邀请码,可不填'}
                 rules={[
                   {
                     required: false,
@@ -334,7 +348,7 @@ const Login: React.FC = () => {
           )}
         </LoginForm>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

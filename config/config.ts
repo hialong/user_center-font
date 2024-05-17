@@ -1,6 +1,5 @@
 // https://umijs.org/config/
 import { defineConfig } from '@umijs/max';
-import { join } from 'path';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
@@ -126,6 +125,16 @@ export default defineConfig({
    * @description 基于 openapi 的规范生成serve 和mock，能减少很多样板代码
    * @doc https://pro.ant.design/zh-cn/docs/openapi/
    */
+  openAPI: [
+    {
+      requestLibPath: "import { request } from 'umi'",
+      // 或者使用在线的版本
+      schemaPath: 'http://localhost:8881/api/v3/api-docs',
+      // schemaPath: join(__dirname, 'oneapi.json'),
+      mock: false,
+      projectName: 'BOSC管理中心',
+    },
+  ],
 
   mfsu: {
     strategy: 'normal',

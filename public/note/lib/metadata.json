@@ -1,12 +1,14 @@
 {
   "vaultName": "myVault",
-  "lastExport": 1715342166708,
+  "lastExport": 1715518224653,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title minimal-flexoki-dark colorful-headings colorful-active links-int-on links-ext-on full-width-media minimal-readable trim-cols styled-scrollbars",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
     "1-项目/用户中心项目/项目部署（阿里云）.md",
+    "1-项目/用户中心项目/引入knife4j.md",
+    "1-项目/用户中心项目/自定义注解实现权限校验.md",
     "2-领域/后端学习/计算机与网络/监听回调.md",
     "2-领域/后端学习/计算机与网络/网络部分基础.md",
     "2-领域/后端学习/计算机与网络/HTTP报文是什么样子的.md",
@@ -56,33 +58,7 @@
     "2-领域/后端学习/Redis/redis面试题.md",
     "2-领域/后端学习/Redis/Redis知识结构mindmap.md",
     "2-领域/前端学习/浏览器加载前端.md",
-    "2-领域/前端学习/ant.design.pro.md",
-    "lib/media/image-20231219013243753.png",
-    "lib/media/image-20231219234355756.png",
-    "lib/media/image-20231217222008380.png",
-    "lib/media/image-20231217232526448.png",
-    "lib/media/image-20231219010107838.png",
-    "lib/media/image-20231219010259819.png",
-    "lib/media/image-20231219012529951.png",
-    "lib/media/image-20231220232953541.png",
-    "lib/media/image-20231221002451815.png",
-    "lib/media/image-20231221002636300.png",
-    "lib/media/image-20231226001133134.png",
-    "lib/media/image-20231226234407734.png",
-    "lib/media/image-20231227001640372.png",
-    "lib/media/image-20231227003741271.png",
-    "lib/media/image-20231227004031822.png",
-    "lib/media/image-20231222075727013.png",
-    "lib/media/image-20231222080207919.png",
-    "lib/media/image-20231222080456083.png",
-    "lib/media/image-20231222080551943.png",
-    "lib/media/image-20231222080735687.png",
-    "lib/media/image-20231222081538376.png",
-    "lib/media/image-20231222081708058.png",
-    "lib/media/image-20231222081807472.png",
-    "lib/media/image-20231217210935567.png",
-    "lib/media/image-20231217212109893.png",
-    "lib/media/paste-image-1705934150311image.png",
+    "2-领域/前端学习/ant.design.pro框架.md",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -112,7 +88,33 @@
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
     "lib/styles/supported-plugins.css",
-    "lib/styles/main-styles.css"
+    "lib/styles/main-styles.css",
+    "lib/media/image-20231219013243753.png",
+    "lib/media/image-20231219234355756.png",
+    "lib/media/image-20231217222008380.png",
+    "lib/media/image-20231217232526448.png",
+    "lib/media/image-20231219010107838.png",
+    "lib/media/image-20231219010259819.png",
+    "lib/media/image-20231219012529951.png",
+    "lib/media/image-20231220232953541.png",
+    "lib/media/image-20231221002451815.png",
+    "lib/media/image-20231221002636300.png",
+    "lib/media/image-20231226001133134.png",
+    "lib/media/image-20231226234407734.png",
+    "lib/media/image-20231227001640372.png",
+    "lib/media/image-20231227003741271.png",
+    "lib/media/image-20231227004031822.png",
+    "lib/media/image-20231222075727013.png",
+    "lib/media/image-20231222080207919.png",
+    "lib/media/image-20231222080456083.png",
+    "lib/media/image-20231222080551943.png",
+    "lib/media/image-20231222080735687.png",
+    "lib/media/image-20231222081538376.png",
+    "lib/media/image-20231222081708058.png",
+    "lib/media/image-20231222081807472.png",
+    "lib/media/image-20231217210935567.png",
+    "lib/media/image-20231217212109893.png",
+    "lib/media/paste-image-1705934150311image.png"
   ],
   "mainDependencies": [
     "lib/scripts/graph-wasm.wasm",
@@ -148,343 +150,343 @@
   ],
   "fileInfo": {
     "2-领域/后端学习/Java/mybatis 分页.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1564,
       "exportedPath": "2-领域/后端学习/java/mybatis-分页.html",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1715342166708,
-      "sourceSize": 53180,
+      "modifiedTime": 1715518224653,
+      "sourceSize": 54596,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1715342166708,
-      "sourceSize": 3078,
+      "modifiedTime": 1715518224653,
+      "sourceSize": 3173,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 157786,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 206205,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 8188,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518224653,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "1-项目/用户中心项目/项目部署（阿里云）.md": {
-      "modifiedTime": 1715342166708,
-      "sourceSize": 6729,
+      "modifiedTime": 1715518187826,
+      "sourceSize": 7046,
       "exportedPath": "1-项目/用户中心项目/项目部署（阿里云）.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/监听回调.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2342,
       "exportedPath": "2-领域/后端学习/计算机与网络/监听回调.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/网络部分基础.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 19258,
       "exportedPath": "2-领域/后端学习/计算机与网络/网络部分基础.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/HTTP报文是什么样子的.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3588,
       "exportedPath": "2-领域/后端学习/计算机与网络/http报文是什么样子的.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/HTTP传输大文件的方法.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 9009,
       "exportedPath": "2-领域/后端学习/计算机与网络/http传输大文件的方法.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/Http的实体数据.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 6031,
       "exportedPath": "2-领域/后端学习/计算机与网络/http的实体数据.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/http的网址.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2196,
       "exportedPath": "2-领域/后端学习/计算机与网络/http的网址.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/HTTP重定向和跳转.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3603,
       "exportedPath": "2-领域/后端学习/计算机与网络/http重定向和跳转.html",
       "dependencies": []
     },
     "2-领域/后端学习/计算机与网络/HTTP状态码.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2373,
       "exportedPath": "2-领域/后端学习/计算机与网络/http状态码.html",
       "dependencies": []
     },
     "2-领域/后端学习/算法/哈希相关.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 4601,
       "exportedPath": "2-领域/后端学习/算法/哈希相关.html",
       "dependencies": []
     },
     "2-领域/后端学习/虚机/上环境的一些命令.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1967,
       "exportedPath": "2-领域/后端学习/虚机/上环境的一些命令.html",
       "dependencies": []
     },
     "2-领域/后端学习/Java/红黑树是什么？.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 358,
       "exportedPath": "2-领域/后端学习/java/红黑树是什么？.html",
       "dependencies": []
     },
     "2-领域/后端学习/Java/平衡多路查找树（B树）.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 9284,
       "exportedPath": "2-领域/后端学习/java/平衡多路查找树（b树）.html",
       "dependencies": []
     },
     "2-领域/后端学习/Java/JAVA基础巩固.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 64413,
       "exportedPath": "2-领域/后端学习/java/java基础巩固.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/复杂查询.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3610,
       "exportedPath": "2-领域/后端学习/mysql/基础/复杂查询.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/函数、视图、储存、触发器.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3182,
       "exportedPath": "2-领域/后端学习/mysql/基础/函数、视图、储存、触发器.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/mysql查询.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 12129,
       "exportedPath": "2-领域/后端学习/mysql/基础/mysql查询.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/mysql的更新和删除.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2774,
       "exportedPath": "2-领域/后端学习/mysql/基础/mysql的更新和删除.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/mysql的执行流程.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3042,
       "exportedPath": "2-领域/后端学习/mysql/基础/mysql的执行流程.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/基础/mysql之数据汇总.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 5389,
       "exportedPath": "2-领域/后端学习/mysql/基础/mysql之数据汇总.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/原理/索引.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 15044,
       "exportedPath": "2-领域/后端学习/mysql/原理/索引.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/原理/count关键字.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 4897,
       "exportedPath": "2-领域/后端学习/mysql/原理/count关键字.html",
       "dependencies": []
     },
     "2-领域/后端学习/Mysql/原理/orderby是怎么运作的.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3658,
       "exportedPath": "2-领域/后端学习/mysql/原理/orderby是怎么运作的.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/知识点/IO多路复用.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1619,
       "exportedPath": "2-领域/后端学习/redis/知识点/io多路复用.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/知识点/Redis 跳表.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2322,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-跳表.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/知识点/Redis Hash.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1441,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-hash.html",
       "dependencies": [
@@ -492,7 +494,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis hashTable 底层以及操作.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3911,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-hashtable-底层以及操作.html",
       "dependencies": [
@@ -500,7 +502,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis List底层以及操作.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 5081,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-list底层以及操作.html",
       "dependencies": [
@@ -511,7 +513,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis Set的操作以及底层.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1721,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-set的操作以及底层.html",
       "dependencies": [
@@ -519,7 +521,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis ZSet.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2092,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis-zset.html",
       "dependencies": [
@@ -529,7 +531,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis持久化.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 9129,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis持久化.html",
       "dependencies": [
@@ -541,13 +543,13 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/Redis单线程，还是多线程？.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1339,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis单线程，还是多线程？.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/知识点/Redis内存淘汰策略.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1603,
       "exportedPath": "2-领域/后端学习/redis/知识点/redis内存淘汰策略.html",
       "dependencies": [
@@ -562,7 +564,7 @@
       ]
     },
     "2-领域/后端学习/Redis/知识点/RedisString的编码以及操作.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 4239,
       "exportedPath": "2-领域/后端学习/redis/知识点/redisstring的编码以及操作.html",
       "dependencies": [
@@ -571,85 +573,85 @@
       ]
     },
     "2-领域/后端学习/Redis/Redis场景/多机部署.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 6166,
       "exportedPath": "2-领域/后端学习/redis/redis场景/多机部署.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/分布式锁（很重要）.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 9196,
       "exportedPath": "2-领域/后端学习/redis/redis场景/分布式锁（很重要）.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/缓存一致性怎么保证.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3418,
       "exportedPath": "2-领域/后端学习/redis/redis场景/缓存一致性怎么保证.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/缓存异常场景.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 4483,
       "exportedPath": "2-领域/后端学习/redis/redis场景/缓存异常场景.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/缓存应用.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 310,
       "exportedPath": "2-领域/后端学习/redis/redis场景/缓存应用.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/秒杀和限流.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 173,
       "exportedPath": "2-领域/后端学习/redis/redis场景/秒杀和限流.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/事务.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 3140,
       "exportedPath": "2-领域/后端学习/redis/redis场景/事务.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/数据同步技术.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1754,
       "exportedPath": "2-领域/后端学习/redis/redis场景/数据同步技术.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/消息队列.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 774,
       "exportedPath": "2-领域/后端学习/redis/redis场景/消息队列.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/Redis缓存基础.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 5745,
       "exportedPath": "2-领域/后端学习/redis/redis场景/redis缓存基础.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/Redis集群.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 6957,
       "exportedPath": "2-领域/后端学习/redis/redis场景/redis集群.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis场景/RedisHash槽.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 2151,
       "exportedPath": "2-领域/后端学习/redis/redis场景/redishash槽.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/redis面试题.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 12186,
       "exportedPath": "2-领域/后端学习/redis/redis面试题.html",
       "dependencies": []
     },
     "2-领域/后端学习/Redis/Redis知识结构mindmap.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 41957,
       "exportedPath": "2-领域/后端学习/redis/redis知识结构mindmap.html",
       "dependencies": [
@@ -657,171 +659,183 @@
       ]
     },
     "2-领域/前端学习/浏览器加载前端.md": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 1796,
       "exportedPath": "2-领域/前端学习/浏览器加载前端.html",
       "dependencies": []
     },
-    "2-领域/前端学习/ant.design.pro.md": {
-      "modifiedTime": 1715342166708,
-      "sourceSize": 301,
-      "exportedPath": "2-领域/前端学习/ant.design.pro.html",
-      "dependencies": []
-    },
     "lib/media/image-20231219013243753.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 156352,
       "exportedPath": "lib/media/image-20231219013243753.png",
       "dependencies": []
     },
     "lib/media/image-20231219234355756.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 399348,
       "exportedPath": "lib/media/image-20231219234355756.png",
       "dependencies": []
     },
     "lib/media/image-20231217222008380.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 157671,
       "exportedPath": "lib/media/image-20231217222008380.png",
       "dependencies": []
     },
     "lib/media/image-20231217232526448.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 511383,
       "exportedPath": "lib/media/image-20231217232526448.png",
       "dependencies": []
     },
     "lib/media/image-20231219010107838.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 369525,
       "exportedPath": "lib/media/image-20231219010107838.png",
       "dependencies": []
     },
     "lib/media/image-20231219010259819.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 41708,
       "exportedPath": "lib/media/image-20231219010259819.png",
       "dependencies": []
     },
     "lib/media/image-20231219012529951.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 330666,
       "exportedPath": "lib/media/image-20231219012529951.png",
       "dependencies": []
     },
     "lib/media/image-20231220232953541.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 248705,
       "exportedPath": "lib/media/image-20231220232953541.png",
       "dependencies": []
     },
     "lib/media/image-20231221002451815.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 279386,
       "exportedPath": "lib/media/image-20231221002451815.png",
       "dependencies": []
     },
     "lib/media/image-20231221002636300.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 253204,
       "exportedPath": "lib/media/image-20231221002636300.png",
       "dependencies": []
     },
     "lib/media/image-20231226001133134.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 330438,
       "exportedPath": "lib/media/image-20231226001133134.png",
       "dependencies": []
     },
     "lib/media/image-20231226234407734.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 281547,
       "exportedPath": "lib/media/image-20231226234407734.png",
       "dependencies": []
     },
     "lib/media/image-20231227001640372.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 326937,
       "exportedPath": "lib/media/image-20231227001640372.png",
       "dependencies": []
     },
     "lib/media/image-20231227003741271.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 538992,
       "exportedPath": "lib/media/image-20231227003741271.png",
       "dependencies": []
     },
     "lib/media/image-20231227004031822.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 508839,
       "exportedPath": "lib/media/image-20231227004031822.png",
       "dependencies": []
     },
     "lib/media/image-20231222075727013.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 268157,
       "exportedPath": "lib/media/image-20231222075727013.png",
       "dependencies": []
     },
     "lib/media/image-20231222080207919.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 308390,
       "exportedPath": "lib/media/image-20231222080207919.png",
       "dependencies": []
     },
     "lib/media/image-20231222080456083.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 235440,
       "exportedPath": "lib/media/image-20231222080456083.png",
       "dependencies": []
     },
     "lib/media/image-20231222080551943.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 325858,
       "exportedPath": "lib/media/image-20231222080551943.png",
       "dependencies": []
     },
     "lib/media/image-20231222080735687.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 324153,
       "exportedPath": "lib/media/image-20231222080735687.png",
       "dependencies": []
     },
     "lib/media/image-20231222081538376.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 496128,
       "exportedPath": "lib/media/image-20231222081538376.png",
       "dependencies": []
     },
     "lib/media/image-20231222081708058.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 305626,
       "exportedPath": "lib/media/image-20231222081708058.png",
       "dependencies": []
     },
     "lib/media/image-20231222081807472.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 343454,
       "exportedPath": "lib/media/image-20231222081807472.png",
       "dependencies": []
     },
     "lib/media/image-20231217210935567.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 195114,
       "exportedPath": "lib/media/image-20231217210935567.png",
       "dependencies": []
     },
     "lib/media/image-20231217212109893.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 316717,
       "exportedPath": "lib/media/image-20231217212109893.png",
       "dependencies": []
     },
     "lib/media/paste-image-1705934150311image.png": {
-      "modifiedTime": 1715342166708,
+      "modifiedTime": 1715518187826,
       "sourceSize": 42928,
       "exportedPath": "lib/media/paste-image-1705934150311image.png",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/引入knife4j.md": {
+      "modifiedTime": 1715518187826,
+      "sourceSize": 1386,
+      "exportedPath": "1-项目/用户中心项目/引入knife4j.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/自定义注解实现权限校验.md": {
+      "modifiedTime": 1715518187826,
+      "sourceSize": 3972,
+      "exportedPath": "1-项目/用户中心项目/自定义注解实现权限校验.html",
+      "dependencies": []
+    },
+    "2-领域/前端学习/ant.design.pro框架.md": {
+      "modifiedTime": 1715518187826,
+      "sourceSize": 959,
+      "exportedPath": "2-领域/前端学习/ant.design.pro框架.html",
       "dependencies": []
     }
   }

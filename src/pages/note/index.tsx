@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { PageContainer } from '@ant-design/pro-components';
 import { Card } from 'antd';
 import { useLocation } from 'react-router-dom';
 const EmbedWidget = () => {
@@ -7,15 +7,17 @@ const EmbedWidget = () => {
   // 打印当前页面地址
   console.log('Current Path:', location.pathname);
   return (
-    <Card title="个人博客，偶尔更新，默认折叠，可以搜索">
-      <iframe
-        title="个人博客，偶尔更新"
-        src={htmlFilePath}
-        sandbox="allow-scripts allow-same-origin"
-        width="100%"
-        height="1000"
-      />
-    </Card>
+    <PageContainer>
+      <Card title="偶尔更新，默认折叠，可以搜索,按住ctrl建跳转链接">
+        <iframe
+          title="个人博客，偶尔更新"
+          src={htmlFilePath}
+          sandbox="allow-scripts allow-same-origin"
+          width="100%"
+          height="1000"
+        />
+      </Card>
+    </PageContainer>
   );
 };
 

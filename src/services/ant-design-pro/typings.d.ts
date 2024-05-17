@@ -32,6 +32,7 @@ declare namespace API {
     email?: string;
     UserStatus: number;
     createTime: Date;
+    updateTime: Date;
     userRole: number;
     specialCode?: string;
     score: string;
@@ -42,7 +43,7 @@ declare namespace API {
     type?: string;
     currentAuthority?: string;
   };
-  type RegisterResult = number
+  type RegisterResult = number;
 
   type PageParams = {
     current?: number;

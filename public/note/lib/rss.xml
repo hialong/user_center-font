@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[myVault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>myVault</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 10 May 2024 11:56:28 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 10 May 2024 11:56:06 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[项目部署（阿里云）]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[myVault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>myVault</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 12 May 2024 12:50:25 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 12 May 2024 12:50:24 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[项目部署（阿里云）]]></title><description><![CDATA[ 
  <br><br>购买就直接省略了，由于当前 20240429 我不知道怎么买最划算，所以就直接试用阿里云三个月<br>
 参考网址 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/BThinker/article/details/123358697" rel="noopener" class="external-link" href="https://blog.csdn.net/BThinker/article/details/123358697" target="_blank">Docker 安装 (完整详细版)_docker安装-CSDN博客</a><br>工具包不知道干嘛的（没运行也能下载）<br>## 安装Docker所需要的一些工具包
 sudo yum install -y yum-utils
@@ -101,16 +101,82 @@ CMD ["nginx", "-g", "daemon off;"]
 
 复制<br>然后上环境之后，打镜像包<br> docker build -t user-center-front:v0.0.1 .
 复制<br>然后创建运行容器<br>docker run --name user_center_front  -d -p 80:80 user-center-front:v0.0.1
-复制<br>几个坑首先是 nginx 里面的配置，空格少打了都会报错，if 和 = 前后都要有空格，不然会出错<br>
-<br>session 丢失问题, 用跨域浏览器可能会导致 sessionId 丢失问题
-<br>nginx 配置跨域问题需要配置为自己的端口
-<br><br># 向/etc/apt/sources.list.d/debian.sources添加网易的源
+复制<br>几个坑首先是 nginx 里面的配置，空格少打了都会报错，if 和 = 前后都要有空格，不然会出错<br>session 丢失问题, 用跨域浏览器可能会导致 sessionId 丢失问题，这里涉及到 sessionId 的问题，服务器需要获取到 sessionID 才能获取到对应的 session，而 session 是和浏览器会话是相关的，所以使用了不安全的浏览器配置（Chrome 的取消跨域检测）就可能会导致后端获取不到对应的session<br>nginx 配置跨域问题需要配置为自己的端口，跨域不止是 ip 而且还有端口<br><br># 向/etc/apt/sources.list.d/debian.sources添加网易的源
 echo 'deb http://mirrors.163.com/debian/ jessie main non-free contrib' &gt;&gt; /etc/apt/sources.list.d/debian.sources &amp;&amp; \
 echo 'deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib' &gt;&gt; /etc/apt/sources.list.d/debian.sources &amp;&amp; \
 echo 'deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib' &gt;&gt; /etc/apt/sources.list.d/debian.sources
 复制<br>然后 apt-get update, apt-get install vim<br><br><a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_38650077/article/details/106540825" rel="noopener" class="external-link" href="https://blog.csdn.net/weixin_38650077/article/details/106540825" target="_blank">IDEA 远程调试[Debug]_idea 远程调试客户端应该连接哪个 ip-CSDN 博客</a><br>
 <br>有时间尝试一下能不能远程调试
-]]></description><link>1-项目\用户中心项目\项目部署（阿里云）.html</link><guid isPermaLink="false">1-项目/用户中心项目/项目部署（阿里云）.md</guid><pubDate>Thu, 09 May 2024 18:18:11 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[监听回调]]></title><description><![CDATA[ 
+]]></description><link>1-项目\用户中心项目\项目部署（阿里云）.html</link><guid isPermaLink="false">1-项目/用户中心项目/项目部署（阿里云）.md</guid><pubDate>Sat, 11 May 2024 03:52:31 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[引入knife4j]]></title><description><![CDATA[ 
+ <br><br>springBoot 2 版本的时候用的 springfox 下的 swagger，但是 springboot3 不一样，踩了坑，改了很多，分两点讲<br><br>首先引入依赖<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141239.png" referrerpolicy="no-referrer"><br>&lt;!-- https://doc.xiaominfo.com/knife4j/documentation/get_start.html--&gt;  
+&lt;dependency&gt;  
+&lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;  
+&lt;artifactId&gt;knife4j-spring-boot-starter&lt;/artifactId&gt;  
+&lt;version&gt;3.0.3&lt;/version&gt;  
+&lt;/dependency&gt;
+复制<br>然后创建一个类随便配置一下<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141306.png" referrerpolicy="no-referrer"><br><br>咱们根据文档可以看到<br>
+<a data-tooltip-position="top" aria-label="https://doc.xiaominfo.com/docs/quick-start" rel="noopener" class="external-link" href="https://doc.xiaominfo.com/docs/quick-start" target="_blank">快速开始 | Knife4j</a><br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141405.png" referrerpolicy="no-referrer"><br>
+这个依赖都不一样了，那么配置自然就不一样了<br>
+所以先引入<br>&lt;dependency&gt;  
+&lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;  
+&lt;artifactId&gt;knife4j-openapi3-jakarta-spring-boot-starter&lt;/artifactId&gt;  
+&lt;version&gt;4.4.0&lt;/version&gt;  
+&lt;/dependency&gt;
+复制<br>然后配置也不一样了<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141510.png" referrerpolicy="no-referrer">]]></description><link>1-项目\用户中心项目\引入knife4j.html</link><guid isPermaLink="false">1-项目/用户中心项目/引入knife4j.md</guid><pubDate>Sun, 12 May 2024 08:13:10 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141239.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141239.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[自定义注解实现权限校验]]></title><description><![CDATA[ 
+ <br><br><a data-tooltip-position="top" aria-label="https://www.cnblogs.com/sgh1023/p/13363679.html" rel="noopener" class="external-link" href="https://www.cnblogs.com/sgh1023/p/13363679.html" target="_blank">Spring Boot使用AOP的正确姿势 - James_Shangguan - 博客园</a><br>首先我们需要 springboot 中的 aop 来帮助我们实现切面编程，这样才有办法实现通过注解在操作之前进行权限的校验<br>添加依赖<br>&lt;dependency&gt;  
+&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
+&lt;artifactId&gt;spring-boot-starter-aop&lt;/artifactId&gt;  
+&lt;/dependency&gt;
+复制<br><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511193102.png" referrerpolicy="no-referrer"><br>拥有了这个依赖我们就可以使用注解进行切点切面的定义了<br><br> @Pointcut 注解可以在一个切面内定义可重用的切点，表达式可以写很多如下<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511193710.png" referrerpolicy="no-referrer"><br>@before、@after 等就是明确在切点前后进行操作的一些操作<br>
+如同下面这样<br>@Aspect
+@Component
+public class AopAdvice {
+
+    @Pointcut("execution (* com.shangguan.aop.controller.*.*(..))")
+    public void test() {
+
+    }
+
+    @Before("test()")
+    public void beforeAdvice() {
+        System.out.println("beforeAdvice...");
+    }
+
+    @After("test()")
+    public void afterAdvice() {
+        System.out.println("afterAdvice...");
+    }
+
+    @Around("test()")
+    public void aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+        System.out.println("before");
+        try {
+            proceedingJoinPoint.proceed();
+        } catch (Throwable t) {
+            t.printStackTrace();
+        }
+        System.out.println("after");
+    }
+
+}
+
+复制<br><br><a data-tooltip-position="top" aria-label="https://www.cnblogs.com/songsongsun/p/14517977.html" rel="noopener" class="external-link" href="https://www.cnblogs.com/songsongsun/p/14517977.html" target="_blank">使用自定义注解和切面AOP实现Java程序增强 - 皮皮松 - 博客园</a><br>
+除了@pointcut 我们还有一种方式可以进行定义切点，那就是自定义注解实际上，这样的方式我们也可以做到操作的拦截<br>@Around("@annotation(authCheck)")<br>其中 authCheck 就是一个自定义的注解，这样我们就可以在这个方法（所有被自定义注解注解了的方法）前后都织入我们的操作<br>那么首先就是写我们的自定义注解<br><br>直接如下<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511194126.png" referrerpolicy="no-referrer"><br><br>我们需要一些小技巧，这样可以通过上下文获取request<br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/javacrazy_/article/details/116588422" rel="noopener" class="external-link" href="https://blog.csdn.net/javacrazy_/article/details/116588422" target="_blank">RequestContextHolder详解-CSDN博客</a><br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511195410.png" referrerpolicy="no-referrer"><br>关于这个 attribute 有很多实现类，点进去就能看到<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511195744.png" referrerpolicy="no-referrer"><br>由于我们这个简单的项目，里面应该就是 servlet，所以我们直接强转成 servletRequestAttribute 就行了，就能拿到当前的 request 了<br>实现如下<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511210926.png" referrerpolicy="no-referrer"><br>就行了<br>需要注意的几个点<br>
+一个是拦截器需要注解<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511223424.png" referrerpolicy="no-referrer"><br>
+另一个是启动类也需要注解<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511223447.png" referrerpolicy="no-referrer"><br>
+该函数是 Spring AOP 中的一个注解@EnableAspectJAutoProxy，用于启用 AspectJ 自动代理。<br>
+proxyTargetClass = true 表示使用 CGLIB 动态代理目标类，即使目标类没有实现接口。<br>
+exposeProxy = true 表示将代理对象暴露给 ThreadLocal，以便在需要时可以手动获取代理对象。<br>
+这个注解通常用于开启切面编程，使得我们可以使用注解方式定义切面，并在运行时自动织入到目标对象中。]]></description><link>1-项目\用户中心项目\自定义注解实现权限校验.html</link><guid isPermaLink="false">1-项目/用户中心项目/自定义注解实现权限校验.md</guid><pubDate>Sat, 11 May 2024 14:35:11 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511193102.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511193102.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[监听回调]]></title><description><![CDATA[ 
  <br><br>监听和回调本质就是对象对事件的处理方式：<br>
 1. 监听是处理者不断监视是否有对应事件发生，当有事件发生时就采取相应的处理事件的措施，<br>
 2. 回调是事件发生后通过通过事件主动调用目标对象处理方法来处理事件的方式（这也属于一种通信方式）<br>
@@ -3169,7 +3235,7 @@ EMBSTR
 RAW
 sds和RedisObject是分开的，使用在长的字符串上，字节头和内容是分开的（有个阈值，超过阈值就用这个来存储字符串，目前比较新版本是 44（5.0.5））
 
-<br><img alt="image-20231217211908559" src="app:\\9bcdfebcb92806ac1aee9b88d9df159de0a9\C:\\Users\92502\AppData\Roaming\Typora\typora-user-images\image-20231217211908559.png" referrerpolicy="no-referrer"><br><br>​	<img alt="image-20231217212109893" src="\lib\media\image-20231217212109893.png" referrerpolicy="no-referrer"><br>
+<br><img alt="image-20231217211908559" src="app:\\a4c6d72d640b09303e9906b3e15645db826c\C:\\Users\92502\AppData\Roaming\Typora\typora-user-images\image-20231217211908559.png" referrerpolicy="no-referrer"><br><br>​	<img alt="image-20231217212109893" src="\lib\media\image-20231217212109893.png" referrerpolicy="no-referrer"><br>
 另外要注意的是，Redis 中的 SDS 分为 sdshdr 8, sdshdr 16, sdshdr 32, sdshdr 64, 字段属性一样，但是对应不同大小的字符串, 以 sdshdr8 为例，这里的 8 代表可以用 8 个 bite 记录字符串长度 8 位可以表示的数字范围是 ±2 的 8 次方（包括负数）然后一个 char 是8比特大小，即一个字节，sdshar8表示的是 char 的长度，也就是说 embstr 只能用 sdshdr 8 (最合适是的，也有特殊的 sdshdr 5 啥的，就是特殊情况了)<br>// from Redis 7.0.8
 struct __attribute__ ((__packed__)) sdshdr8{
     unit8_t len;/*used*/
@@ -3669,5 +3735,8 @@ cors，把请求分为2种<br>
 <br>application/x-www-form-urlencoded
 
 
-<br>都满足以上条件的就是简单请求，否则就是非简单请求。<br>比如我们经常使用的Content-Type:application/json; charset=utf-8，这个请求就是非简单请求<br>非简单请求发送的时候，浏览器就会触发预检请求，这个在开发过程中可以通过修改浏览器的配置进行改变，比如 chrome 浏览器的非安全模式就能做到不发送预检请求，直接跨域<br><br><a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/66484450" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/66484450" target="_blank">一文搞懂跨域的所有问题，生活从此669~ - 知乎</a>]]></description><link>2-领域\前端学习\浏览器加载前端.html</link><guid isPermaLink="false">2-领域/前端学习/浏览器加载前端.md</guid><pubDate>Thu, 09 May 2024 11:14:22 GMT</pubDate></item><item><title><![CDATA[ant.design.pro]]></title><description><![CDATA[ 
- <br><br>关于 proTable 里面的一些 api 的初步使用<br><a data-tooltip-position="top" aria-label="https://blog.csdn.net/yutingwu816/article/details/126620983" rel="noopener" class="external-link" href="https://blog.csdn.net/yutingwu816/article/details/126620983" target="_blank">ant-design proTable 之 request 和 actionRef初识_protable request-CSDN博客</a>]]></description><link>2-领域\前端学习\ant.design.pro.html</link><guid isPermaLink="false">2-领域/前端学习/ant.design.pro.md</guid><pubDate>Tue, 30 Apr 2024 09:01:21 GMT</pubDate></item></channel></rss>
+<br>都满足以上条件的就是简单请求，否则就是非简单请求。<br>比如我们经常使用的Content-Type:application/json; charset=utf-8，这个请求就是非简单请求<br>非简单请求发送的时候，浏览器就会触发预检请求，这个在开发过程中可以通过修改浏览器的配置进行改变，比如 chrome 浏览器的非安全模式就能做到不发送预检请求，直接跨域<br><br><a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/66484450" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/66484450" target="_blank">一文搞懂跨域的所有问题，生活从此669~ - 知乎</a>]]></description><link>2-领域\前端学习\浏览器加载前端.html</link><guid isPermaLink="false">2-领域/前端学习/浏览器加载前端.md</guid><pubDate>Thu, 09 May 2024 11:14:22 GMT</pubDate></item><item><title><![CDATA[ant.design.pro框架]]></title><description><![CDATA[ 
+ <br><br>关于 proTable 里面的一些 api 的初步使用<br><a data-tooltip-position="top" aria-label="https://blog.csdn.net/yutingwu816/article/details/126620983" rel="noopener" class="external-link" href="https://blog.csdn.net/yutingwu816/article/details/126620983" target="_blank">ant-design proTable 之 request 和 actionRef初识_protable request-CSDN博客</a><br><br>只需要后端维护好 swagger 文档或者任意满足规范的文档，去这个地址<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512161219.png" referrerpolicy="no-referrer"><br>然后在 config. ts 里面有 openapi 的配置，配置好地址，<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512154934.png" referrerpolicy="no-referrer"><br>
+运行 openapi 即可<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512154948.png" referrerpolicy="no-referrer"><br>
+在这个目录下就会生成全部的接口和type<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512155030.png" referrerpolicy="no-referrer">]]></description><link>2-领域\前端学习\ant.design.pro框架.html</link><guid isPermaLink="false">2-领域/前端学习/ant.design.pro框架.md</guid><pubDate>Sun, 12 May 2024 08:12:27 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512161219.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240512161219.png"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
