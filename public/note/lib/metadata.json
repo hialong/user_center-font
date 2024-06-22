@@ -1,14 +1,19 @@
 {
   "vaultName": "myVault",
-  "lastExport": 1715518224653,
+  "lastExport": 1716306569828,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title minimal-flexoki-dark colorful-headings colorful-active links-int-on links-ext-on full-width-media minimal-readable trim-cols styled-scrollbars",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
     "1-项目/用户中心项目/项目部署（阿里云）.md",
+    "1-项目/用户中心项目/项目微服务部署.md",
+    "1-项目/用户中心项目/引入Echarts （react版本）.md",
     "1-项目/用户中心项目/引入knife4j.md",
     "1-项目/用户中心项目/自定义注解实现权限校验.md",
+    "1-项目/用户中心项目/RPC和HTTP以及引入Dubbo框架.md",
+    "1-项目/用户中心项目/SDK开发.md",
+    "1-项目/用户中心项目/SpringCloud-gateway学习.md",
     "2-领域/后端学习/计算机与网络/监听回调.md",
     "2-领域/后端学习/计算机与网络/网络部分基础.md",
     "2-领域/后端学习/计算机与网络/HTTP报文是什么样子的.md",
@@ -22,7 +27,8 @@
     "2-领域/后端学习/Java/红黑树是什么？.md",
     "2-领域/后端学习/Java/平衡多路查找树（B树）.md",
     "2-领域/后端学习/Java/JAVA基础巩固.md",
-    "2-领域/后端学习/Java/mybatis 分页.md",
+    "2-领域/后端学习/mybatis/mybatis 分页.md",
+    "2-领域/后端学习/mybatis/Mybatis报错的可能.md",
     "2-领域/后端学习/Mysql/基础/复杂查询.md",
     "2-领域/后端学习/Mysql/基础/函数、视图、储存、触发器.md",
     "2-领域/后端学习/Mysql/基础/mysql查询.md",
@@ -59,6 +65,7 @@
     "2-领域/后端学习/Redis/Redis知识结构mindmap.md",
     "2-领域/前端学习/浏览器加载前端.md",
     "2-领域/前端学习/ant.design.pro框架.md",
+    "2-领域/前端学习/React.md",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -149,195 +156,189 @@
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
-    "2-领域/后端学习/Java/mybatis 分页.md": {
-      "modifiedTime": 1715518187826,
-      "sourceSize": 1564,
-      "exportedPath": "2-领域/后端学习/java/mybatis-分页.html",
-      "dependencies": []
-    },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1715518224653,
-      "sourceSize": 54596,
+      "modifiedTime": 1716306569828,
+      "sourceSize": 60668,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1715518224653,
-      "sourceSize": 3173,
+      "modifiedTime": 1716306569828,
+      "sourceSize": 3533,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 157786,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 206205,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 8188,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1715518224653,
+      "modifiedTime": 1716306569828,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "1-项目/用户中心项目/项目部署（阿里云）.md": {
-      "modifiedTime": 1715518187826,
-      "sourceSize": 7046,
+      "modifiedTime": 1716306569828,
+      "sourceSize": 7236,
       "exportedPath": "1-项目/用户中心项目/项目部署（阿里云）.html",
       "dependencies": []
     },
@@ -396,8 +397,8 @@
       "dependencies": []
     },
     "2-领域/后端学习/虚机/上环境的一些命令.md": {
-      "modifiedTime": 1715518187826,
-      "sourceSize": 1967,
+      "modifiedTime": 1716287440601,
+      "sourceSize": 2150,
       "exportedPath": "2-领域/后端学习/虚机/上环境的一些命令.html",
       "dependencies": []
     },
@@ -836,6 +837,54 @@
       "modifiedTime": 1715518187826,
       "sourceSize": 959,
       "exportedPath": "2-领域/前端学习/ant.design.pro框架.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/项目微服务部署.md": {
+      "modifiedTime": 1716306569828,
+      "sourceSize": 3895,
+      "exportedPath": "1-项目/用户中心项目/项目微服务部署.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/引入Echarts （react版本）.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 453,
+      "exportedPath": "1-项目/用户中心项目/引入echarts-（react版本）.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/RPC和HTTP以及引入Dubbo框架.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 11408,
+      "exportedPath": "1-项目/用户中心项目/rpc和http以及引入dubbo框架.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/SDK开发.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 2803,
+      "exportedPath": "1-项目/用户中心项目/sdk开发.html",
+      "dependencies": []
+    },
+    "1-项目/用户中心项目/SpringCloud-gateway学习.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 2515,
+      "exportedPath": "1-项目/用户中心项目/springcloud-gateway学习.html",
+      "dependencies": []
+    },
+    "2-领域/后端学习/mybatis/mybatis 分页.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 1564,
+      "exportedPath": "2-领域/后端学习/mybatis/mybatis-分页.html",
+      "dependencies": []
+    },
+    "2-领域/后端学习/mybatis/Mybatis报错的可能.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 468,
+      "exportedPath": "2-领域/后端学习/mybatis/mybatis报错的可能.html",
+      "dependencies": []
+    },
+    "2-领域/前端学习/React.md": {
+      "modifiedTime": 1716287440601,
+      "sourceSize": 335,
+      "exportedPath": "2-领域/前端学习/react.html",
       "dependencies": []
     }
   }

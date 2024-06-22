@@ -139,20 +139,21 @@ const Welcome: React.FC = () => {
               index={1}
               href="https://github.com/hialong"
               title="个人github"
-              desc="点击了解更多可以跳转github"
+              desc="该项目实现登录注册api开放和分析等功能，管理员可以接入并发布接口，可视化各接口调用情况；用户可以开通接口调用权限、浏览接口及在线调试，并通过客户端SDK轻松调用接口。点击了解更多可以跳转github"
             />
             <InfoCard
               index={2}
               title="了解 项目前端"
-              href="https://github.com/hialong/user_center-font"
+              href="http://8.136.96.241/note"
               desc="前端是通过阿里的ant.design.pro进行开发的，框架为react,语言为TypeScript,目前实现功能有 个人博客，页面权限管理
-              （管理员账号hailong/12345678）只有管理员可以查看并修改用户的权限，用户管理等"
+              （管理员账号hailong/12345678）只有管理员可以查看并修改用户的权限，用户管理，api调用，管理员还能通过echarts-react版本进行接口分析"
             />
             <InfoCard
               index={3}
               title="了解项目后端"
-              href="https://github.com/hialong/user-universe"
-              desc="后端采用java21以及spring-boot加mybatis进行开发，目前实现用户的增删改查，逻辑删除，权限管理等"
+              href="http://8.136.96.241/note"
+              desc="技术栈：spring-cloud,dubbo,nacos,sdk开发，gateway网关，mybatis-plus swagger 目前实现用户的增删改查，逻辑删除，权限管理,同时开放了api的端口调用功能，采用微服务的架构，编写了swagger文档，可以用来调
+              用接口的sdk包，使用了spring cloud gateway对api进行流量监控，流量染色等操作"
             />
           </div>
         </div>

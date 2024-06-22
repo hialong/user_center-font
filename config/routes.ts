@@ -24,6 +24,12 @@ export default [
         path: '/admin/InterfaceInfoManagement',
         component: './Admin/InterfaceInfoManagement',
       },
+      {
+        name: '接口信息分析',
+        icon: 'smile',
+        path: '/admin/InterfaceAnalysis',
+        component: './Admin/InterfaceAnalysis',
+      },
       { path: '/admin/sub-page', redirect: '/welcome' },
     ],
   },

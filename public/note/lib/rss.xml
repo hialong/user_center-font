@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[myVault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>myVault</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 12 May 2024 12:50:25 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 12 May 2024 12:50:24 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[项目部署（阿里云）]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[myVault]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>myVault</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 21 May 2024 15:49:30 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 21 May 2024 15:49:29 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[项目部署（阿里云）]]></title><description><![CDATA[ 
  <br><br>购买就直接省略了，由于当前 20240429 我不知道怎么买最划算，所以就直接试用阿里云三个月<br>
 参考网址 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/BThinker/article/details/123358697" rel="noopener" class="external-link" href="https://blog.csdn.net/BThinker/article/details/123358697" target="_blank">Docker 安装 (完整详细版)_docker安装-CSDN博客</a><br>工具包不知道干嘛的（没运行也能下载）<br>## 安装Docker所需要的一些工具包
 sudo yum install -y yum-utils
@@ -106,8 +106,218 @@ echo 'deb http://mirrors.163.com/debian/ jessie main non-free contrib' &gt;&gt; 
 echo 'deb http://mirrors.163.com/debian/ jessie-updates main non-free contrib' &gt;&gt; /etc/apt/sources.list.d/debian.sources &amp;&amp; \
 echo 'deb http://mirrors.163.com/debian-security/ jessie/updates main non-free contrib' &gt;&gt; /etc/apt/sources.list.d/debian.sources
 复制<br>然后 apt-get update, apt-get install vim<br><br><a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_38650077/article/details/106540825" rel="noopener" class="external-link" href="https://blog.csdn.net/weixin_38650077/article/details/106540825" target="_blank">IDEA 远程调试[Debug]_idea 远程调试客户端应该连接哪个 ip-CSDN 博客</a><br>
-<br>有时间尝试一下能不能远程调试
-]]></description><link>1-项目\用户中心项目\项目部署（阿里云）.html</link><guid isPermaLink="false">1-项目/用户中心项目/项目部署（阿里云）.md</guid><pubDate>Sat, 11 May 2024 03:52:31 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[引入knife4j]]></title><description><![CDATA[ 
+<br>有时间尝试一下能不能远程调试<br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/haduwi/article/details/126296308" rel="noopener" class="external-link" href="https://blog.csdn.net/haduwi/article/details/126296308" target="_blank">使用 IDEA 快速远程调试 Docker 中运行的 Java 应用程序 （附解决思考过程）_idea远程调试docker-CSDN博客</a>
+]]></description><link>1-项目\用户中心项目\项目部署（阿里云）.html</link><guid isPermaLink="false">1-项目/用户中心项目/项目部署（阿里云）.md</guid><pubDate>Tue, 21 May 2024 15:24:18 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240429170153.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[项目微服务部署]]></title><description><![CDATA[ 
+ <br><br>由于大修大改，项目被我改成了带一点微服务的项目，所以需要重新上线部署目前来看，部署的步骤应该是这样<br>
+<br>部署 nacos ✅ 2024-05-21
+<br>修改微服务中的 yml 的注册中心的配置 ✅ 2024-05-21
+<br>部署 apiAssign 提供接口的这个项目 ✅ 2024-05-21
+<br>修改 sdk 中的调用接口的请求地址以及 gateWay 中的转发地址
+<br>gateway 部署 ✅ 2024-05-21
+<br>修改 mysql 容器的数据库 ✅ 2024-05-21
+<br>前端笔记记得部署到库里面
+<br><br>怎么找？--- 直接去看 dockerHub 里面的教程<br>
+<a data-tooltip-position="top" aria-label="https://hub.docker.com/r/nacos/nacos-server" rel="noopener" class="external-link" href="https://hub.docker.com/r/nacos/nacos-server" target="_blank">Docker</a><br>拉取镜像<br>docker pull  nacos/nacos-server:v2.3.2
+复制<br>上面的教程里面简单启动 nacos 的方法（这里要注意，这样启动的话 nacos 用的就是内置的数据库，反正看你自己，需要你就搜搜怎么把数据库配置出来就行，我这边就是简单运行直接这么跑了）<br>docker run --name nacos-quick -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:v2.3.2
+复制<br>然后就好了，nacos 是这样的   0.0.0.0:8849-&gt;8848/tcp, ::: 8849-&gt;8848/tcp<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521114735.png" referrerpolicy="no-referrer"><br>访问地址是<br>
+[Nacos](http://8.136.96.241:8849/nacos)<br>
+登录密码都是 nacos<br><br>打 jar 包<br>
+然后部署到服务器，拿出 target 里面的 jar 包和代码里面的dockerfile<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521142347.png" referrerpolicy="no-referrer"><br>#Docker 镜像构建  
+#@author: hailong  
+FROM alpine:3.19.1 as builder  
+  
+#添加说明等信息  
+LABEL name=bkp description="jdk21 base on alpine image"  
+  
+#安装jdk  
+RUN apk add --no-cache --no-cache openjdk21  
+  
+#安装maven  
+#RUN apk add --no-cache --no-cache maven  
+#COPY settings.xml /usr/share/java/maven-3/conf/settings.xml  
+  
+# Copy local code to the container image.  
+ADD apiAssign-0.0.1-SNAPSHOT.jar app.jar  
+  
+  
+# Run the web service on container startup.  
+CMD ["java","-jar","/app.jar","--spring.profiles.active=prod"]
+复制<br>打镜像<br>docker build -t api_assign:v0.0.1 .
+复制<br>跑容器<br>docker run --name api_assign -v /path/service/apiAssign:/app -d  -p 8126:8126 api_assign:v0.0.1
+复制<br>-v 是挂载出来 docker 里面的路径的 -d 后台运行<br>Dockefile 就是随便搞个空的容器应该就行了<br><br>打镜像<br>docker build -t api_gateway:v0.0.1 .
+复制<br>跑容器<br>docker run --name api_gateway -v /path/service/apiGateWay:/app -d  -p 9991:9991 api_gateway:v0.0.1
+复制<br>dockerfile 照着上面抄就行了，没什么难度<br><br>打镜像<br>docker build -t user-center-backend:v0.0.1 .
+复制<br>跑容器<br>docker run --name user-center-backend -v /path/service/userCenterBackend:/app -d  -p 8881:8881 user-center-backend:v0.0.1
+复制<br><br>一直没办法创建注册中心，是不是我 nacos 版本太低了？2.1.0 是不是不适配我的 dubbo3<br>
+我去下一个狠的吧，2.3.2 版本的<br>好像有点用，但是又报 9848 端口连接不上，重新写个 run 的命令吧<br>
+新版本的 nacos 需要开放两个版本的端口!!!!<br>docker run --name nacos-quick -e MODE=standalone -p 8848:8848 -p 9848:9848 -d nacos/nacos-server:v2.3.2
+复制<br>然后一直报错，搞不懂，所以直接把 docker 重启了现在好了<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521221320.png" referrerpolicy="no-referrer"><br>好了！微服务重启成功<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521221329.png" referrerpolicy="no-referrer"><br>剩下的就是 gateWay 也要重新改]]></description><link>1-项目\用户中心项目\项目微服务部署.html</link><guid isPermaLink="false">1-项目/用户中心项目/项目微服务部署.md</guid><pubDate>Tue, 21 May 2024 15:49:21 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521114735.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240521114735.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[引入Echarts （react版本）]]></title><description><![CDATA[ 
+ <br><br>用 echarts 但是这里要注意，echarts 原生的引入不适用于 react ，去官网找一下 react 的版本的<br>
+GitHub 地址如下<br>
+<a data-tooltip-position="top" aria-label="https://github.com/hustcc/echarts-for-react" rel="noopener" class="external-link" href="https://github.com/hustcc/echarts-for-react" target="_blank">GitHub - hustcc/echarts-for-react: ⛳️ Apache ECharts components for React wrapper. 一个简单的 Apache echarts 的 React 封装。</a>]]></description><link>1-项目\用户中心项目\引入echarts-（react版本）.html</link><guid isPermaLink="false">1-项目/用户中心项目/引入Echarts （react版本）.md</guid><pubDate>Mon, 20 May 2024 15:34:56 GMT</pubDate></item><item><title><![CDATA[RPC和HTTP以及引入Dubbo框架]]></title><description><![CDATA[ 
+ <br><br>网关是一个单独的项目，但是统计这个流量什么的都需要用原本的 user-center 项目中的方法，或者直接自己操作数据库，有点太捞了，而如果变成 HTTP 的方式暴露出去呢，又太危险了，所以想到了 RPC 或者微服务或者直接按照之前的方法，打 jar 包给其他项目引用（sdk）<br>刚好，学习一下微服务，所以决定选择使用微服务的Dubbo<br><br> -- 像调用本地方法一样调用远程方法<br>http 协议有 7 层，RBC 的性能更高，可以支持其他的协议，不用 7 层（例如 TCP 等）<br>那么 RBC 的实现框架目前比较好的有很多，比如 Dubbo<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519201926.png" referrerpolicy="no-referrer"><br>
+<a data-tooltip-position="top" aria-label="https://cn.dubbo.apache.org/zh-cn/overview/quickstart/" rel="noopener" class="external-link" href="https://cn.dubbo.apache.org/zh-cn/overview/quickstart/" target="_blank">Dubbo 入门 | Apache Dubbo</a><br>阅读官方文档是最快的学习的方法<br>Dubbo 框架中提供一个 dubbo-zookeeper 作为注册中心，根据他的入门可以很方便的看到项目是如何启动的，springBoot 调用方法非常简单，一个消费者，一个公共接口类，一个提供者 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519202713.png" referrerpolicy="no-referrer"><br><br>首先这个文档是中文，好看，好学<br>
+其次，fein 是 Http 协议的，这个 dubbo 是 Rpc 的用的 Triple 协议，更高的性能<br>
+然后 Dubbo 好学<br><br>我现在的需求是 gateWay 中能调用 user-center 这个里面封装的方法，也就是 gate-way 是消费者，user-center 是提供者，还需要一个公共的接口包，提供 interface 接口<br>
+<br> 重要提示<br>
+首先，保证你的项目不要在中文路径下<br>
+首先，保证你的项目不要在中文路径下<br>
+首先，保证你的项目不要在中文路径下<br>
+重要的话说三遍
+<br> 
+<br>里面的注册中心有两种，一种是 zookeeper 一种是 nacos ，用哪种？<br>
+根据 AI 回答<br>
+Dubbo 3. x 版本对 Nacos 的支持更为友好和直接，如果您的项目使用的是较新的 Dubbo 版本，可能会倾向于选择 Nacos 作为注册中心。<br>Zookeeper 优点:<br>
+成熟稳定：Zookeeper 是 Apache 的顶级项目，历史悠久，广泛应用于大型分布式系统中，稳定性经过了长时间的验证。<br>
+一致性保证：采用 ZAB（Zookeeper Atomic Broadcast）协议，能够保证强一致性（CP 模型），适合那些对数据一致性要求极高的场景。<br>
+生态丰富：与 Hadoop、Kafka 等众多大数据组件集成紧密，支持广泛的开源生态系统。<br>
+多用途：除了服务发现和配置管理外，还常用于分布式锁、队列、选举等场景。<br>
+Zookeeper 缺点:<br>
+复杂度较高：配置和运维相对复杂，对于新手来说学习曲线较陡峭。<br>
+资源消耗：在小规模集群中资源占用相对较高，可能不适合轻量级应用。<br>
+单点问题：虽然设计为高可用集群，但在实际部署中若配置不当，仍有可能出现单点故障。<br>
+数据模型限制：数据模型基于树形结构，对于某些特定类型的数据存储和查询可能不够灵活。<br>
+Nacos 优点:<br>
+易用性：Nacos 设计时考虑了易用性，提供了图形化界面，便于管理和监控，上手更快。<br>
+一体化解决方案：集成了服务发现、配置管理、健康检查等功能于一体，简化了微服务架构的搭建。<br>
+动态配置：依赖 MySQL 等关系型数据库存储配置，支持实时配置更新和推送，无需重启服务即可生效。<br>
+AP 设计：默认支持 AP 模式（可用性优先），更适合现代微服务架构的需求，能在网络分区时保证服务可用性。<br>
+与 Spring Cloud/Dubbo 等框架集成良好：特别适合微服务架构，特别是与 Spring Cloud 生态结合紧密。<br>
+Nacos 缺点:<br>
+依赖外部数据库：虽然增加了灵活性和持久化能力，但也引入了额外的运维成本和潜在的单点故障风险。<br>
+性能和扩展性：在极端高并发或大规模集群环境下，相对于 Zookeeper，Nacos 的性能和扩展能力可能需要更细致的调优。<br>
+成熟度：相比于 Zookeeper，Nacos 相对较新，虽然发展迅速，但在某些特定领域的成熟度和社区支持可能不如 Zookeeper。<br>
+综上所述，在选择 Zookeeper 还是 Nacos 时，应根据具体需求、团队熟悉度以及项目的长远规划来决定。Dubbo（您提供的版本为 3.1.7）作为服务治理框架，可以与两者集成，但需要注意的是，Dubbo 3. x 版本对 Nacos 的支持更为友好和直接，如果您的项目使用的是较新的 Dubbo 版本，可能会倾向于选择 Nacos 作为注册中心。<br>所以咱们用 nacos  后面有需要再去学 zookeeper<br><br>首先这个时候就不要去看 Dubbo 的官方文档，因为 Dubbo 的官方文档写的是用的 zookeeper 的配置，搜 Nacos，用 Nacos 做注册中心<br>
+<a data-tooltip-position="top" aria-label="https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html" rel="noopener" class="external-link" href="https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html" target="_blank">Dubbo 融合 Nacos 成为注册中心</a><br>然后发现这个是 nacos 1.x 的，应该去看 nacos2.x 的，这个是最新的，看到里面说 nacos 里面 issue 更新了新的东西，不在强制依赖了 <a data-tooltip-position="top" aria-label="https://github.com/apache/dubbo/issues/7291" rel="noopener" class="external-link" href="https://github.com/apache/dubbo/issues/7291" target="_blank">Dubbo is not compatible with Nacos2 client. · Issue #7291 · apache/dubbo · GitHub</a> （所以用 Dubbo2 的应该也能用，dubbo 3 我先试试）<br><br>nacos 2.3.2 版本，官方文档直接下<br>
+<a data-tooltip-position="top" aria-label="https://github.com/alibaba/nacos/releases" rel="noopener" class="external-link" href="https://github.com/alibaba/nacos/releases" target="_blank">Releases · alibaba/nacos</a><br>按照官方文档启动后 <a data-tooltip-position="top" aria-label="https://nacos.io/zh-cn/docs/v2/quickstart/quick-start.html" rel="noopener" class="external-link" href="https://nacos.io/zh-cn/docs/v2/quickstart/quick-start.html" target="_blank">Nacos 快速开始</a><br>进入 nacos 的 bin 目录下 startup.cmd -m standalone 启动单机模式<br>
+这个地址就是 nacos 的地址<br>
+http://localhost:8848/nacos/#/configurationManagement?dataId=&amp;group=&amp;appName=&amp;namespace=&amp;pageSize=&amp;pageNo=<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519231558.png" referrerpolicy="no-referrer"><br><br>先看样例，找到 Dubbo 官网，下载官方样例，<a data-tooltip-position="top" aria-label="https://github.com/apache/dubbo-samples/tree/master" rel="noopener" class="external-link" href="https://github.com/apache/dubbo-samples/tree/master" target="_blank">GitHub - apache/dubbo-samples: samples for Apache Dubbo</a> 在 github 的 1-basic 里面，然后看一下<br><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520095646.png" referrerpolicy="no-referrer"><br>
+大致分为三个模块，一个消费者，一个调用者，以及中间的接口提供层<br>然后我在看文档的时候意外发现 Dubbo 的官网有怎么配置注册中心的样例<a data-tooltip-position="top" aria-label="https://cn.dubbo.apache.org/zh-cn/overview/mannual/java-sdk/reference-manual/config-center/nacos/" rel="noopener" class="external-link" href="https://cn.dubbo.apache.org/zh-cn/overview/mannual/java-sdk/reference-manual/config-center/nacos/" target="_blank">Nacos | Apache Dubbo</a><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520100535.png" referrerpolicy="no-referrer"><br>那么直接来照着这个安装吧<br>然后我发现实例代码里面也是 nacos 作为注册中心的，<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520101638.png" referrerpolicy="no-referrer"><br>
+好像我记得之前是 zookeeper 来着，因为实例上面写的就是说提供了 zookeeper ，不过问题不大，应该是小问题<br>打interface包的时候出问题了，要升级 maven 版本<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520102854.png" referrerpolicy="no-referrer"><br><br>
+<br>
+ 那么就升级到 3.8.8 的maven
+
+<br>
+ 然后给原本的项目添加上依赖，模拟样例里面的 provider<br>
+结果项目启动不起来了，NoclassFounder
+
+<br><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520114509.png" referrerpolicy="no-referrer"><br>
+<br>
+ ---找到原因了，多了一个 application  的主键，搞的我这个两个启动类了
+
+<br>
+ 还是报错，现在是报，然后我找 issue 看到了 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520130042.png" referrerpolicy="no-referrer">
+
+<br><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520130114.png" referrerpolicy="no-referrer"><br>
+所以决定把 Dubbo 升级到 3.2.9 如下<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520130142.png" referrerpolicy="no-referrer"><br>成功启动了，nacos 里面终于能看到东西了呜呜呜<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520130237.png" referrerpolicy="no-referrer"><br>
+<br> 现在的问题是消费者无法调用到服务者的方法，一直报错<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520151524.png" referrerpolicy="no-referrer">
+<br>然后根据 issue 的提示，在 provider 里面添加了<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162515.png" referrerpolicy="no-referrer"><br>
+最终调用成功<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162502.png" referrerpolicy="no-referrer"><br><br>首先就是选定自己的 privoder 和 consumer 了（我这边 springBoot 3.2.3 java 21 所以 Dubbo 的依赖需要 3.2.x 以后的版本）<br>都加上这两个依赖<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162655.png" referrerpolicy="no-referrer"><br>本地下载 nacos 按照官方流程启动单机模式就行<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162722.png" referrerpolicy="no-referrer"><br>provider 类里记得加上 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162740.png" referrerpolicy="no-referrer"><br>
+不然消费者调用不到服务者<br>然后自己在 provider 里面创建一个接口类（或者抽出去，变成一个公共的服务也行，我这里偷懒先试试）<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162903.png" referrerpolicy="no-referrer"><br>
+这是一个非常简单的接口，抄的样例里面的<br>然后去实现他<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520162930.png" referrerpolicy="no-referrer"><br>
+这里注意加上注解，@DubboService  @EnableDubbo<br>
+然后启动类上面记得加上<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163010.png" referrerpolicy="no-referrer"><br>
+如果这里加上以后，报错，看这个 issue <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520130114.png" referrerpolicy="no-referrer"><br>
+接着是 yml 的配置<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163252.png" referrerpolicy="no-referrer"><br>正常启动后，nacos 页面就能看到服务了<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163122.png" referrerpolicy="no-referrer"><br>然后消费者的项目里面自己写一个接口，只要这个接口的包名跟 provider 里面的一模一样就行了 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163200.png" referrerpolicy="no-referrer"><br>然后用注解自动调用<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163330.png" referrerpolicy="no-referrer"><br>application 上面同样加注解<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163405.png" referrerpolicy="no-referrer"><br>
+yml 配置如下<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163439.png" referrerpolicy="no-referrer"><br>直接启动，由于我 Task 是用了@component 注解，会被自动扫到创建实例，然后自动 run，就能看到成功<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240520163540.png" referrerpolicy="no-referrer"><br>所以按照这个思路进行改造吧！]]></description><link>1-项目\用户中心项目\rpc和http以及引入dubbo框架.html</link><guid isPermaLink="false">1-项目/用户中心项目/RPC和HTTP以及引入Dubbo框架.md</guid><pubDate>Mon, 20 May 2024 09:54:35 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519201926.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519201926.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[SDK开发]]></title><description><![CDATA[ 
+ <br><br>希望能够像 springBoot-starter 一样，只要别人引入，就能用最简单的方式比如配置 springboot 里面的 yml 文件进行简单的配置，类似这种 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516105733.png" referrerpolicy="no-referrer"><br>
+就能使用我提供的能力<br><br>通过这两个值判断用户是否可以调用后端的接口，一般为了保证安全性还需要加一个随机数，nonce 去判断，防止别人走代理啥的给你接口一直重放<br><br>首先需要新建一个 springBoot 项目，我是直接选的最新的 springBoot 以及 java21 ，依赖就选 java web 、devtool、loombook，加上最重要的 configuration 这个<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516174151.png" referrerpolicy="no-referrer"><br>
+前面的其他的看着加，这个依赖必须加<br>新建项目后，需要删除掉里面的 build 块，和入口方法，因为用不着<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516174306.png" referrerpolicy="no-referrer"><br>然后在原来的入口方法的路径下，创建一个 cofig 类<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516174346.png" referrerpolicy="no-referrer"><br>测试方法也可以删掉了，因为打包的时候测试方法报错，就上面那个绿色测试类里面<br>然后重点来了<br>
+在 resource 目录下，创建 META-INF 文件夹，文件夹名字很重要，不然不生效，里面创建文件 spring.factories  如下<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516174618.png" referrerpolicy="no-referrer"><br>
+里面的类就是你配置类的地址，这样打包的时候就能找到你的配置类了<br>然后直接 intsall 就行了<br><br>install 完成之后，你的本地 maven 仓库里面就会有这个包，其他项目引用的时候就只需要你的 pom 中的 groupId，artificialid 类似下面这种<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516205456.png" referrerpolicy="no-referrer"><br>
+然后在目标项目里面进行配置 yml<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516205541.png" referrerpolicy="no-referrer"><br>然后关键的一点来了，注意要扫描包的路径里面加上这段路径<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516205645.png" referrerpolicy="no-referrer"><br>然后测试，直接自动注入就行，client 会带上 yml 中配置的key<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516205706.png" referrerpolicy="no-referrer"><br>
+发送成功<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516205741.png" referrerpolicy="no-referrer">]]></description><link>1-项目\用户中心项目\sdk开发.html</link><guid isPermaLink="false">1-项目/用户中心项目/SDK开发.md</guid><pubDate>Thu, 16 May 2024 12:57:43 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516105733.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240516105733.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[SpringCloud-gateway学习]]></title><description><![CDATA[ 
+ <br><br>学习微服务，学习多个项目之间的整合，以及项目中 api 开放平台需要统计流量、流量染色、接口保护等能力<br>注意，新建项目的时候，pom 文件很可能加的 gateway 的依赖带 mvc 的，这个两个是不一样的<br>
+建议不用 mvc 版本的，因为 mvc 是阻塞 io，慢<br>
+<a data-tooltip-position="top" aria-label="https://blog.csdn.net/weixin_46436257/article/details/135358258" rel="noopener" class="external-link" href="https://blog.csdn.net/weixin_46436257/article/details/135358258" target="_blank">spring-cloud-starter-gateway-mvc和spring-cloud-starter-gateway的区别-CSDN博客</a><br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519000143.png" referrerpolicy="no-referrer"><br><br>简单来说，就是我可以通过访问网关的地址，而不是去访问原来的直接暴露的地址<br>
+让网关给我的请求加上必要的请求头、做一些校验，防止路径暴露、同时还能控制流量<br><br>
+<br>路由
+<br>负载均衡
+<br>统一鉴权
+<br>处理跨域
+<br>统一业务处理
+<br>访问控制
+<br>发布控制
+<br>流量染色
+<br>接口保护
+
+<br>限制请求
+<br>信息脱敏
+<br>降级熔断 
+<br>限流：令牌桶算法，漏桶算法，RedisLimitHandler
+<br>超时时间
+
+
+<br>统一日志
+<br>统一文档
+<br>
+<br>学习令牌桶算法，漏桶算法，RedisLimitHandler
+<br><br>具体可见官方文档<br>
+简单代码等：<a data-tooltip-position="top" aria-label="https://spring.io/projects/spring-cloud-gateway" rel="noopener" class="external-link" href="https://spring.io/projects/spring-cloud-gateway" target="_blank">Spring Cloud Gateway</a><br>详细配置信息<br>
+<a data-tooltip-position="top" aria-label="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/configuring-route-predicate-factories-and-filter-factories.html" rel="noopener" class="external-link" href="https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/configuring-route-predicate-factories-and-filter-factories.html" target="_blank">Configuring Route Predicate Factories and Gateway Filter Factories :Spring Cloud Gateway</a><br>官方文档讲的很清晰，简单的配置 yml 就可以做到很多过滤、跳转方面的能力 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240518235449.png" referrerpolicy="no-referrer"><br>
+添加请求头的能力<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240518235738.png" referrerpolicy="no-referrer"><br><br>首先打印日志的问题，这玩意很像前端的 Promise，是异步的，所以打印真正返回的日志比较麻烦，百度搜一下重写里面的方法就行，参考下篇<br>获取返回日志参考这篇 <a data-tooltip-position="top" aria-label="https://blog.csdn.net/qq_19636353/article/details/126759522" rel="noopener" class="external-link" href="https://blog.csdn.net/qq_19636353/article/details/126759522" target="_blank">SpringCloud Gateway 打印请求响应日志、跨域全局配置_gateway 打印相应数据-CSDN博客</a><br>
+<br>未完待续
+]]></description><link>1-项目\用户中心项目\springcloud-gateway学习.html</link><guid isPermaLink="false">1-项目/用户中心项目/SpringCloud-gateway学习.md</guid><pubDate>Sun, 19 May 2024 12:02:54 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519000143.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240519000143.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[上环境的一些命令]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>首先是安装 nginx 这个可以参考这篇文章 <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/425790769" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/425790769" target="_blank">安装nginx 虚拟机版本</a>
+<br>然后需要修改安装好后的 nginx 里面的 conf 目录下的 nginx. config 文件，两个地方，一个要改上面的用户，变成 root 不是 nobody，第二个要配置里面的 root 路径为你前端项目 dist 里面的地址，下面 html 不用变
+<br>记得修改完配置刷新一下 nginx 的配置<br>nginx -s reload
+复制<br><br>
+<br>
+先安装 java。然后安装 git maven 
+
+<br>
+git 拉取代码，然后 mvn package -DskipTests 打包
+
+<br>
+ 然后讲踩坑的点，安装 java 的时候发现自己的 jdk 版本是 21 所以需要自己去下载 tar. gz 的包，安装好之后配置一下，参考这个文章<a data-tooltip-position="top" aria-label="https://blog.csdn.net/napoay/article/details/79864770" rel="noopener" class="external-link" href="https://blog.csdn.net/napoay/article/details/79864770" target="_blank">解决CentOS默认JDK无法替换问题_虚拟机中安装jdk不能替代本来的-CSDN博客</a>
+
+<br>
+ 虚拟机运行这个 jar 包的时候，原本的命令类似
+
+<br> java -jar user-center-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+复制<br>但是你可以后台运行命令就变成这样<br>nohup java -jar user-center-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod &amp;
+复制<br>运行后就在后台运行了<br>一些有意思的命令<br>#给文件加所有人权限 a是所有人，x是执行权限
+chmod a+x user-center-0.0.1-SNAPSHOT.jar 
+# 查看后台进程
+ps -ef |grep xxx
+# 删除进程
+kill -9 [pid]
+# 看文件大小，用kb mb表示
+ls -alh
+# 查找文件
+whereis xxx
+# 看端口号
+netstat -ntlp
+# 看历史命令
+history
+复制<br><br>主要要看 dockerFile 这个文件，然后 docker build 命令打镜像包<br>启动：docker run<br>
+<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png" referrerpolicy="no-referrer"><br><br>docker image prune -a
+复制<br><a data-tooltip-position="top" aria-label="https://blog.csdn.net/gxf212/article/details/89676307" rel="noopener" class="external-link" href="https://blog.csdn.net/gxf212/article/details/89676307" target="_blank">11.1 Docker 清理none镜像 Prune命令_docker preum-CSDN博客</a>]]></description><link>2-领域\后端学习\虚机\上环境的一些命令.html</link><guid isPermaLink="false">2-领域/后端学习/虚机/上环境的一些命令.md</guid><pubDate>Tue, 21 May 2024 07:40:52 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mybatis 分页]]></title><description><![CDATA[ 
+ 刚开始分页，记录一下分页的小问题]]></description><link>2-领域\后端学习\mybatis\mybatis-分页.html</link><guid isPermaLink="false">2-领域/后端学习/mybatis/mybatis 分页.md</guid><pubDate>Sun, 05 May 2024 18:32:04 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240430190241.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240430190241.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Mybatis报错的可能]]></title><description><![CDATA[ 
+ <br><br>'getBaseMapper ()' in 'com. baomidou. mybatisplus. extension. service. impl. ServiceImpl' clashes with 'getBaseMapper ()' in 'com. baomidou. mybatisplus. extension. service. IService'; attempting to use incompatible return type<br>这个原因就是 mapper 类里面可能使用了实体类但是你的实现类里面却用的另一个项目里面同名的实体类]]></description><link>2-领域\后端学习\mybatis\mybatis报错的可能.html</link><guid isPermaLink="false">2-领域/后端学习/mybatis/Mybatis报错的可能.md</guid><pubDate>Mon, 20 May 2024 09:58:10 GMT</pubDate></item><item><title><![CDATA[React]]></title><description><![CDATA[ 
+ <br><br><img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240514143627.png" referrerpolicy="no-referrer"><br>
+监听组件，类似于 Vue 的 watch，当 Values 变化的时候，触发前面的方法，对 formRef 进行赋值]]></description><link>2-领域\前端学习\react.html</link><guid isPermaLink="false">2-领域/前端学习/React.md</guid><pubDate>Tue, 14 May 2024 06:37:19 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240514143627.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240514143627.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[引入knife4j]]></title><description><![CDATA[ 
  <br><br>springBoot 2 版本的时候用的 springfox 下的 swagger，但是 springboot3 不一样，踩了坑，改了很多，分两点讲<br><br>首先引入依赖<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240511141239.png" referrerpolicy="no-referrer"><br>&lt;!-- https://doc.xiaominfo.com/knife4j/documentation/get_start.html--&gt;  
 &lt;dependency&gt;  
 &lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;  
@@ -717,42 +927,7 @@ class Solution {
         }
         return ans;
     }
-复制]]></description><link>2-领域\后端学习\算法\哈希相关.html</link><guid isPermaLink="false">2-领域/后端学习/算法/哈希相关.md</guid><pubDate>Thu, 14 Mar 2024 15:46:25 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240312231119.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240312231119.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[上环境的一些命令]]></title><description><![CDATA[ 
- <br><br><br>
-<br>首先是安装 nginx 这个可以参考这篇文章 <a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/425790769" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/425790769" target="_blank">安装nginx 虚拟机版本</a>
-<br>然后需要修改安装好后的 nginx 里面的 conf 目录下的 nginx. config 文件，两个地方，一个要改上面的用户，变成 root 不是 nobody，第二个要配置里面的 root 路径为你前端项目 dist 里面的地址，下面 html 不用变
-<br>记得修改完配置刷新一下 nginx 的配置<br>nginx -s reload
-复制<br><br>
-<br>
-先安装 java。然后安装 git maven 
-
-<br>
-git 拉取代码，然后 mvn package -DskipTests 打包
-
-<br>
- 然后讲踩坑的点，安装 java 的时候发现自己的 jdk 版本是 21 所以需要自己去下载 tar. gz 的包，安装好之后配置一下，参考这个文章<a data-tooltip-position="top" aria-label="https://blog.csdn.net/napoay/article/details/79864770" rel="noopener" class="external-link" href="https://blog.csdn.net/napoay/article/details/79864770" target="_blank">解决CentOS默认JDK无法替换问题_虚拟机中安装jdk不能替代本来的-CSDN博客</a>
-
-<br>
- 虚拟机运行这个 jar 包的时候，原本的命令类似
-
-<br> java -jar user-center-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
-复制<br>但是你可以后台运行命令就变成这样<br>nohup java -jar user-center-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod &amp;
-复制<br>运行后就在后台运行了<br>一些有意思的命令<br>#给文件加所有人权限 a是所有人，x是执行权限
-chmod a+x user-center-0.0.1-SNAPSHOT.jar 
-# 查看后台进程
-ps -ef |grep xxx
-# 删除进程
-kill -9 [pid]
-# 看文件大小，用kb mb表示
-ls -alh
-# 查找文件
-whereis xxx
-# 看端口号
-netstat -ntlp
-# 看历史命令
-history
-复制<br><br>主要要看 dockerFile 这个文件，然后 docker build 命令打镜像包<br>启动：docker run<br>
-<img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png" referrerpolicy="no-referrer">]]></description><link>2-领域\后端学习\虚机\上环境的一些命令.html</link><guid isPermaLink="false">2-领域/后端学习/虚机/上环境的一些命令.md</guid><pubDate>Sat, 20 Apr 2024 14:01:17 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240420141404.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[红黑树是什么？]]></title><description><![CDATA[ 
+复制]]></description><link>2-领域\后端学习\算法\哈希相关.html</link><guid isPermaLink="false">2-领域/后端学习/算法/哈希相关.md</guid><pubDate>Thu, 14 Mar 2024 15:46:25 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240312231119.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240312231119.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[红黑树是什么？]]></title><description><![CDATA[ 
  <br><br>红黑树本质其实也是对概念模型 : 2-3-4 树的一种实现，而 2-3-4 树是阶数为 4 的B 树 <br>
 <br>没写完到时候看这个<a data-tooltip-position="top" aria-label="https://zhuanlan.zhihu.com/p/273829162" rel="noopener" class="external-link" href="https://zhuanlan.zhihu.com/p/273829162" target="_blank">图解：什么是红黑树？ - 知乎</a>
 ]]></description><link>2-领域\后端学习\java\红黑树是什么？.html</link><guid isPermaLink="false">2-领域/后端学习/Java/红黑树是什么？.md</guid><pubDate>Tue, 12 Mar 2024 14:08:51 GMT</pubDate></item><item><title><![CDATA[平衡多路查找树（B树）]]></title><description><![CDATA[ 
@@ -2026,8 +2201,7 @@ this(checkCreateClassLoader(), parent);<br>
 <br>
 但是如果想要打破双亲委派模型，那么就要重写，loadClass()方法了，就可以自定义怎么loadClass了，不需要一层层往上找了（比如tomcat服务器，为了优先加载web目录下的类，再加载其他目录下的类，就自己定义实现了webAppClassLoader这个类）
 
-<br><br><br>主内存（Main Memory）：主内存是所有线程共享的内存区域，用于存储共享变量。当一个线程需要读取或修改共享变量时，它首先会从主内存中获取该变量的值，然后在自己的工作内存中进行操作，最后将结果写回主内存。<br>工作内存（Working Memory）：工作内存是每个线程私有的内存区域，用于存储主内存中共享变量的副本。线程对共享变量的所有操作都发生在工作内存中，然后将结果同步回主内存。这样可以提高程序的执行效率，避免每次操作共享变量都需要直接访问主内存。<br>内存间交互操作：JMM定义了八种操作，用于描述生成的class字节码指令对内存的读写要求。这些操作包括：lock（锁定）、unlock（解锁）、read（读取）、load（载入）、use（使用）、assign（赋值）、store（存储）和write（写入）。<br>原子性：原子性是指一个操作要么全部完成，要么全部不完成。JMM保证了基本类型的读取和写入操作的原子性，但对于复合操作（例如自增运算），JMM并没有保证其原子性。为了解决这个问题，可以使用synchronized关键字或显式锁（如ReentrantLock）来确保复合操作的原子性。<br>可见性：可见性是指当一个线程修改了共享变量的值，其他线程能够立即看到修改后的值。JMM通过volatile关键字和synchronized关键字来保证可见性。当一个共享变量被volatile修饰时，其他线程能够立即看到该变量的最新值；当一个共享变量在synchronized块中被修改时，其他线程在退出synchronized块后能够立即看到修改后的值。<br>有序性：有序性是指程序执行的顺序应该按照代码的先后顺序进行。然而，由于处理器和编译器的优化，代码的执行顺序可能会被重新排序。JMM通过happens-before规则来保证程序的有序性。如果一个操作happens-before另一个操作，那么第一个操作的结果对于第二个操作是可见的，而且第一个操作不会因为线程的执行而重排序。<br>总之，JMM内存模型定义了一组规则，用于确保多线程程序在各个虚拟机上运行时能够得到一致的结果。这些规则涉及原子性、可见性和有序性等方面，可以帮助开发者编写正确、可靠的多线程程序。<br><br>新建（New）：线程刚被创建，但是尚未启动。还没调用start()方法。<br>可运行（Runnable）：线程可以在Java虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操作系统处理器。包括运行（running）和就绪（ready）两种状态。<br>阻塞（Blocked）：线程进入等待状态，线程因为某种原因，放弃了CPU的使用权。阻塞的情况分三种： A. 等待阻塞：运行的线程执行了wait()，JVM会把当前线程放入等待队列。 B. 同步阻塞：运行的线程在获取对象的同步锁时，如果该同步锁被其他线程占用了，JVM会把当前线程放入锁池中。 C. 其他阻塞：运行的线程执行sleep()、join()或者发出IO请求时，JVM会把当前线程设置为阻塞状态，当sleep()执行完，join()线程终止，IO处理完毕线程再次恢复。<br>等待（Waiting）：线程拥有了某个锁之后，调用了wait()方法，等待其他线程/锁拥有者调用notify/notifyAll以便该线程可以继续下一步操作。线程调用join()方法时，也会进入等待状态，等待被join的线程执行结束。<br>超时等待（Timed Waiting）：同等待状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Thread.sleep、Object.wait。<br>终止（Terminated）：线程执行完毕，因为run()方法正常退出或者因为没有捕获的异常终止了run()方法而死亡。终止的线程不可再次恢复。<br><br>AQS（AbstractQueuedSynchronizer）是Java并发包java.util.concurrent中的一个抽象类，它提供了构建锁和其他同步组件的一个通用框架。AQS实现了基于队列的阻塞和唤醒机制，用于构建各种同步组件，如ReentrantLock、Semaphore、CountDownLatch等。<br>AQS内部维护了一个整数状态（state）和一个双向队列（CLH队列），用于实现同步组件的阻塞和唤醒操作。它定义了三个核心方法：tryAcquire、tryRelease和isHeldExclusively。这些方法需要子类根据具体同步组件的实现来提供。]]></description><link>2-领域\后端学习\java\java基础巩固.html</link><guid isPermaLink="false">2-领域/后端学习/Java/JAVA基础巩固.md</guid><pubDate>Tue, 20 Feb 2024 11:34:11 GMT</pubDate><enclosure url="lib\media\1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[mybatis 分页]]></title><description><![CDATA[ 
- 刚开始分页，记录一下分页的小问题]]></description><link>2-领域\后端学习\java\mybatis-分页.html</link><guid isPermaLink="false">2-领域/后端学习/Java/mybatis 分页.md</guid><pubDate>Sun, 05 May 2024 18:32:04 GMT</pubDate><enclosure url="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240430190241.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240430190241.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[复杂查询]]></title><description><![CDATA[ 
+<br><br><br>主内存（Main Memory）：主内存是所有线程共享的内存区域，用于存储共享变量。当一个线程需要读取或修改共享变量时，它首先会从主内存中获取该变量的值，然后在自己的工作内存中进行操作，最后将结果写回主内存。<br>工作内存（Working Memory）：工作内存是每个线程私有的内存区域，用于存储主内存中共享变量的副本。线程对共享变量的所有操作都发生在工作内存中，然后将结果同步回主内存。这样可以提高程序的执行效率，避免每次操作共享变量都需要直接访问主内存。<br>内存间交互操作：JMM定义了八种操作，用于描述生成的class字节码指令对内存的读写要求。这些操作包括：lock（锁定）、unlock（解锁）、read（读取）、load（载入）、use（使用）、assign（赋值）、store（存储）和write（写入）。<br>原子性：原子性是指一个操作要么全部完成，要么全部不完成。JMM保证了基本类型的读取和写入操作的原子性，但对于复合操作（例如自增运算），JMM并没有保证其原子性。为了解决这个问题，可以使用synchronized关键字或显式锁（如ReentrantLock）来确保复合操作的原子性。<br>可见性：可见性是指当一个线程修改了共享变量的值，其他线程能够立即看到修改后的值。JMM通过volatile关键字和synchronized关键字来保证可见性。当一个共享变量被volatile修饰时，其他线程能够立即看到该变量的最新值；当一个共享变量在synchronized块中被修改时，其他线程在退出synchronized块后能够立即看到修改后的值。<br>有序性：有序性是指程序执行的顺序应该按照代码的先后顺序进行。然而，由于处理器和编译器的优化，代码的执行顺序可能会被重新排序。JMM通过happens-before规则来保证程序的有序性。如果一个操作happens-before另一个操作，那么第一个操作的结果对于第二个操作是可见的，而且第一个操作不会因为线程的执行而重排序。<br>总之，JMM内存模型定义了一组规则，用于确保多线程程序在各个虚拟机上运行时能够得到一致的结果。这些规则涉及原子性、可见性和有序性等方面，可以帮助开发者编写正确、可靠的多线程程序。<br><br>新建（New）：线程刚被创建，但是尚未启动。还没调用start()方法。<br>可运行（Runnable）：线程可以在Java虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操作系统处理器。包括运行（running）和就绪（ready）两种状态。<br>阻塞（Blocked）：线程进入等待状态，线程因为某种原因，放弃了CPU的使用权。阻塞的情况分三种： A. 等待阻塞：运行的线程执行了wait()，JVM会把当前线程放入等待队列。 B. 同步阻塞：运行的线程在获取对象的同步锁时，如果该同步锁被其他线程占用了，JVM会把当前线程放入锁池中。 C. 其他阻塞：运行的线程执行sleep()、join()或者发出IO请求时，JVM会把当前线程设置为阻塞状态，当sleep()执行完，join()线程终止，IO处理完毕线程再次恢复。<br>等待（Waiting）：线程拥有了某个锁之后，调用了wait()方法，等待其他线程/锁拥有者调用notify/notifyAll以便该线程可以继续下一步操作。线程调用join()方法时，也会进入等待状态，等待被join的线程执行结束。<br>超时等待（Timed Waiting）：同等待状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Thread.sleep、Object.wait。<br>终止（Terminated）：线程执行完毕，因为run()方法正常退出或者因为没有捕获的异常终止了run()方法而死亡。终止的线程不可再次恢复。<br><br>AQS（AbstractQueuedSynchronizer）是Java并发包java.util.concurrent中的一个抽象类，它提供了构建锁和其他同步组件的一个通用框架。AQS实现了基于队列的阻塞和唤醒机制，用于构建各种同步组件，如ReentrantLock、Semaphore、CountDownLatch等。<br>AQS内部维护了一个整数状态（state）和一个双向队列（CLH队列），用于实现同步组件的阻塞和唤醒操作。它定义了三个核心方法：tryAcquire、tryRelease和isHeldExclusively。这些方法需要子类根据具体同步组件的实现来提供。]]></description><link>2-领域\后端学习\java\java基础巩固.html</link><guid isPermaLink="false">2-领域/后端学习/Java/JAVA基础巩固.md</guid><pubDate>Tue, 20 Feb 2024 11:34:11 GMT</pubDate><enclosure url="lib\media\1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\1ebd1df862c34880bc26b9d494535b3dtplv-k3u1fbpfcp-watermark.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[复杂查询]]></title><description><![CDATA[ 
  <br><br>简而言之，套娃查询<br>
 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240227231703.png" referrerpolicy="no-referrer"><br><br>举个例子<br>
 <img alt="image.png" src="https://obsidian-pic-1317906728.cos.ap-nanjing.myqcloud.com/obsidian/20240229233112.png" referrerpolicy="no-referrer"><br><br>实际上，我们可以把我们查出来的表当作一个虚拟的表写到 from 那块比如这样<br>
